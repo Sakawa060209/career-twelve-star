@@ -62,6 +62,111 @@
 @media(max-width:1000px){.player-title-row{align-items:flex-start;flex-direction:column;gap:2px}.hero-finance{padding-bottom:5px}.national-panel{padding:20px}.selection-dashboard{grid-template-columns:1fr}}
 @media(max-width:700px){.match-report{grid-template-columns:1fr 48px}.match-detail{grid-column:1}.match-fixture{grid-template-columns:minmax(60px,1fr) auto minmax(60px,1fr)}.match-team span{font-size:8px}.match-team-logo{width:22px;height:24px}.hero-finance{flex-wrap:wrap}.hero-finance span{padding:4px 6px}}
 
+/* Version 7: compact touch-first mobile dashboard and league championship cabinet. */
+.mobile-command,.mobile-more-btn{display:none}
+.league-award-card{grid-column:span 2;min-height:230px}
+.league-trophy-gallery{display:grid;grid-template-columns:repeat(7,minmax(44px,1fr));gap:7px;margin-bottom:18px}
+.league-trophy-icon{position:relative;min-height:74px;padding:9px 4px 5px;display:grid;place-items:center;background:#091710;border:1px solid rgba(231,187,101,.22);overflow:hidden}
+.league-trophy-icon>i{position:absolute;font-style:normal;font-size:42px;line-height:1;opacity:.7;filter:saturate(.75)}
+.league-trophy-icon img{position:relative;z-index:1;width:33px;height:33px;object-fit:contain;filter:drop-shadow(0 3px 5px rgba(0,0,0,.35))}
+.league-trophy-icon small{position:relative;z-index:1;margin-top:4px;color:#dec98f;font-size:7px}
+.league-image-source{display:block;margin:-8px 0 12px;color:#687a70;font-size:7px;font-style:normal}
+.trophy-item{display:grid;grid-template-columns:48px minmax(0,1fr) auto}
+.trophy-item-image{position:relative;width:42px;height:46px;display:grid;place-items:center;flex:none}
+.trophy-item-image>i{position:absolute;font-style:normal;font-size:31px;opacity:.72;filter:saturate(.75)}
+.trophy-item-image img{position:relative;z-index:1;width:31px;height:31px;object-fit:contain}
+
+@media(max-width:700px){
+  body{background:#07110d}
+  .creator-page{overflow:auto}
+  .creator-nav{height:58px;padding:0 16px}
+  .creator-nav .brand{font-size:13px}
+  .creator-copy{display:none}
+  .creator-wrap{display:block;padding:12px 10px 85px}
+  .creator-card{padding:18px 14px;border-radius:18px;box-shadow:none}
+  .creator-card .step-label{margin-bottom:17px}
+  .creator-card .field.full{margin-bottom:12px}
+  .form-grid{gap:12px}
+  .field input,.field select{min-height:48px;border-radius:10px}
+  .segmented{height:48px}.segmented button:first-child{border-radius:10px 0 0 10px}.segmented button:last-child{border-radius:0 10px 10px 0}
+  .profile-title{margin-top:18px;padding-top:15px}
+  .potential{margin:17px 0 12px;border-radius:10px}
+  .start{min-height:52px;border-radius:12px}
+
+  .game-main{padding-bottom:72px}
+  .topbar{height:58px;padding:0 12px}
+  .topbar h2{font-size:15px}.topbar p{margin-bottom:2px}
+  .top-actions{gap:6px}.top-actions #calendar{display:inline}.top-actions .live-dot{display:none}
+  #sound-btn{margin-left:2px;width:30px;height:30px;border-radius:9px}
+  .page{padding:10px 10px 92px}
+  .player-hero{min-height:132px;padding:14px 13px 16px;gap:11px;border-radius:18px}
+  .crest.large{width:50px;height:58px;font-size:14px;border-width:3px}
+  .player-identity{max-width:calc(100% - 112px)}
+  .player-identity .eyebrow{max-width:190px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:8px}
+  .player-title-row{gap:3px}.player-title-row h1{font-size:21px;margin-bottom:2px}
+  .hero-finance{gap:4px;padding:0}.hero-finance span{font-size:7px;padding:3px 5px}.hero-finance b{font-size:10px}
+  .meta{gap:4px;max-width:220px}.meta span{padding:3px 5px;font-size:8px}.meta span:nth-child(n+5){display:none}
+  .overall{right:8px;bottom:13px;padding:5px 9px;border-left:0;background:rgba(5,15,9,.58);border-radius:12px}
+  .overall strong{font-size:32px}.overall small{font-size:7px}
+
+  .mobile-command{display:block;margin-top:9px;padding:13px;border-radius:18px;border-color:rgba(201,255,56,.34)}
+  .mobile-command-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px}
+  .mobile-command-head span,.mobile-command-head strong{display:block}.mobile-command-head span{font-size:8px;color:var(--muted)}.mobile-command-head strong{font-size:12px;margin-top:2px}
+  .mobile-command-head>b{font-size:8px;color:var(--lime);padding:4px 7px;background:rgba(201,255,56,.08);border:1px solid rgba(201,255,56,.18);border-radius:9px}
+  .mobile-snapshot{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+  .mobile-snapshot>div{min-width:0;padding:8px;background:#08150e;border:1px solid var(--line);border-radius:10px}
+  .mobile-snapshot span,.mobile-snapshot b{display:block}.mobile-snapshot span{font-size:7px;color:var(--muted)}.mobile-snapshot b{font:600 13px 'Oswald';margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mobile-span-picker{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin:9px 0 7px}
+  .mobile-span-picker button{min-height:36px;border:1px solid var(--line);background:#0b1b13;color:var(--muted);font-size:9px;border-radius:10px}
+  .mobile-span-picker button.active{border-color:var(--lime);background:rgba(201,255,56,.11);color:var(--lime);font-weight:800}
+  #mobile-advance-btn{width:100%;min-height:48px;border-radius:12px}
+
+  .dashboard-grid{display:block;margin-top:9px}
+  .left-col,.right-col{gap:9px}
+  #overview-page .action-panel{display:none}
+  #overview-page .stats-panel,#overview-page .reports-panel,#overview-page .right-col>.panel{border-radius:16px}
+  #overview-page .stats-panel,#overview-page .reports-panel{padding:14px}
+  #overview-page .stats-panel .section-head,#overview-page .reports-panel .section-head{margin-bottom:10px}
+  #overview-page .stat-grid{margin-bottom:0;border-radius:11px;overflow:hidden}
+  #overview-page .stat{padding:10px}#overview-page .stat b{font-size:21px}
+  #overview-page:not(.mobile-expanded) .attribute-head,
+  #overview-page:not(.mobile-expanded) .attribute-grid,
+  #overview-page:not(.mobile-expanded) .stats-panel .meter-row,
+  #overview-page:not(.mobile-expanded) .right-col>.panel:not(.award-showcase):not(.news-panel){display:none}
+  #overview-page .right-col{margin-top:9px}
+  #overview-page .right-col>.panel{padding:14px}
+  #overview-page .right-col .award-showcase.hidden{display:none}
+  #overview-page .right-col .feed-item:nth-child(n+4){display:none}
+  #overview-page.mobile-expanded .right-col .feed-item:nth-child(n+4){display:grid}
+  .mobile-more-btn{display:block;width:100%;margin:10px 0 0;min-height:45px;border:1px solid #31473a;background:#0d1b15;color:#c7d0ca;border-radius:14px;font-size:10px;font-weight:700}
+  .match-report{padding:9px 0}.match-detail p{font-size:8px}
+
+  .sidebar{height:68px;padding:5px 7px;border-top:1px solid #263a2f;border-right:0;background:rgba(7,17,13,.97);backdrop-filter:blur(15px)}
+  .sidebar nav{gap:3px}.sidebar nav button{min-height:56px;padding:6px 2px;border-radius:12px;font-size:8px}
+  .sidebar nav button span{font-size:16px;margin-bottom:2px}.sidebar nav button.active{box-shadow:none;background:#16271d;color:var(--lime)}
+  .sidebar nav button:hover:not(.active){background:transparent;color:#75887d}
+
+  .page-intro{padding:8px 3px 16px}.page-intro h1{font-size:27px}.page-intro>p:last-child{font-size:10px;line-height:1.6}
+  .award-cards{display:grid;grid-template-columns:1fr;gap:8px}
+  .award-card,.league-award-card{grid-column:auto;min-height:0;padding:14px;border-radius:15px}
+  .award-card:not(.league-award-card){display:grid;grid-template-columns:45px 1fr;column-gap:10px}
+  .award-card:not(.league-award-card) .trophy-symbol{grid-row:1/4;margin:0;font-size:30px}
+  .award-card h3{font-size:13px}.award-card p{margin:4px 0;font-size:9px}.award-card .eligibility{margin-top:7px}
+  .league-trophy-gallery{grid-template-columns:repeat(5,1fr);gap:5px;margin-bottom:12px}
+  .league-trophy-icon{min-height:62px;padding:7px 2px 4px}.league-trophy-icon>i{font-size:39px}.league-trophy-icon img{width:27px;height:27px}.league-trophy-icon small{font-size:6px}
+  .trophy-log{padding:14px;border-radius:16px}
+  .trophy-item{grid-template-columns:42px minmax(0,1fr) auto;padding:11px 0}.trophy-item-image{width:36px;height:41px}.trophy-item-image img{width:27px;height:27px}
+  .trophy-item>span:last-child{font-size:8px}
+
+  .league-tabs{margin:0 -10px;padding:0 10px 10px;scrollbar-width:none}
+  .league-tabs button{min-height:40px;border-radius:11px}
+  .club-card,.real-standings{border-radius:14px}
+  .modal{place-items:end center;padding:0}
+  .modal-card{width:100%;max-height:88vh;overflow:auto;padding:27px 17px 20px;border-radius:22px 22px 0 0}
+  .modal-actions{position:sticky;bottom:-20px;padding:10px 0 0;background:#112219}
+  .toast{left:12px;right:12px;bottom:82px;text-align:center;border-radius:12px}
+}
+
 </style>
 </head>
 <body>
@@ -143,6 +248,20 @@
           <div class="hero-stripe"></div>
         </div>
 
+        <div id="mobile-command" class="mobile-command panel" aria-label="手机快捷操作">
+          <div class="mobile-command-head">
+            <div><span>生涯速览</span><strong id="mobile-status-text">准备下一阶段</strong></div>
+            <b id="mobile-form">状态良好</b>
+          </div>
+          <div id="mobile-snapshot" class="mobile-snapshot"></div>
+          <div class="mobile-span-picker" role="group" aria-label="选择推进跨度">
+            <button type="button" class="active" data-mobile-span="2">2 个月</button>
+            <button type="button" data-mobile-span="6">半赛季</button>
+            <button type="button" data-mobile-span="12">一赛季</button>
+          </div>
+          <button id="mobile-advance-btn" type="button" class="primary">推进两个月 <b>→</b></button>
+        </div>
+
         <div class="dashboard-grid">
           <div class="left-col">
             <div class="panel stats-panel">
@@ -191,6 +310,7 @@
             </div>
           </div>
         </div>
+        <button id="mobile-more-btn" class="mobile-more-btn" type="button" aria-expanded="false">展开完整生涯信息</button>
       </section>
 
       <section id="career-page" class="page">
@@ -271,8 +391,25 @@ const AWARDS=[
   {name:'金球奖',icon:'◈',mark:'B',desc:'世界足坛最高个人荣誉。综合能力、赛季表现与顶级赛事成绩决定归属。',rule:'所有位置 · 21 岁后更有机会'},
   {name:'欧洲金童奖',icon:'✦',mark:'G',desc:'授予表现最出色的年轻球员，是天才少年迈入巨星行列的第一座里程碑。',rule:'21 岁以下球员'},
   {name:'欧洲金靴奖',icon:'♞',mark:'S',desc:'属于欧洲联赛最致命的得分手，进球数与联赛系数共同决定排名。',rule:'非门将 · 赛季进球突出'},
-  {name:'雅辛奖 · 金手套',icon:'♜',mark:'Y',desc:'年度最佳门将荣誉，零封、扑救表现、失球数与球队成绩共同评定。',rule:'仅门将位置'}
+  {name:'雅辛奖 · 金手套',icon:'♜',mark:'Y',desc:'年度最佳门将荣誉，零封、扑救表现、失球数与球队成绩共同评定。',rule:'仅门将位置'},
+  {name:'联赛冠军',icon:'♛',mark:'C',type:'league',desc:'赛季结束时随俱乐部登上积分榜首位。奖杯使用游戏数据库中对应联赛的联网标识。',rule:'所有位置 · 球队最终排名第 1'}
 ];
+const LEAGUE_TROPHY_IMAGES={
+  '英超':'https://media.api-sports.io/football/leagues/39.png',
+  '西甲':'https://media.api-sports.io/football/leagues/140.png',
+  '德甲':'https://media.api-sports.io/football/leagues/78.png',
+  '意甲':'https://media.api-sports.io/football/leagues/135.png',
+  '法甲':'https://media.api-sports.io/football/leagues/61.png',
+  '葡超':'https://media.api-sports.io/football/leagues/94.png',
+  '荷甲':'https://media.api-sports.io/football/leagues/88.png',
+  '比甲':'https://media.api-sports.io/football/leagues/144.png',
+  '苏超':'https://media.api-sports.io/football/leagues/179.png',
+  '奥甲':'https://media.api-sports.io/football/leagues/218.png',
+  '沙特联':'https://media.api-sports.io/football/leagues/307.png',
+  '美职联':'https://media.api-sports.io/football/leagues/253.png',
+  '中超':'https://media.api-sports.io/football/leagues/169.png'
+};
+const leagueTrophyImage=short=>LEAGUE_TROPHY_IMAGES[short]||AWARD_IMAGES?.DEFAULT||'';
 const SAVE_KEY='career12-save-v1';
 const TEAM_LOGOS={
   '曼彻斯特蓝月':50,'伦敦枪手':42,'默西塞德红军':40,'北伦敦雄狮':47,'伦敦蓝狮':49,'纽卡斯尔联':34,
@@ -319,6 +456,16 @@ function init(){
   $('#player-form').onsubmit=createPlayer;
   $('#advance-btn').onclick=advanceTwoMonths;
   $('#advance-span').onchange=updateAdvanceUI;
+  $('#mobile-advance-btn').onclick=advanceTwoMonths;
+  $$('[data-mobile-span]').forEach(button=>button.onclick=()=>{
+    $('#advance-span').value=button.dataset.mobileSpan;
+    updateAdvanceUI();
+  });
+  $('#mobile-more-btn').onclick=()=>{
+    const page=$('#overview-page'),expanded=page.classList.toggle('mobile-expanded');
+    $('#mobile-more-btn').textContent=expanded?'收起详细信息':'展开完整生涯信息';
+    $('#mobile-more-btn').setAttribute('aria-expanded',String(expanded));
+  };
   $('#reset-btn').onclick=resetGame;
   $('#modal-close').onclick=closeModal;
   $('#modal').onclick=e=>{if(e.target===$('#modal')&&!modalLocked)closeModal()};
@@ -386,7 +533,18 @@ function renderAll(){
   $('#profile-route').textContent=`${state.profile?.playStyle||'全能型'} · ${state.profile?.personality||'自律'} · ${state.profile?.development||'技术'}路线 · ${state.profile?.agentStyle||'稳健'}经纪`;
   $('#profile-goal').textContent=`目标：${state.profile?.careerGoal||'成为世界最佳'}`;
   $('#advance-btn').disabled=state.retired;
-  renderAttributes();renderInjuryStatus();renderAwardShowcase();renderSeasonSummary();renderFeed();renderMatchReports();renderEurope();renderNational();renderSelectionInsights();renderCareer();renderAwards();updateAdvanceUI();save();
+  renderAttributes();renderInjuryStatus();renderAwardShowcase();renderSeasonSummary();renderFeed();renderMatchReports();renderEurope();renderNational();renderSelectionInsights();renderCareer();renderAwards();renderMobileSnapshot();updateAdvanceUI();save();
+}
+function renderMobileSnapshot(){
+  const s=seasonStats(),isGK=state.pos==='GK',output=isGK?`${s.cleanSheets} 零封`:`${s.goals} 球 · ${s.assists} 助`;
+  const status=state.retired?'生涯已结束':state.injured>0?`${state.injuryDetail?.name||'伤病'} · 还需 ${state.injured} 月`:`${state.club} · ${MONTHS[state.month]}`;
+  $('#mobile-status-text').textContent=status;
+  $('#mobile-form').textContent=state.injured>0?'伤停':state.fitness>=78?'状态出色':state.fitness>=55?'状态正常':'需要恢复';
+  $('#mobile-snapshot').innerHTML=[
+    ['出场',s.apps],
+    [isGK?'赛季表现':'进球 / 助攻',output],
+    ['能力 / 体能',`${state.overall} / ${state.fitness}`]
+  ].map(([label,value])=>`<div><span>${label}</span><b>${value}</b></div>`).join('');
 }
 function logoUrl(name){return TEAM_LOGOS[name]?`https://media.api-sports.io/football/teams/${TEAM_LOGOS[name]}.png`:''}
 function crestContent(c){const url=logoUrl(c[0]);return url?`<span>${c[1]}</span><img src="${url}" alt="${c[0]}徽标" onerror="this.remove()">`:`<span>${c[1]}</span>`}
@@ -1007,8 +1165,8 @@ function renderAwardShowcase(){
   el.classList.remove('hidden');el.innerHTML=`<img src="${t.image||awardImage(t.name)}" alt="${t.name}奖项图片" onerror="this.style.display='none'"><div class="award-showcase-copy"><p class="eyebrow">LATEST PERSONAL HONOUR · 得奖说明</p><h3>${t.name}</h3><p>${t.reason}</p><small>${t.season} · 图片来源 Wikimedia Commons</small></div>`;
 }
 function renderAwards(){
-  $('#award-cards').innerHTML=AWARDS.map(a=>`<div class="award-card" data-mark="${a.mark}"><div class="trophy-symbol">${a.icon}</div><h3>${a.name}</h3><p>${a.desc}</p><span class="eligibility">${a.rule}</span></div>`).join('');if(!state)return;
-  $('#trophy-count').textContent=`${state.trophies.length} 座奖杯`;$('#trophy-list').innerHTML=state.trophies.length?state.trophies.map(t=>`<div class="trophy-item"><div><strong>${t.name}</strong><small>${t.reason||'随队或个人获得的重要荣誉。'}</small></div><span>${t.season}</span></div>`).join(''):'<div class="empty-state">奖杯柜还空着。继续前进，你会来到这里。</div>';
+  $('#award-cards').innerHTML=AWARDS.map(a=>`<div class="award-card ${a.type==='league'?'league-award-card':''}" data-mark="${a.mark}">${a.type==='league'?`<div class="league-trophy-gallery">${LEAGUES.map(l=>`<span class="league-trophy-icon" title="${l.name}冠军奖杯"><i>🏆</i><img src="${leagueTrophyImage(l.short)}" alt="${l.short}联赛冠军奖杯图标" loading="lazy" onerror="this.remove()"><small>${l.short}</small></span>`).join('')}</div><em class="league-image-source">在线联赛标识：API-Sports · 断网时保留奖杯图标</em>`:`<div class="trophy-symbol">${a.icon}</div>`}<h3>${a.name}</h3><p>${a.desc}</p><span class="eligibility">${a.rule}</span></div>`).join('');if(!state)return;
+  $('#trophy-count').textContent=`${state.trophies.length} 座奖杯`;$('#trophy-list').innerHTML=state.trophies.length?state.trophies.map(t=>`<div class="trophy-item"><span class="trophy-item-image ${t.type==='league'||String(t.name).includes('联赛冠军')?'league':''}"><i>🏆</i><img src="${t.image||awardImage(t.name)}" alt="${t.name}奖杯图标" loading="lazy" onerror="this.remove()"></span><div><strong>${t.name}</strong><small>${t.reason||'随队或个人获得的重要荣誉。'}</small></div><span>${t.season}</span></div>`).join(''):'<div class="empty-state">奖杯柜还空着。继续前进，你会来到这里。</div>';
 }
 function renderClubs(){
   const l=LEAGUES[activeLeague];$('#club-database').innerHTML=l.clubs.map(c=>`<div class="club-card"><div class="crest" style="--club:${c[2]}">${crestContent(c)}</div><div><strong>${c[0]}</strong><small>${l.name} · 实力 ${c[3]} · 参考排名 #${worldRank(c[0])}</small><div class="stars">${'★'.repeat(Math.max(1,Math.round((c[3]-55)/9)))}${'☆'.repeat(Math.max(0,5-Math.round((c[3]-55)/9)))}</div></div></div>`).join('');
@@ -1095,7 +1253,7 @@ function migrateState(){
   state.profile.playStyle=state.profile.playStyle||(PLAY_STYLES[state.pos]||['全能型'])[0];state.attributes=state.attributes||initialAttributes(state.pos,state.overall||52,state.profile.playStyle);
   state.eventHistory=state.eventHistory||{};state.injuryHistory=state.injuryHistory||{};state.flags=state.flags||{};state.flags.seasonEventCount=state.flags.seasonEventCount||0;state.flags.lastInteractiveEventMonth=state.flags.lastInteractiveEventMonth??-99;
   state.relationships=state.relationships||{coach:50,teammates:50,fans:35,agent:50};state.matchReports=state.matchReports||[];state.continentalHistory=state.continentalHistory||[];state.trophies=state.trophies||[];state.seasons=state.seasons||[newSeason(state.year||2026,state.club)];
-  state.trophies.forEach(t=>{t.reason=t.reason||`${t.season} 赛季获得的重要荣誉。`;t.image=t.image||awardImage(t.name)});
+  state.trophies.forEach(t=>{t.reason=t.reason||`${t.season} 赛季获得的重要荣誉。`;if(String(t.name).includes('联赛冠军')){t.type='league';t.league=t.league||LEAGUES.find(l=>String(t.name).includes(l.short))?.short;t.image=leagueTrophyImage(t.league)}else t.image=t.image||awardImage(t.name)});
   const c=clubByName(state.club);if(c){state.clubCode=c[1];state.clubColor=c[2];state.clubStrength=c[3]}recalculateOverall();if(state.age>=16&&!state.continentalCurrent)state.continentalCurrent=createContinentalCampaign();ensureNational();state.version=6;
 }
 function weeklySalaryText(weekly){
@@ -1164,7 +1322,7 @@ function simulateLeagueTable(s){
   let cycle=0;while(table.some(t=>t.played<targetMatches)&&cycle<6){for(let r=0;r<rounds.length&&table.some(t=>t.played<targetMatches);r++){rounds[r].forEach(([a,b],i)=>{if(byName[a].played>=targetMatches||byName[b].played>=targetMatches)return;const swap=(cycle+r+i)%2===1;play(swap?b:a,swap?a:b)})}cycle++}
   table.forEach(t=>{t.gd=t.gf-t.ga;t.strength=Math.round(t.strength)});table.sort((a,b)=>b.points-a.points||b.gd-a.gd||b.gf-a.gf||b.wins-a.wins);
   table.forEach((t,i)=>t.rank=i+1);const mine=table.find(t=>t.name===state.club);s.leagueRank=mine?.rank||clubs.length;s.leaguePoints=mine?.points||0;s.leagueTable=table;s.leagueName=league.name;s.leagueMatches=targetMatches;
-  if(s.leagueRank===1){const name=`${league.short} 联赛冠军`,reason=`${s.season} 赛季以 ${s.leaguePoints} 分随 ${state.club} 获得 ${league.name} 冠军。`;state.trophies.unshift({name,season:s.season,reason,image:awardImage(name),team:true});addEvent('赢得联赛冠军',reason,'♜');addFeed('联赛冠军',`${state.club} 登上 ${league.short} 积分榜首位，你收获一座联赛奖杯。`,'♜')}return table;
+  if(s.leagueRank===1){const name=`${league.short} 联赛冠军`,reason=`${s.season} 赛季以 ${s.leaguePoints} 分随 ${state.club} 获得 ${league.name} 冠军。`;state.trophies.unshift({name,season:s.season,reason,image:leagueTrophyImage(league.short),league:league.short,type:'league',team:true});addEvent('赢得联赛冠军',reason,'♜');addFeed('联赛冠军',`${state.club} 登上 ${league.short} 积分榜首位，你收获一座联赛奖杯。`,'♜')}return table;
 }
 function leagueGoldenTarget(league,s){
   if(s.leagueGoldenTarget)return s.leagueGoldenTarget;const short=league?.short,range=['英超','西甲','德甲','意甲','法甲'].includes(short)?[22,31]:short==='沙特联'?[19,28]:short==='美职联'?[18,25]:short==='中超'?[15,23]:[18,28];return s.leagueGoldenTarget=rand(range[0],range[1]);
@@ -1174,7 +1332,7 @@ function addTrophy(name,s,reason,personal=true){
 }
 if(!AWARDS.some(a=>a.name==='联赛金靴奖'))AWARDS.splice(3,0,{name:'联赛金靴奖',icon:'♟',mark:'L',desc:'授予所在国内联赛当赛季进球最多的球员，与欧洲金靴的跨联赛加权排名分开计算。',rule:'非门将 · 超过该联赛模拟最佳射手线'});
 function awardImage(name){
-  if(String(name).includes('金靴'))return AWARD_IMAGES['欧洲金靴奖'];if(String(name).includes('金球'))return AWARD_IMAGES['金球奖'];if(String(name).includes('雅辛')||String(name).includes('金手套'))return AWARD_IMAGES['雅辛奖 · 金手套'];if(String(name).includes('金童'))return AWARD_IMAGES['欧洲金童奖'];return AWARD_IMAGES.DEFAULT;
+  const league=LEAGUES.find(l=>String(name).includes(l.short)&&String(name).includes('联赛冠军'));if(league)return leagueTrophyImage(league.short);if(String(name).includes('金靴'))return AWARD_IMAGES['欧洲金靴奖'];if(String(name).includes('金球'))return AWARD_IMAGES['金球奖'];if(String(name).includes('雅辛')||String(name).includes('金手套'))return AWARD_IMAGES['雅辛奖 · 金手套'];if(String(name).includes('金童'))return AWARD_IMAGES['欧洲金童奖'];return AWARD_IMAGES.DEFAULT;
 }
 function evaluateAwards(s){
   const league=leagueForClub(state.club),rating=+s.rating||0,output=state.pos==='GK'?s.cleanSheets*3+s.apps+rating*2:s.goals*4+s.assists*2+s.apps*.3+rating*2;
@@ -1227,6 +1385,8 @@ function updateAdvanceUI(){
   $('#next-title').textContent=state.retired?'传奇已经谢幕':state.injured?`${label}：康复与赛程继续推进`:`推进${label}`;
   $('#next-desc').textContent=state.retired?'你的生涯数据已经定格。':`将模拟未来 ${months} 个月的联赛、洲际赛事、训练、伤病和转会窗口。`;
   $('#advance-btn').innerHTML=state.retired?'生涯已结束':`推进${label} <b>→</b>`;
+  $('#mobile-advance-btn').disabled=state.retired;$('#mobile-advance-btn').innerHTML=state.retired?'生涯已结束':`推进${label} <b>→</b>`;
+  $$('[data-mobile-span]').forEach(button=>button.classList.toggle('active',+button.dataset.mobileSpan===months));
 }
 function destinationSalaryFactor(short){return short==='沙特联'?1.9:short==='美职联'?1.05:short==='中超'?.72:1}
 function transferOffers(){
