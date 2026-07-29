@@ -189,6 +189,61 @@
   .creator-save-button{min-height:44px;border-radius:10px}
 }
 
+/* Version 9: clearer typography, detailed attributes and official-rule links. */
+.noise,.hero-stripe{display:none}
+body{font-size:16px}
+.panel,.award-card,.club-card,.real-standings{background:#0d1c15;box-shadow:none}
+.topbar h2{font-size:20px}.topbar p{font-size:11px}.top-actions{font-size:12px}
+.section-head h3{font-size:18px}.eyebrow{font-size:12px}
+.stat span{font-size:11px}.meter-row,.meter-row b{font-size:11px}
+.attribute-head{font-size:12px}.attribute-head small{font-size:10px}
+.attribute-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.attribute-item{min-height:42px;padding:8px 10px}.attribute-item span{font-size:10px}.attribute-item b{font-size:18px}
+.feed-item strong{font-size:13px}.feed-item p{font-size:11px;line-height:1.55}.feed-item time{font-size:9px}
+.contract-grid span{font-size:10px}.contract-grid b{font-size:16px}
+.match-team span,.match-detail p{font-size:10px}.match-score small,.match-rating small{font-size:9px}
+.national-identity strong{font-size:13px}.national-identity small,.selection-note{font-size:9px}
+.national-stats span{font-size:8px}.national-stats b{font-size:16px}
+.award-card:after{display:none}.award-card h3{font-size:17px}.award-card p{font-size:11px;line-height:1.65}
+.award-card .eligibility{font-size:10px}.league-image-source{font-size:9px}
+.award-rule-source{position:relative;z-index:2;display:inline-flex;margin-top:10px;color:var(--lime);font-size:10px;text-decoration:none;border-bottom:1px solid rgba(201,255,56,.32);padding-bottom:2px}
+.award-rule-source:hover{color:#efffa7}
+.national-trophy-gallery{grid-template-columns:repeat(4,minmax(70px,1fr))}
+.trophy-item strong{font-size:13px}.trophy-item small{font-size:10px}
+.page-intro>p:last-child{font-size:13px}
+.modal-card>p:not(.eyebrow){font-size:13px}.modal-actions button{font-size:12px}.choice-detail{font-size:9px}
+
+@media(min-width:1001px){
+  .topbar h2{font-size:19px}
+  .player-identity h1{font-size:30px}
+  .meta span{font-size:10px}
+  .stats-panel .section-head h3,.reports-panel .section-head h3{font-size:16px}
+  .stat span{font-size:10px}.attribute-item span{font-size:10px}.attribute-item b{font-size:17px}
+  .right-col .feed-item strong{font-size:12px}.right-col .feed-item p{font-size:10px}
+}
+
+@media(max-width:700px){
+  body{font-size:16px}
+  .creator-card{background:#0d1c15}
+  .field>span{font-size:12px}.field input,.field select{font-size:14px}
+  .profile-title{font-size:13px}.potential{font-size:12px}
+  .topbar h2{font-size:17px}.topbar p{font-size:10px}
+  .player-title-row h1{font-size:23px}
+  .player-identity .eyebrow{font-size:9px}.hero-finance span{font-size:8px}.hero-finance b{font-size:11px}
+  .meta span{font-size:9px}.overall small{font-size:8px}
+  .mobile-command-head span{font-size:9px}.mobile-command-head strong{font-size:14px}.mobile-command-head>b{font-size:9px}
+  .mobile-snapshot span{font-size:8px}.mobile-snapshot b{font-size:15px}
+  .mobile-span-picker button{font-size:11px}#mobile-advance-btn{font-size:14px}
+  .attribute-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+  .attribute-item{min-height:44px}.attribute-item span{font-size:11px}.attribute-item b{font-size:19px}
+  .match-team span,.match-detail p{font-size:9px}
+  .sidebar nav button{font-size:9px}
+  .page-intro h1{font-size:29px}.page-intro>p:last-child{font-size:12px}
+  .award-card h3{font-size:15px}.award-card p{font-size:11px}.award-card .eligibility,.award-rule-source{font-size:10px}
+  .league-trophy-icon small{font-size:8px}.league-image-source{font-size:9px}
+  .national-trophy-gallery{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+
   </style>
 </head>
 <body>
@@ -225,7 +280,7 @@
           <label class="field"><span>经纪人策略</span><select id="agentStyle"><option value="稳健">稳健 · 重视出场时间</option><option value="忠诚">忠诚 · 倾向长期留队</option><option value="进取">进取 · 主动寻求转会</option><option value="商业">商业 · 品牌价值优先</option></select></label>
           <label class="field full-span"><span>生涯首要目标</span><select id="careerGoal"><option value="成为世界最佳">成为世界最佳 · 冲击金球奖</option><option value="俱乐部传奇">成为俱乐部传奇 · 一人一城</option><option value="国家队荣誉">为国家队赢得最高荣誉</option><option value="体验多国联赛">征服不同国家的联赛</option></select></label>
         </div>
-        <div class="potential"><span>初始档案</span><strong>15 岁 · 青训新星 · 潜力未知</strong></div>
+        <div class="potential"><span>初始档案</span><strong>15 岁 · 青训新星 · 能力随生涯变化</strong></div>
         <button class="primary start" type="submit">踏上职业之路 <b>→</b></button>
         <button id="creator-saves-btn" class="creator-save-button" type="button">▣ 查看已有存档 <span id="creator-save-count">0 / 10</span></button>
       </form>
@@ -267,7 +322,7 @@
             </div>
             <div class="meta" id="player-meta"></div>
           </div>
-          <div class="overall"><span>综合能力</span><strong id="overall">46</strong><small id="potential-text">潜力 88–94</small></div>
+          <div class="overall"><span>综合能力</span><strong id="overall">46</strong><small id="potential-text">能力值 / 100</small></div>
           <div class="hero-stripe"></div>
         </div>
 
@@ -412,11 +467,12 @@ const COUNTRIES=['中国','英格兰','西班牙','德国','意大利','法国',
 const POSITIONS=[['ST','中锋'],['LW','左边锋'],['RW','右边锋'],['CAM','前腰'],['CM','中前卫'],['CDM','后腰'],['LB','左后卫'],['CB','中后卫'],['RB','右后卫'],['GK','门将']];
 const MONTHS=['八月','九月','十月','十一月','十二月','一月','二月','三月','四月','五月','六月','七月'];
 const AWARDS=[
-  {name:'金球奖',icon:'◈',mark:'B',desc:'世界足坛最高个人荣誉。综合能力、赛季表现与顶级赛事成绩决定归属。',rule:'所有位置 · 21 岁后更有机会'},
-  {name:'欧洲金童奖',icon:'✦',mark:'G',desc:'授予表现最出色的年轻球员，是天才少年迈入巨星行列的第一座里程碑。',rule:'21 岁以下球员'},
-  {name:'欧洲金靴奖',icon:'♞',mark:'S',desc:'属于欧洲联赛最致命的得分手，进球数与联赛系数共同决定排名。',rule:'非门将 · 赛季进球突出'},
-  {name:'雅辛奖 · 金手套',icon:'♜',mark:'Y',desc:'年度最佳门将荣誉，零封、扑救表现、失球数与球队成绩共同评定。',rule:'仅门将位置'},
-  {name:'联赛冠军',icon:'♛',mark:'C',type:'league',desc:'赛季结束时随俱乐部登上积分榜首位。奖杯使用游戏数据库中对应联赛的联网标识。',rule:'所有位置 · 球队最终排名第 1'}
+  {name:'金球奖',icon:'◈',mark:'B',desc:'全球范围个人奖项，依次参考个人表现、球队成绩与荣誉，以及球员风度和公平竞赛。',rule:'全球联赛均可参评 · 顶级表现与重大冠军更有利',source:'金球奖官方规则',sourceUrl:'https://ballondor.com/the-ballon-dor'},
+  {name:'欧洲金童奖',icon:'✦',mark:'G',desc:'授予效力欧洲顶级联赛、表现最出色的年轻球员。',rule:'21 岁以下 · 仅欧洲顶级联赛球员',source:'Golden Boy 官方说明',sourceUrl:'https://www.goldenboyaward.com/'},
+  {name:'欧洲金靴奖',icon:'♞',mark:'S',desc:'依据欧洲顶级联赛进球数乘以联赛强度系数，计算跨联赛射手排名。',rule:'非门将 · 仅欧洲联赛 · 进球 × 系数',source:'UEFA 计分说明',sourceUrl:'https://www.uefa.com/uefachampionsleague/news/0252-0cda34062034-e692869a9b96-1000--lionel-messi-europe-s-top-scorer/'},
+  {name:'雅辛奖 · 金手套',icon:'♜',mark:'Y',desc:'全球范围年度最佳门将荣誉，综合零封、扑救、稳定性与球队成绩。',rule:'全球联赛门将均可参评',source:'金球奖官方排名说明',sourceUrl:'https://ballondor.com/all-rankings'},
+  {name:'联赛冠军',icon:'♛',mark:'C',type:'league',desc:'赛季结束时随俱乐部登上积分榜首位。奖杯使用游戏数据库中对应联赛的联网标识。',rule:'所有位置 · 球队最终排名第 1'},
+  {name:'国家队冠军',icon:'⚑',mark:'N',type:'national',desc:'随国家队赢得世界杯或所属大洲最高级别国家队赛事，冠军标识会进入荣誉橱窗。',rule:'入选国家队并随队夺冠'}
 ];
 const LEAGUE_TROPHY_IMAGES={
   '英超':'https://media.api-sports.io/football/leagues/39.png',
@@ -434,6 +490,20 @@ const LEAGUE_TROPHY_IMAGES={
   '中超':'https://media.api-sports.io/football/leagues/169.png'
 };
 const leagueTrophyImage=short=>LEAGUE_TROPHY_IMAGES[short]||AWARD_IMAGES?.DEFAULT||'';
+const NATIONAL_TROPHY_IMAGES={
+  'FIFA 世界杯':'https://media.api-sports.io/football/leagues/1.png',
+  '世界杯':'https://media.api-sports.io/football/leagues/1.png',
+  '非洲杯':'https://media.api-sports.io/football/leagues/6.png',
+  '亚洲杯':'https://media.api-sports.io/football/leagues/7.png',
+  '美洲杯':'https://media.api-sports.io/football/leagues/9.png'
+};
+const NATIONAL_TROPHY_GALLERY=[
+  ['FIFA 世界杯','世界杯'],['亚洲杯','亚洲杯'],['美洲杯','美洲杯'],['非洲杯','非洲杯']
+];
+const nationalTrophyImage=name=>{
+  const key=Object.keys(NATIONAL_TROPHY_IMAGES).find(k=>String(name).includes(k));
+  return key?NATIONAL_TROPHY_IMAGES[key]:'';
+};
 const SAVE_KEY='career12-save-v1';
 const SAVE_LIBRARY_KEY='career12-save-library-v1';
 const SAVE_LIMIT=10;
@@ -548,7 +618,7 @@ function renderAll(){
   $('#player-name').textContent=state.name;$('#club-line').textContent=`${state.club} · ${state.age<16?'青训学院':'一线队'}`;
   const flag=COUNTRY_CODES[state.country]?`<img class="flag" src="https://flagcdn.com/24x18/${COUNTRY_CODES[state.country]}.png" alt="${state.country}国旗" onerror="this.remove()">`:'';
   $('#player-meta').innerHTML=[`${flag}${state.country}`,`${state.pos} · ${POSITIONS.find(p=>p[0]===state.pos)[1]}`,`${state.number} 号`,state.foot,state.profile?.playStyle||'全能型',`${state.profile?.personality||'自律'} · ${state.profile?.development||'技术'}路线`].map(x=>`<span>${x}</span>`).join('');
-  $('#overall').textContent=state.overall;$('#potential-text').textContent=`潜力 ${state.potential}`;
+  $('#overall').textContent=state.overall;$('#potential-text').textContent='能力值 / 100';
   setCrest($('#club-crest'),c);setCrest($('#mini-crest'),c);
   const isGK=state.pos==='GK';
   const stats=isGK?[['出场',s.apps],['首发',s.starts],['零封',s.cleanSheets],['场均评分',s.rating||'—']]:[['出场',s.apps],['进球',s.goals],['助攻',s.assists],['场均评分',s.rating||'—']];
@@ -972,27 +1042,33 @@ const PLAY_STYLES={
   LB:['进攻边卫','防守边卫','内收边卫'],RB:['进攻边卫','防守边卫','内收边卫'],
   CB:['出球中卫','制空中卫','盯人中卫','清道夫'],GK:['门线门将','清道夫门将','出球门将']
 };
-const OUTFIELD_KEYS=['pace','shooting','passing','dribbling','defending','physical'];
-const GK_KEYS=['reflexes','handling','kicking','positioning','oneOnOnes','physical'];
-const ATTRIBUTE_LABELS={pace:'速度',shooting:'射门',passing:'传球',dribbling:'盘带',defending:'防守',physical:'身体',reflexes:'反应',handling:'手型',kicking:'开球',positioning:'站位',oneOnOnes:'一对一'};
+const OUTFIELD_KEYS=['pace','acceleration','shooting','finishing','passing','vision','dribbling','ballControl','defending','positioning','physical','stamina'];
+const GK_KEYS=['reflexes','handling','kicking','positioning','oneOnOnes','physical','aerialReach','command','throwing','pace'];
+const ATTRIBUTE_LABELS={
+  pace:'速度',acceleration:'爆发',shooting:'射术',finishing:'终结',passing:'传球',vision:'视野',
+  dribbling:'盘带',ballControl:'控球',defending:'防守',positioning:'站位',physical:'身体',stamina:'耐力',
+  reflexes:'反应',handling:'手型',kicking:'长传',oneOnOnes:'一对一',aerialReach:'制空',command:'指挥',throwing:'手抛球'
+};
 const POSITION_WEIGHTS={
-  ST:{pace:.16,shooting:.34,passing:.10,dribbling:.18,defending:.03,physical:.19},
-  LW:{pace:.25,shooting:.20,passing:.18,dribbling:.25,defending:.02,physical:.10},RW:{pace:.25,shooting:.20,passing:.18,dribbling:.25,defending:.02,physical:.10},
-  CAM:{pace:.12,shooting:.18,passing:.30,dribbling:.26,defending:.04,physical:.10},
-  CM:{pace:.10,shooting:.12,passing:.31,dribbling:.19,defending:.16,physical:.12},
-  CDM:{pace:.08,shooting:.06,passing:.25,dribbling:.12,defending:.31,physical:.18},
-  LB:{pace:.20,shooting:.05,passing:.18,dribbling:.14,defending:.25,physical:.18},RB:{pace:.20,shooting:.05,passing:.18,dribbling:.14,defending:.25,physical:.18},
-  CB:{pace:.08,shooting:.03,passing:.12,dribbling:.06,defending:.40,physical:.31},
-  GK:{reflexes:.26,handling:.22,kicking:.13,positioning:.19,oneOnOnes:.14,physical:.06}
+  ST:{pace:.10,acceleration:.10,shooting:.12,finishing:.22,passing:.06,vision:.04,dribbling:.08,ballControl:.10,defending:.01,positioning:.08,physical:.06,stamina:.03},
+  LW:{pace:.13,acceleration:.13,shooting:.08,finishing:.10,passing:.08,vision:.07,dribbling:.13,ballControl:.10,defending:.02,positioning:.05,physical:.04,stamina:.07},
+  RW:{pace:.13,acceleration:.13,shooting:.08,finishing:.10,passing:.08,vision:.07,dribbling:.13,ballControl:.10,defending:.02,positioning:.05,physical:.04,stamina:.07},
+  CAM:{pace:.06,acceleration:.07,shooting:.08,finishing:.06,passing:.15,vision:.18,dribbling:.12,ballControl:.12,defending:.02,positioning:.06,physical:.03,stamina:.05},
+  CM:{pace:.04,acceleration:.04,shooting:.05,finishing:.03,passing:.18,vision:.16,dribbling:.08,ballControl:.10,defending:.09,positioning:.08,physical:.06,stamina:.09},
+  CDM:{pace:.03,acceleration:.03,shooting:.02,finishing:.01,passing:.13,vision:.10,dribbling:.04,ballControl:.07,defending:.20,positioning:.15,physical:.12,stamina:.10},
+  LB:{pace:.10,acceleration:.10,shooting:.02,finishing:.01,passing:.10,vision:.05,dribbling:.07,ballControl:.05,defending:.18,positioning:.10,physical:.10,stamina:.12},
+  RB:{pace:.10,acceleration:.10,shooting:.02,finishing:.01,passing:.10,vision:.05,dribbling:.07,ballControl:.05,defending:.18,positioning:.10,physical:.10,stamina:.12},
+  CB:{pace:.04,acceleration:.04,shooting:.01,finishing:.01,passing:.07,vision:.04,dribbling:.02,ballControl:.03,defending:.25,positioning:.20,physical:.19,stamina:.10},
+  GK:{reflexes:.20,handling:.16,kicking:.08,positioning:.15,oneOnOnes:.13,physical:.05,aerialReach:.10,command:.06,throwing:.03,pace:.04}
 };
 const STYLE_KEYS={
-  '抢点射手':['shooting','positioning'],'速度突击手':['pace','dribbling'],'支点中锋':['physical','passing'],'全能前锋':['shooting','dribbling'],
-  '内切得分手':['shooting','dribbling'],'传统边锋':['pace','passing'],'边路组织者':['passing','dribbling'],'古典前腰':['passing','dribbling'],
-  '影子前锋':['shooting','pace'],'高压核心':['physical','defending'],'自由组织者':['passing','dribbling'],'控球组织者':['passing','dribbling'],
-  '全能中场':['passing','physical'],'节拍器':['passing','positioning'],'B2B中场':['physical','pace'],'抢球机器':['defending','physical'],
-  '拖后组织者':['passing','defending'],'防守屏障':['defending','positioning'],'进攻边卫':['pace','passing'],'防守边卫':['defending','physical'],
-  '内收边卫':['passing','defending'],'出球中卫':['passing','defending'],'制空中卫':['physical','defending'],'盯人中卫':['defending','pace'],
-  '清道夫':['pace','defending'],'门线门将':['reflexes','handling'],'清道夫门将':['oneOnOnes','kicking'],'出球门将':['kicking','positioning']
+  '抢点射手':['finishing','positioning'],'速度突击手':['pace','acceleration','dribbling'],'支点中锋':['physical','ballControl','vision'],'全能前锋':['shooting','finishing','ballControl'],
+  '内切得分手':['finishing','dribbling','ballControl'],'传统边锋':['pace','acceleration','passing'],'边路组织者':['passing','vision','ballControl'],'古典前腰':['passing','vision','ballControl'],
+  '影子前锋':['finishing','positioning','acceleration'],'高压核心':['stamina','defending','physical'],'自由组织者':['vision','dribbling','ballControl'],'控球组织者':['passing','vision','ballControl'],
+  '全能中场':['passing','stamina','physical'],'节拍器':['passing','vision','positioning'],'B2B中场':['stamina','physical','acceleration'],'抢球机器':['defending','stamina','physical'],
+  '拖后组织者':['passing','vision','defending'],'防守屏障':['defending','positioning','physical'],'进攻边卫':['pace','stamina','passing'],'防守边卫':['defending','positioning','physical'],
+  '内收边卫':['passing','ballControl','positioning'],'出球中卫':['passing','vision','defending'],'制空中卫':['positioning','physical','defending'],'盯人中卫':['defending','positioning','pace'],
+  '清道夫':['pace','positioning','defending'],'门线门将':['reflexes','handling'],'清道夫门将':['oneOnOnes','pace','kicking'],'出球门将':['kicking','throwing','command']
 };
 const STYLE_DESCRIPTIONS={
   '抢点射手':'禁区跑位与射门更强','速度突击手':'反击、盘带与冲刺更强','支点中锋':'争顶和做球更强','全能前锋':'终结与串联均衡',
@@ -1023,6 +1099,19 @@ function initialAttributes(pos,base,style){
 }
 function calculateOverall(attrs=state.attributes,pos=state.pos){
   const weights=POSITION_WEIGHTS[pos]||POSITION_WEIGHTS.CM;return Math.round(Object.entries(weights).reduce((n,[k,w])=>n+(attrs[k]||40)*w,0));
+}
+function ensureDetailedAttributes(){
+  if(!state?.attributes)return;
+  const a=state.attributes,seed=(key,fallback)=>{if(!Number.isFinite(a[key]))a[key]=clamp(Math.round(fallback),20,100)};
+  if(state.pos==='GK'){
+    seed('reflexes',state.overall||50);seed('handling',a.reflexes);seed('kicking',a.handling);seed('positioning',(a.reflexes+a.handling)/2);
+    seed('oneOnOnes',(a.reflexes+a.positioning)/2);seed('physical',a.handling);seed('aerialReach',(a.handling+a.physical)/2);
+    seed('command',(a.positioning+a.handling)/2);seed('throwing',(a.kicking+a.handling)/2);seed('pace',(a.oneOnOnes+a.physical)/2);
+  }else{
+    seed('pace',state.overall||50);seed('acceleration',a.pace);seed('shooting',state.overall||50);seed('finishing',a.shooting);
+    seed('passing',state.overall||50);seed('vision',a.passing);seed('dribbling',state.overall||50);seed('ballControl',a.dribbling);
+    seed('defending',state.overall||50);seed('positioning',(a.defending+a.passing)/2);seed('physical',state.overall||50);seed('stamina',a.physical);
+  }
 }
 function recalculateOverall(){
   state.potential=clamp(Math.round(state.potential||90),40,100);
@@ -1069,7 +1158,9 @@ function renderAwardShowcase(){
 
 function developmentPool(){
   const keys=attributeKeys(),pool=[...keys],focus=state.profile?.development,styleKeys=STYLE_KEYS[state.profile?.playStyle]||[];
-  const focusMap=state.pos==='GK'?{技术:['handling','kicking'],速度:['reflexes','oneOnOnes'],身体:['physical','handling'],战术:['positioning','oneOnOnes']}:{技术:['passing','dribbling','shooting'],速度:['pace','dribbling'],身体:['physical','defending'],战术:['passing','defending']};
+  const focusMap=state.pos==='GK'
+    ?{技术:['handling','kicking','throwing'],速度:['reflexes','pace','oneOnOnes'],身体:['physical','aerialReach','handling'],战术:['positioning','command','oneOnOnes']}
+    :{技术:['passing','vision','dribbling','ballControl','shooting','finishing'],速度:['pace','acceleration','dribbling'],身体:['physical','stamina','defending'],战术:['vision','positioning','passing','defending']};
   [...(focusMap[focus]||[]),...styleKeys,...styleKeys].forEach(k=>{if(keys.includes(k))pool.push(k)});return pool;
 }
 function applyMonthlyDevelopment(){
@@ -1106,32 +1197,35 @@ function simulateMonth(){
 }
 function simulateFixture(competition,opponent,isContinental){
   const s=seasonStats(),a=state.attributes,m=styleMatchMods(),youth=state.age<16;
-  const form=recentFormScore(),squadBenchmark=youth?50:state.clubStrength-20,qualityGap=state.overall-squadBenchmark;
-  const chance=clamp((youth?.62:.46)+qualityGap*.035+(state.trust-50)*.006+(form-6.5)*.09-(isContinental?.07:0),.04,.98);
+  const form=recentFormScore(),squadBenchmark=youth?50:state.clubStrength-20,qualityGap=state.overall-squadBenchmark,endurance=a.stamina??a.physical??50;
+  const chance=clamp((youth?.62:.46)+qualityGap*.035+(state.trust-50)*.006+(form-6.5)*.09+(endurance-50)*.0015-(isContinental?.07:0),.04,.98);
   const appeared=state.injured<=0&&Math.random()<chance,startChance=clamp(.34+qualityGap*.04+(state.trust-50)*.007+(form-6.5)*.12-(isContinental?.04:0),.06,.94),start=appeared&&Math.random()<startChance,minutes=appeared?(start?rand(68,95):rand(8,35)):0;
   const teamEdge=(state.clubStrength-opponent[3])/18,home=Math.random()<.5;let teamGoals=rand(0,2)+(Math.random()<clamp(.36+teamEdge*.12,.1,.72)?1:0),oppGoals=rand(0,2)+(Math.random()<clamp(.35-teamEdge*.12,.1,.7)?1:0);
   let goals=0,assists=0,cleanSheet=false,rating=null,shots=0,keyPasses=0,tackles=0,interceptions=0,saves=0,passAccuracy=0,dribbles=0,aerials=0;
   if(appeared){
     const full=minutes/90;
     if(state.pos==='GK'){
-      saves=Math.max(1,Math.round((rand(2,6)+(a.reflexes-50)/20+m.save)*full));passAccuracy=clamp(Math.round(58+(a.kicking+a.positioning-80)/4+m.pass+rand(-5,6)),45,95);cleanSheet=oppGoals===0;
-      rating=5.65+saves*.15+(cleanSheet?.7:0)+(passAccuracy-65)*.008-(oppGoals*.13)+(state.profile.playStyle==='门线门将'?saves*.025:0);
+      const saveSkill=a.reflexes*.42+a.oneOnOnes*.28+a.aerialReach*.18+a.positioning*.12,distribution=a.kicking*.45+a.throwing*.30+a.command*.25;
+      saves=Math.max(1,Math.round((rand(2,6)+(saveSkill-50)/18+m.save)*full));aerials=Math.max(0,Math.round((rand(0,3)+(a.aerialReach-45)/20)*full));
+      passAccuracy=clamp(Math.round(57+(distribution-45)*.34+m.pass+rand(-5,6)),45,96);cleanSheet=oppGoals===0;
+      rating=5.62+saves*.15+aerials*.035+(cleanSheet?.72:0)+(passAccuracy-65)*.008-(oppGoals*.13)+(a.command-50)*.003+(state.profile.playStyle==='门线门将'?saves*.025:0);
     }else{
-      shots=Math.max(0,Math.round((rand(0,2)+(a.shooting-45)/25+(['ST','LW','RW'].includes(state.pos)?1:0))*full));
-      keyPasses=Math.max(0,Math.round((rand(0,2)+(a.passing-45)/24+m.key)*full));tackles=Math.max(0,Math.round((rand(0,3)+(a.defending-45)/18+m.tackle)*full));
-      interceptions=Math.max(0,Math.round((rand(0,2)+(a.defending-45)/25)*full));dribbles=Math.max(0,Math.round((rand(0,3)+(a.dribbling-45)/20+m.dribble)*full));aerials=Math.max(0,Math.round((rand(0,2)+(a.physical-45)/24+m.aerial)*full));
-      passAccuracy=clamp(Math.round(67+(a.passing-45)*.32+m.pass+rand(-5,6)),48,96);
+      const finishingSkill=a.finishing*.58+a.shooting*.27+a.positioning*.15,creation=a.vision*.55+a.passing*.30+a.ballControl*.15,carry=a.dribbling*.45+a.ballControl*.32+a.acceleration*.23,defence=a.defending*.58+a.positioning*.28+a.physical*.14;
+      shots=Math.max(0,Math.round((rand(0,2)+(a.shooting+a.positioning-90)/46+(['ST','LW','RW'].includes(state.pos)?1:0))*full));
+      keyPasses=Math.max(0,Math.round((rand(0,2)+(creation-45)/22+m.key)*full));tackles=Math.max(0,Math.round((rand(0,3)+(defence-45)/18+m.tackle)*full));
+      interceptions=Math.max(0,Math.round((rand(0,2)+(a.defending+a.positioning-90)/42)*full));dribbles=Math.max(0,Math.round((rand(0,3)+(carry-45)/18+m.dribble)*full));aerials=Math.max(0,Math.round((rand(0,2)+(a.physical+a.positioning-90)/42+m.aerial)*full));
+      passAccuracy=clamp(Math.round(66+(a.passing*.58+a.ballControl*.26+a.vision*.16-45)*.32+m.pass+rand(-5,6)),48,97);
       const posGoal={ST:.19,LW:.14,RW:.14,CAM:.11,CM:.055,CDM:.025,LB:.018,RB:.018,CB:.025}[state.pos]||.05;
       const posAssist={ST:.10,LW:.14,RW:.14,CAM:.17,CM:.12,CDM:.07,LB:.10,RB:.10,CB:.025}[state.pos]||.06;
-      if(Math.random()<clamp((posGoal+(a.shooting-45)/310)*m.goal,.01,.58))goals++;if(goals&&Math.random()<.08)goals++;
-      if(Math.random()<clamp((posAssist+(a.passing-45)/360)*m.assist,.01,.48))assists++;teamGoals=Math.max(teamGoals,goals,assists);
+      if(Math.random()<clamp((posGoal+(finishingSkill-45)/285)*m.goal,.01,.60))goals++;if(goals&&Math.random()<clamp(.045+(a.finishing-50)/650,.03,.13))goals++;
+      if(Math.random()<clamp((posAssist+(creation-45)/330)*m.assist,.01,.50))assists++;teamGoals=Math.max(teamGoals,goals,assists);
       if(state.pos==='ST')rating=5.7+goals*.92+assists*.48+shots*.055+aerials*.035;
       else if(['LW','RW','CAM'].includes(state.pos))rating=5.72+goals*.78+assists*.62+keyPasses*.07+dribbles*.045;
       else if(state.pos==='CM')rating=5.72+goals*.55+assists*.55+keyPasses*.075+tackles*.04+(passAccuracy-70)*.012;
       else if(state.pos==='CDM')rating=5.72+assists*.4+tackles*.075+interceptions*.09+(passAccuracy-70)*.01+(oppGoals===0?.18:0);
       else rating=5.7+goals*.52+assists*.48+tackles*.07+interceptions*.09+aerials*.05+(oppGoals===0?.34:0)-(oppGoals>=3?.28:0);
     }
-    rating=clamp(rating+Math.random()*.75+(teamGoals>oppGoals?.18:teamGoals<oppGoals?-.12:0),4.5,10);
+    rating=clamp(rating+Math.random()*.75+(teamGoals>oppGoals?.18:teamGoals<oppGoals?-.12:0)+(endurance-50)*full*.002,4.5,10);
     const oldApps=s.apps,oldRating=+s.rating||0;s.apps++;if(start)s.starts++;s.minutes+=minutes;s.goals+=goals;s.assists+=assists;if(cleanSheet)s.cleanSheets++;s.rating=((oldRating*oldApps+rating)/(oldApps+1)).toFixed(2);
   }
   rating=rating?+rating.toFixed(1):null;const result=teamGoals>oppGoals?'胜':teamGoals<oppGoals?'负':'平';
@@ -1150,18 +1244,18 @@ function renderMatchReports(){
 }
 
 const INJURIES=[
-  {name:'轻度肌肉疲劳',months:[1,1],weight:18,desc:'连续高负荷导致肌纤维疲劳，无结构性撕裂。',loss:{physical:2,pace:1},permanent:0},
-  {name:'踝关节外侧韧带扭伤',months:[1,2],weight:15,desc:'变向时踝关节内翻，影响启动与支撑。',loss:{pace:2,dribbling:1,physical:1},permanent:0},
-  {name:'腘绳肌二级拉伤',months:[2,3],weight:13,desc:'大腿后侧肌纤维部分撕裂，冲刺能力明显受限。',loss:{pace:3,physical:2},permanent:1},
-  {name:'内收肌损伤',months:[1,2],weight:11,desc:'腹股沟区域拉伤，横向移动和射门发力受限。',loss:{physical:2,shooting:1},permanent:0},
-  {name:'膝内侧副韧带损伤',months:[3,4],weight:8,desc:'膝关节受到外翻应力，需要固定和力量重建。',loss:{pace:2,defending:2,physical:2},permanent:1},
-  {name:'第五跖骨骨折',months:[3,4],weight:5,desc:'足部应力集中造成骨折，必须等待影像学愈合。',loss:{pace:3,dribbling:2,physical:1},permanent:1},
-  {name:'脑震荡',months:[1,1],weight:6,desc:'头部碰撞后出现短暂神经症状，必须通过分级复赛流程。',loss:{positioning:2,passing:1,reflexes:2},permanent:0},
-  {name:'前十字韧带撕裂',months:[7,9],weight:2,desc:'膝关节稳定结构严重受损，需要手术和长期康复。',loss:{pace:5,physical:4,dribbling:2,defending:2},permanent:3,potential:1},
-  {name:'跟腱断裂',months:[6,8],weight:1,desc:'跟腱连续性中断，爆发力与蹬地能力受到长期影响。',loss:{pace:5,physical:5},permanent:4,potential:2},
-  {name:'生长期膝前疼痛',months:[1,2],weight:10,maxAge:16,desc:'快速生长阶段牵拉胫骨结节，需要控制跑跳负荷。',loss:{physical:2,pace:1},permanent:0},
+  {name:'轻度肌肉疲劳',months:[1,1],weight:18,desc:'连续高负荷导致肌纤维疲劳，无结构性撕裂。',loss:{stamina:2,physical:1,pace:1},permanent:0},
+  {name:'踝关节外侧韧带扭伤',months:[1,2],weight:15,desc:'变向时踝关节内翻，影响启动与支撑。',loss:{acceleration:2,pace:1,ballControl:1,physical:1},permanent:0},
+  {name:'腘绳肌二级拉伤',months:[2,3],weight:13,desc:'大腿后侧肌纤维部分撕裂，冲刺能力明显受限。',loss:{acceleration:3,pace:2,stamina:1,physical:1},permanent:1},
+  {name:'内收肌损伤',months:[1,2],weight:11,desc:'腹股沟区域拉伤，横向移动和射门发力受限。',loss:{physical:2,shooting:1,finishing:1},permanent:0},
+  {name:'膝内侧副韧带损伤',months:[3,4],weight:8,desc:'膝关节受到外翻应力，需要固定和力量重建。',loss:{acceleration:2,defending:2,positioning:1,physical:2},permanent:1},
+  {name:'第五跖骨骨折',months:[3,4],weight:5,desc:'足部应力集中造成骨折，必须等待影像学愈合。',loss:{pace:2,acceleration:2,ballControl:2,physical:1},permanent:1},
+  {name:'脑震荡',months:[1,1],weight:6,desc:'头部碰撞后出现短暂神经症状，必须通过分级复赛流程。',loss:{positioning:2,vision:2,passing:1,reflexes:2,command:1},permanent:0},
+  {name:'前十字韧带撕裂',months:[7,9],weight:2,desc:'膝关节稳定结构严重受损，需要手术和长期康复。',loss:{pace:3,acceleration:4,stamina:2,physical:3,dribbling:2,defending:1,positioning:1},permanent:3,potential:1},
+  {name:'跟腱断裂',months:[6,8],weight:1,desc:'跟腱连续性中断，爆发力与蹬地能力受到长期影响。',loss:{pace:4,acceleration:5,physical:4,stamina:2},permanent:4,potential:2},
+  {name:'生长期膝前疼痛',months:[1,2],weight:10,maxAge:16,desc:'快速生长阶段牵拉胫骨结节，需要控制跑跳负荷。',loss:{stamina:2,physical:2,acceleration:1},permanent:0},
   {name:'手指骨折',months:[2,2],weight:13,pos:'GK',desc:'扑救近距离射门时手指受力过伸，影响接球稳定。',loss:{handling:4,reflexes:1},permanent:1},
-  {name:'肩关节脱位',months:[3,4],weight:6,pos:'GK',desc:'侧扑落地导致肩关节脱位，影响伸展扑救和手抛球。',loss:{handling:3,physical:3,oneOnOnes:1},permanent:1}
+  {name:'肩关节脱位',months:[3,4],weight:6,pos:'GK',desc:'侧扑落地导致肩关节脱位，影响伸展扑救和手抛球。',loss:{handling:3,aerialReach:3,throwing:2,physical:2,oneOnOnes:1},permanent:1}
 ];
 function eligibleInjuries(){
   return INJURIES.filter(i=>(!i.pos||i.pos===state.pos)&&(!i.maxAge||state.age<=i.maxAge)&&Object.keys(i.loss).some(k=>k in state.attributes));
@@ -1242,7 +1336,7 @@ function transferOffers(){
 function transferOffer(){
   if(state.age<16){addFeed('转会规则限制','未满 16 岁，俱乐部不会为你安排职业转会。','×');return}
   const offers=transferOffers();if(!offers.length)return;
-  const restriction=state.age<18?'根据未成年球员规则，本次仅出现同国俱乐部报价。':'报价由球员能力、位置数据、年龄潜力和俱乐部参考排名共同生成。';
+  const restriction=state.age<18?'根据未成年球员规则，本次仅出现同国俱乐部报价。':'报价由球员能力、位置数据、年龄与发展空间和俱乐部参考排名共同生成。';
   const extra=`<div class="offer-list">${offers.map(o=>`<div class="offer-box"><div class="crest" style="--club:${o.club[2]}">${crestContent(o.club)}</div><div><strong>${o.club[0]}</strong><small>${o.league.name} · 周薪 ${weeklySalaryText(o.wage)} · 报价 ${money(o.fee)}</small></div><div class="offer-rank">#${o.rank}<small>参考排名</small></div></div>`).join('')}</div>`;
   const actions=offers.map((o,i)=>[`加盟 ${o.club[0]}`,()=>completeTransfer(o),i===0,`报价 ${money(o.fee)} · 周薪 ${weeklySalaryText(o.wage)} · 队内竞争重新计算`]);
   actions.push(['全部拒绝',()=>{state.morale=clamp(state.morale+2,0,100);state.trust=clamp(state.trust+4,0,100);addFeed('留队决定',`你拒绝 ${offers.length} 份报价，继续留在 ${state.club}。`,'↩');closeModal();renderAll()},false,'士气 +2 · 教练信任 +4 · 保留当前队内地位']);
@@ -1296,8 +1390,19 @@ function renderAwardShowcase(){
   el.classList.remove('hidden');el.innerHTML=`<img src="${t.image||awardImage(t.name)}" alt="${t.name}奖项图片" onerror="this.style.display='none'"><div class="award-showcase-copy"><p class="eyebrow">LATEST PERSONAL HONOUR · 得奖说明</p><h3>${t.name}</h3><p>${t.reason}</p><small>${t.season} · 图片来源 Wikimedia Commons</small></div>`;
 }
 function renderAwards(){
-  $('#award-cards').innerHTML=AWARDS.map(a=>`<div class="award-card ${a.type==='league'?'league-award-card':''}" data-mark="${a.mark}">${a.type==='league'?`<div class="league-trophy-gallery">${LEAGUES.map(l=>`<span class="league-trophy-icon" title="${l.name}冠军奖杯"><i>🏆</i><img src="${leagueTrophyImage(l.short)}" alt="${l.short}联赛冠军奖杯图标" loading="lazy" onerror="this.remove()"><small>${l.short}</small></span>`).join('')}</div><em class="league-image-source">在线联赛标识：API-Sports · 断网时保留奖杯图标</em>`:`<div class="trophy-symbol">${a.icon}</div>`}<h3>${a.name}</h3><p>${a.desc}</p><span class="eligibility">${a.rule}</span></div>`).join('');if(!state)return;
-  $('#trophy-count').textContent=`${state.trophies.length} 座奖杯`;$('#trophy-list').innerHTML=state.trophies.length?state.trophies.map(t=>`<div class="trophy-item"><span class="trophy-item-image ${t.type==='league'||String(t.name).includes('联赛冠军')?'league':''}"><i>🏆</i><img src="${t.image||awardImage(t.name)}" alt="${t.name}奖杯图标" loading="lazy" onerror="this.remove()"></span><div><strong>${t.name}</strong><small>${t.reason||'随队或个人获得的重要荣誉。'}</small></div><span>${t.season}</span></div>`).join(''):'<div class="empty-state">奖杯柜还空着。继续前进，你会来到这里。</div>';
+  $('#award-cards').innerHTML=AWARDS.map(a=>{
+    let visual=`<div class="trophy-symbol">${a.icon}</div>`,source='';
+    if(a.type==='league'){
+      visual=`<div class="league-trophy-gallery">${LEAGUES.map(l=>`<span class="league-trophy-icon" title="${l.name}冠军奖杯"><i>🏆</i><img src="${leagueTrophyImage(l.short)}" alt="${l.short}联赛冠军奖杯图标" loading="lazy" onerror="this.remove()"><small>${l.short}</small></span>`).join('')}</div>`;
+      source='<em class="league-image-source">在线联赛标识：API-Sports · 断网时保留奖杯图标</em>';
+    }else if(a.type==='national'){
+      visual=`<div class="league-trophy-gallery national-trophy-gallery">${NATIONAL_TROPHY_GALLERY.map(([key,label])=>`<span class="league-trophy-icon" title="${label}冠军标识"><i>🏆</i><img src="${nationalTrophyImage(key)}" alt="${label}冠军图标" loading="lazy" onerror="this.remove()"><small>${label}</small></span>`).join('')}</div>`;
+      source='<em class="league-image-source">在线赛事标识：API-Sports · 夺冠后自动进入荣誉橱窗</em>';
+    }
+    const ruleSource=a.sourceUrl?`<a class="award-rule-source" href="${a.sourceUrl}" target="_blank" rel="noopener">${a.source} ↗</a>`:'';
+    return`<div class="award-card ${a.type?'league-award-card':''}" data-mark="${a.mark}">${visual}${source}<h3>${a.name}</h3><p>${a.desc}</p><span class="eligibility">${a.rule}</span>${ruleSource}</div>`;
+  }).join('');if(!state)return;
+  $('#trophy-count').textContent=`${state.trophies.length} 座奖杯`;$('#trophy-list').innerHTML=state.trophies.length?state.trophies.map(t=>`<div class="trophy-item"><span class="trophy-item-image ${t.type==='league'||String(t.name).includes('联赛冠军')?'league':t.national?'national':''}"><i>🏆</i><img src="${t.image||awardImage(t.name)}" alt="${t.name}奖杯图标" loading="lazy" onerror="this.remove()"></span><div><strong>${t.name}</strong><small>${t.reason||'随队或个人获得的重要荣誉。'}</small></div><span>${t.season}</span></div>`).join(''):'<div class="empty-state">奖杯柜还空着。继续前进，你会来到这里。</div>';
 }
 function renderClubs(){
   const l=LEAGUES[activeLeague];$('#club-database').innerHTML=l.clubs.map(c=>`<div class="club-card"><div class="crest" style="--club:${c[2]}">${crestContent(c)}</div><div><strong>${c[0]}</strong><small>${l.name} · 实力 ${c[3]} · 参考排名 #${worldRank(c[0])}</small><div class="stars">${'★'.repeat(Math.max(1,Math.round((c[3]-55)/9)))}${'☆'.repeat(Math.max(0,5-Math.round((c[3]-55)/9)))}</div></div></div>`).join('');
@@ -1363,7 +1468,7 @@ CAREER_EVENT_DECK.push(
 );
 
 function resolvePenalty(s,base,label){
-  const shooting=s.attributes?.shooting||s.attributes?.kicking||50,mental=(s.profile?.personality==='沉稳'?8:s.profile?.personality==='好胜'?3:0),chance=clamp(base+(shooting-65)*.004+mental*.006+(s.fitness-70)*.0015,.38,.92);
+  const shooting=s.pos==='GK'?(s.attributes?.kicking||50):((s.attributes?.finishing||50)*.65+(s.attributes?.shooting||50)*.35),mental=(s.profile?.personality==='沉稳'?8:s.profile?.personality==='好胜'?3:0),chance=clamp(base+(shooting-65)*.004+mental*.006+(s.fitness-70)*.0015,.38,.92);
   if(Math.random()<chance){seasonStats().goals++;s.trust=clamp(s.trust+8,0,100);s.morale=clamp(s.morale+8,0,100);addFeed('点球命中',`${label}主罚成功，皮球入网。你的点球命中概率为 ${Math.round(chance*100)}%。`,'★')}
   else{s.trust=clamp(s.trust-4,0,100);s.morale=clamp(s.morale-9,0,100);addFeed('点球罚失',`${label}主罚未能得分。失误会成为经历，但不会预设下一次结果。`,'×')}
 }
@@ -1381,10 +1486,10 @@ function createPlayer(e){
 }
 function migrateState(){
   state.profile=state.profile||{personality:'自律',development:'技术',background:'普通家庭',agentStyle:'稳健',careerGoal:'成为世界最佳'};
-  state.profile.playStyle=state.profile.playStyle||(PLAY_STYLES[state.pos]||['全能型'])[0];state.attributes=state.attributes||initialAttributes(state.pos,state.overall||52,state.profile.playStyle);
+  state.profile.playStyle=state.profile.playStyle||(PLAY_STYLES[state.pos]||['全能型'])[0];state.attributes=state.attributes||initialAttributes(state.pos,state.overall||52,state.profile.playStyle);ensureDetailedAttributes();
   state.eventHistory=state.eventHistory||{};state.injuryHistory=state.injuryHistory||{};state.flags=state.flags||{};state.flags.seasonEventCount=state.flags.seasonEventCount||0;state.flags.lastInteractiveEventMonth=state.flags.lastInteractiveEventMonth??-99;
   state.relationships=state.relationships||{coach:50,teammates:50,fans:35,agent:50};state.matchReports=state.matchReports||[];state.continentalHistory=state.continentalHistory||[];state.trophies=state.trophies||[];state.seasons=state.seasons||[newSeason(state.year||2026,state.club)];
-  state.trophies.forEach(t=>{t.reason=t.reason||`${t.season} 赛季获得的重要荣誉。`;if(String(t.name).includes('联赛冠军')){t.type='league';t.league=t.league||LEAGUES.find(l=>String(t.name).includes(l.short))?.short;t.image=leagueTrophyImage(t.league)}else t.image=t.image||awardImage(t.name)});
+  state.trophies.forEach(t=>{t.reason=t.reason||`${t.season} 赛季获得的重要荣誉。`;if(String(t.name).includes('联赛冠军')){t.type='league';t.league=t.league||LEAGUES.find(l=>String(t.name).includes(l.short))?.short;t.image=leagueTrophyImage(t.league)}else if(nationalTrophyImage(t.name)){t.national=true;t.image=nationalTrophyImage(t.name)}else t.image=t.image||awardImage(t.name)});
   const c=clubByName(state.club);if(c){state.clubCode=c[1];state.clubColor=c[2];state.clubStrength=c[3]}recalculateOverall();if(state.age>=16&&!state.continentalCurrent)state.continentalCurrent=createContinentalCampaign();ensureNational();state.version=6;
 }
 function weeklySalaryText(weekly){
@@ -1463,11 +1568,11 @@ function addTrophy(name,s,reason,personal=true){
 }
 if(!AWARDS.some(a=>a.name==='联赛金靴奖'))AWARDS.splice(3,0,{name:'联赛金靴奖',icon:'♟',mark:'L',desc:'授予所在国内联赛当赛季进球最多的球员，与欧洲金靴的跨联赛加权排名分开计算。',rule:'非门将 · 超过该联赛模拟最佳射手线'});
 function awardImage(name){
-  const league=LEAGUES.find(l=>String(name).includes(l.short)&&String(name).includes('联赛冠军'));if(league)return leagueTrophyImage(league.short);if(String(name).includes('金靴'))return AWARD_IMAGES['欧洲金靴奖'];if(String(name).includes('金球'))return AWARD_IMAGES['金球奖'];if(String(name).includes('雅辛')||String(name).includes('金手套'))return AWARD_IMAGES['雅辛奖 · 金手套'];if(String(name).includes('金童'))return AWARD_IMAGES['欧洲金童奖'];return AWARD_IMAGES.DEFAULT;
+  const national=nationalTrophyImage(name);if(national)return national;const league=LEAGUES.find(l=>String(name).includes(l.short)&&String(name).includes('联赛冠军'));if(league)return leagueTrophyImage(league.short);if(String(name).includes('金靴'))return AWARD_IMAGES['欧洲金靴奖'];if(String(name).includes('金球'))return AWARD_IMAGES['金球奖'];if(String(name).includes('雅辛')||String(name).includes('金手套'))return AWARD_IMAGES['雅辛奖 · 金手套'];if(String(name).includes('金童'))return AWARD_IMAGES['欧洲金童奖'];return AWARD_IMAGES.DEFAULT;
 }
 function evaluateAwards(s){
   const league=leagueForClub(state.club),rating=+s.rating||0,output=state.pos==='GK'?s.cleanSheets*3+s.apps+rating*2:s.goals*4+s.assists*2+s.apps*.3+rating*2;
-  if(state.age<=21&&output>58&&state.overall>=70)addTrophy('欧洲金童奖',s,awardReason('欧洲金童奖',s));
+  if(regionForLeague(league)==='UEFA'&&state.age<=21&&output>58&&state.overall>=70)addTrophy('欧洲金童奖',s,awardReason('欧洲金童奖',s));
   if(state.pos==='GK'&&s.cleanSheets>=12&&state.overall>=78)addTrophy('雅辛奖 · 金手套',s,awardReason('雅辛奖 · 金手套',s));
   if(state.pos!=='GK'){
     const target=leagueGoldenTarget(league,s);if(s.goals>=target)addTrophy(`${league?.short||'联赛'}金靴奖`,s,`${s.season} 赛季攻入 ${s.goals} 个联赛进球，超过该联赛最佳射手参考线 ${target} 球。`);
@@ -1530,7 +1635,7 @@ function transferOffers(){
 }
 function transferOffer(){
   if(state.age<16){addFeed('转会规则限制','未满 16 岁，暂不进入职业转会市场。','×');return}const offers=transferOffers();if(!offers.length)return;
-  const restriction=state.age<18?'未成年球员阶段仅生成同国俱乐部报价。':'报价由能力、位置数据、年龄潜力、赛季表现和俱乐部参考排名共同生成。';
+  const restriction=state.age<18?'未成年球员阶段仅生成同国俱乐部报价。':'报价由能力、位置数据、年龄与发展空间、赛季表现和俱乐部参考排名共同生成。';
   const extra=`<div class="offer-list">${offers.map(o=>`<div class="offer-box"><div class="crest" style="--club:${o.club[2]}">${crestContent(o.club)}</div><div><strong>${o.club[0]}</strong><small>${o.league.name} · 周薪 ${weeklySalaryText(o.wage)} · 转会报价 ${money(o.fee)}</small></div><div class="offer-rank">#${o.rank}<small>参考排名</small></div></div>`).join('')}</div>`;
   const actions=offers.map((o,i)=>[`加盟 ${o.club[0]}`,()=>completeTransfer(o),i===0,`周薪 ${weeklySalaryText(o.wage)} · 新队内顺位重新计算`]);actions.push(['全部拒绝',()=>{state.morale=clamp(state.morale+2,0,100);state.trust=clamp(state.trust+4,0,100);addFeed('决定留队',`你拒绝 ${offers.length} 份报价，继续效力 ${state.club}。`,'↩');closeModal();renderAll()},false,'保留现有合同、身价和队内地位']);
   showModal({icon:'↗',kicker:'转会窗口 · 多队报价',title:`${offers.length} 家俱乐部正式求购`,body:restriction,extra,locked:true,actions});
@@ -1569,20 +1674,30 @@ function renderCareer(){
 }
 function applyEventEffects(e){
   if(e.trust)state.trust+=e.trust;if(e.fitness)state.fitness+=e.fitness;if(e.morale)state.morale+=e.morale;if(e.overall){const changes={};attributeKeys().forEach(k=>changes[k]=e.overall);changeAttributes(changes)}if(e.potential)state.potential=clamp(state.potential+e.potential,40,100);
-  if(e.valuePct)state.flags.pendingValueMultiplier=(state.flags.pendingValueMultiplier||1)*e.valuePct;if(e.wagePct)state.wage=Math.max(1,Math.round(state.wage*e.wagePct));if(e.flag)state.flags[e.flag]=true;if(e.clearFlag)delete state.flags[e.clearFlag];
+  if(e.valuePct)state.flags.pendingValueMultiplier=(state.flags.pendingValueMultiplier||1)*e.valuePct;if(e.wagePct)state.wage=Math.max(1,Math.round(state.wage*e.wagePct));if(e.contractYears)state.contractEnd=Math.max(state.contractEnd||state.year,state.year+e.contractYears);if(e.flag)state.flags[e.flag]=true;if(e.clearFlag)delete state.flags[e.clearFlag];
   if(e.relation)Object.entries(e.relation).forEach(([k,v])=>state.relationships[k]=clamp((state.relationships[k]||50)+v,0,100));recalculateOverall();
 }
 function applyMonthlyDevelopment(){
-  const old=state.overall,age=state.age;if(age>30){const chance=clamp(.07+(age-30)*.032,.07,.45);if(Math.random()>=chance)return;const pool=state.pos==='GK'?['physical','physical','reflexes','positioning','oneOnOnes']:['pace','pace','physical','physical','dribbling','shooting','defending'],changes={};for(let i=0;i<(Math.random()<.2?2:1);i++){const k=pick(pool);changes[k]=(changes[k]||0)-1}changeAttributes(changes);if(state.overall<old)addFeed('年龄曲线变化',`${age} 岁后身体与技术状态出现随机下滑，总评 ${old} → ${state.overall}。`,'↓');return}
-  const base=age<=17?.42:age<=20?.36:age<=24?.24:age<=29?.09:0;
-  const potentialGap=Math.max(0,state.potential-state.overall),catchUp=clamp((potentialGap-12)/180,0,.14);
-  const bonus=(state.profile?.personality==='自律'?.035:0)+(state.morale>84?.02:0)-(state.fitness<45?.07:0);
-  const growthChance=clamp(base+catchUp+bonus,.08,.68);
+  const old=state.overall,age=state.age;
+  if(age>30){
+    const chance=clamp(.07+(age-30)*.032,.07,.45);if(Math.random()>=chance)return;
+    const pool=state.pos==='GK'?['physical','pace','reflexes','positioning','oneOnOnes','aerialReach']:['pace','acceleration','physical','stamina','dribbling','ballControl','shooting','defending'],changes={};
+    for(let i=0;i<(Math.random()<.22?2:1);i++){const k=pick(pool);changes[k]=(changes[k]||0)-1}changeAttributes(changes);
+    if(state.overall<old)addFeed('年龄曲线变化',`${age} 岁后恢复、爆发或技术状态出现随机下滑，能力值 ${old} → ${state.overall}。`,'↓');return;
+  }
+  const base=age<=17?.52:age<=20?.44:age<=24?.29:age<=29?.11:0;
+  const internalGap=Math.max(0,state.potential-state.overall),catchUp=clamp((internalGap-10)/155,0,.17);
+  const bonus=(state.profile?.personality==='自律'?.04:0)+(state.morale>84?.025:0)-(state.fitness<45?.075:0);
+  const growthChance=clamp(base+catchUp+bonus,.10,.76);
   if(Math.random()>=growthChance||state.overall>=state.potential)return;
-  const pool=developmentPool(),changes={},count=age<=20?(Math.random()<.3?3:2):age<=24?(Math.random()<.35?2:1):1;
-  for(let i=0;i<count;i++){const k=pick(pool);if(state.attributes[k]<100)changes[k]=(changes[k]||0)+1}
+  const roll=Math.random(),breakthrough=roll<.15,steady=roll<.76,pool=developmentPool(),changes={};
+  const count=breakthrough?(age<=20?rand(6,9):rand(4,6)):steady?(age<=20?rand(4,6):age<=24?rand(3,5):rand(2,3)):(age<=20?rand(2,3):1);
+  for(let i=0;i<count;i++){const k=pick(pool);if(state.attributes[k]<100)changes[k]=(changes[k]||0)+(breakthrough&&i===0?2:1)}
   changeAttributes(changes);
-  if(state.overall>old)addFeed('能力稳步提升',`${state.profile?.playStyle||'位置'}训练产生积累，总评 ${old} → ${state.overall}。潜力差越大，年轻阶段的成长效率越高。`,'↑');
+  if(state.overall>old){
+    const title=breakthrough?'训练突破':steady?'稳定积累':'细节进步';
+    addFeed(title,`${state.profile?.playStyle||'位置'}训练在本月转化为能力，能力值 ${old} → ${state.overall}。每个月的提升幅度与具体属性均会随机变化。`,breakthrough?'★':'↑');
+  }
 }
 function retire(){
   state.retired=true;
@@ -1684,7 +1799,7 @@ function simulateNationalMatch(competition){
   const n=ensureNational(),p=nationalProfile(state.country),opponent=pickNationalOpponent(p.confed),oppStrength=NATIONAL_STRENGTH[opponent]||78,home=Math.random()<.5,edge=(p.strength-oppStrength)/15;
   let teamGoals=rand(0,2)+(Math.random()<clamp(.34+edge*.12,.12,.68)?1:0),oppGoals=rand(0,2)+(Math.random()<clamp(.34-edge*.12,.12,.68)?1:0);
   const callGap=nationalSelectionScore()-nationalSelectionThreshold(),appearanceChance=clamp(.68+callGap*.025+(recentFormScore()-6.5)*.06,.35,.98),appeared=state.injured<=0&&Math.random()<appearanceChance,start=appeared&&Math.random()<clamp(.55+callGap*.03,.25,.95),minutes=appeared?(start?rand(68,95):rand(12,34)):0;
-  let goals=0,assists=0,cleanSheet=false,rating=null;if(appeared){const attacking=['ST','LW','RW','CAM'].includes(state.pos),goalChance=attacking?.15:['CM','CDM'].includes(state.pos)?.045:.018,assistChance=attacking?.13:['CM','CDM','LB','RB'].includes(state.pos)?.09:.025;if(state.pos==='GK')cleanSheet=oppGoals===0;else{if(Math.random()<clamp(goalChance+(state.attributes.shooting-50)/340,.01,.5))goals++;if(Math.random()<clamp(assistChance+(state.attributes.passing-50)/380,.01,.42))assists++;teamGoals=Math.max(teamGoals,goals,assists)}rating=clamp(6+goals*.9+assists*.65+(cleanSheet?.65:0)+Math.random()*1.2+(teamGoals>oppGoals?.25:-.05),4.8,9.8);n.caps++;if(start)n.starts++;n.goals+=goals;n.assists+=assists;if(cleanSheet)n.cleanSheets++}
+  let goals=0,assists=0,cleanSheet=false,rating=null;if(appeared){const attacking=['ST','LW','RW','CAM'].includes(state.pos),goalChance=attacking?.15:['CM','CDM'].includes(state.pos)?.045:.018,assistChance=attacking?.13:['CM','CDM','LB','RB'].includes(state.pos)?.09:.025;if(state.pos==='GK')cleanSheet=oppGoals===0;else{const finish=state.attributes.finishing*.6+state.attributes.shooting*.25+state.attributes.positioning*.15,create=state.attributes.vision*.6+state.attributes.passing*.4;if(Math.random()<clamp(goalChance+(finish-50)/320,.01,.52))goals++;if(Math.random()<clamp(assistChance+(create-50)/360,.01,.44))assists++;teamGoals=Math.max(teamGoals,goals,assists)}rating=clamp(6+goals*.9+assists*.65+(cleanSheet?.65:0)+Math.random()*1.2+(teamGoals>oppGoals?.25:-.05),4.8,9.8);n.caps++;if(start)n.starts++;n.goals+=goals;n.assists+=assists;if(cleanSheet)n.cleanSheets++}
   const result=teamGoals>oppGoals?'胜':teamGoals<oppGoals?'负':'平',report={season:currentSeason(),date:MONTHS[state.month],competition,international:true,club:state.country,clubCode:(COUNTRY_CODES[state.country]||'NT').toUpperCase(),clubColor:'#315f48',position:state.pos,opponent,opponentCode:(COUNTRY_CODES[opponent]||'NT').toUpperCase(),opponentColor:'#73553e',home,teamGoals,oppGoals,result,appeared,start,minutes,goals,assists,cleanSheet,rating:rating?+rating.toFixed(1):null,appearanceChance,shots:goals?rand(2,5):rand(0,3),keyPasses:assists?rand(2,5):rand(0,2),tackles:rand(0,4),interceptions:rand(0,3),saves:state.pos==='GK'?rand(2,7):0,passAccuracy:rand(68,92),dribbles:rand(0,4),aerials:rand(0,4),highlight:appeared&&(rating>=8||goals+assists>=2||cleanSheet&&rating>=7.5)};
   state.matchReports.unshift(report);state.matchReports=state.matchReports.slice(0,80);return report;
 }
@@ -1754,6 +1869,17 @@ CAREER_EVENT_DECK.push(
     {label:'训练后分别沟通',outcome:'花费更多精力，换来更牢固的团队关系。',effects:{relation:{teammates:10,coach:4},fitness:-6}},
     {label:'交给正式队长处理',outcome:'尊重职责边界，个人不承担额外消耗。',effects:{fitness:5,trust:1}}]}
 );
+
+CAREER_EVENT_DECK.push({
+  id:'agent_salary_negotiation',category:'contract',title:'经纪人提出新合同谈薪',icon:'€',minAge:17,cooldown:36,maxRepeat:4,
+  condition:s=>s.wage>0&&((s.contractEnd||s.year)-s.year<=2||seasonPerformanceScore()>=9),
+  body:s=>`经纪人带来俱乐部的续约框架。你目前的周薪是 ${weeklySalaryText(s.wage)}，可以争取更高固定周薪、奖金型结构，或用长期合同换取球队定位。`,
+  choices:[
+    {label:'坚持提高固定周薪',outcome:'保障收入明显提高，但俱乐部希望你立即承担核心球员压力。',effects:{wagePct:1.22,morale:6,trust:-5,relation:{agent:5}}},
+    {label:'降低底薪，加入表现奖金',outcome:'固定涨幅适中，出场与成绩将带来更高市场回报。',effects:{wagePct:1.12,valuePct:1.03,morale:3,trust:3,relation:{agent:3}}},
+    {label:'优先争取长期合同与球队角色',outcome:'短期收入涨幅最小，但续约年限和教练信任更稳定。',effects:{wagePct:1.05,contractYears:4,morale:3,trust:8,relation:{agent:-2}}}
+  ]
+});
 
 /* Version 7: Euro-million finance display and network-backed real-world standings. */
 const REAL_LEAGUE_IDS={
