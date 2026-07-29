@@ -624,10 +624,13 @@ function startingAcademy(country){
 function newSeason(year,club){return {season:`${year}/${String(year+1).slice(-2)}`,club,apps:0,starts:0,goals:0,assists:0,cleanSheets:0,rating:0,minutes:0,done:false}}
 function showGame(){$('#creator').classList.add('hidden');$('#game').classList.remove('hidden')}
 function showPage(name){
+  const target=$(`#${name}-page`);
+  if(!target)return;
   $$('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===name));
-  $$('.page').forEach(p=>p.classList.remove('active'));$(`#${name}-page`).classList.add('active');
-  const titles={overview:'生涯主页',career:'生涯履历',leagues:'联赛数据库',awards:'荣誉殿堂'};$('#page-title').textContent=titles[name];
+  $$('.page').forEach(p=>p.classList.remove('active'));target.classList.add('active');
+  const titles={overview:'生涯主页',career:'生涯履历',leagues:'联赛数据库',awards:'荣誉殿堂'};$('#page-title').textContent=titles[name]||'十二号新星';
   if(name==='career')renderCareer(); if(name==='leagues')renderClubs(); if(name==='awards')renderAwards();
+  target.scrollTop=0;
 }
 function renderAll(){
   const c=clubByName(state.club)||[state.club,state.clubCode,state.clubColor,state.clubStrength], s=seasonStats(), league=leagueForClub(state.club);
@@ -1536,7 +1539,14 @@ function migrateState(){
   state.profile=state.profile||{personality:'自律',development:'技术',background:'普通家庭',agentStyle:'稳健',careerGoal:'成为世界最佳'};
   state.profile.playStyle=state.profile.playStyle||(PLAY_STYLES[state.pos]||['全能型'])[0];state.attributes=state.attributes||initialAttributes(state.pos,state.overall||52,state.profile.playStyle);ensureDetailedAttributes();
   state.eventHistory=state.eventHistory||{};state.injuryHistory=state.injuryHistory||{};state.flags=state.flags||{};state.flags.seasonEventCount=state.flags.seasonEventCount||0;state.flags.lastInteractiveEventMonth=state.flags.lastInteractiveEventMonth??-99;
-  state.relationships=state.relationships||{coach:50,teammates:50,fans:35,agent:50};state.matchReports=state.matchReports||[];state.continentalHistory=state.continentalHistory||[];state.trophies=state.trophies||[];state.seasons=state.seasons||[newSeason(state.year||2026,state.club)];state.leagueMovements=state.leagueMovements||[];applyStoredLeagueMovements();
+  state.relationships=state.relationships||{coach:50,teammates:50,fans:35,agent:50};
+  state.events=Array.isArray(state.events)?state.events:[];
+  state.feed=Array.isArray(state.feed)?state.feed:[];
+  state.matchReports=Array.isArray(state.matchReports)?state.matchReports:[];
+  state.continentalHistory=Array.isArray(state.continentalHistory)?state.continentalHistory:[];
+  state.trophies=Array.isArray(state.trophies)?state.trophies:[];
+  state.seasons=Array.isArray(state.seasons)&&state.seasons.length?state.seasons:[newSeason(state.year||2026,state.club)];
+  state.leagueMovements=Array.isArray(state.leagueMovements)?state.leagueMovements:[];applyStoredLeagueMovements();
   state.trophies.forEach(t=>{t.reason=t.reason||`${t.season} 赛季获得的重要荣誉。`;if(String(t.name).includes('联赛冠军')){t.type='league';t.league=t.league||LEAGUES.find(l=>String(t.name).includes(l.short))?.short;t.image=leagueTrophyImage(t.league)}else if(nationalTrophyImage(t.name)){t.national=true;t.image=nationalTrophyImage(t.name)}else t.image=t.image||awardImage(t.name)});
   const c=clubByName(state.club);if(c){state.clubCode=c[1];state.clubColor=c[2];state.clubStrength=c[3]}recalculateOverall();if(state.age>=16&&!state.continentalCurrent)state.continentalCurrent=createContinentalCampaign();ensureNational();state.version=8;
 }
@@ -1715,13 +1725,15 @@ function renderAwardShowcase(){
   el.innerHTML=`<div class="honour-title"><div><p class="eyebrow">TROPHY SPOTLIGHT</p><h3>冠军与个人荣誉</h3></div><span>${state.trophies.length} 座</span></div><div class="honour-grid">${items.map((t,i)=>`<div class="honour-card"><img src="${t.image||awardImage(t.name)}" alt="${t.name}" onerror="this.outerHTML='<div class=&quot;award-fallback&quot;>♜</div>'"><div><strong>${t.name}</strong><p>${t.reason||'随球队或凭个人表现赢得的重要荣誉。'}</p><small>${t.season}${i===0?' · 最新荣誉':''}</small></div></div>`).join('')}</div>`;
 }
 function renderFeed(){
-  const majorIcons=['♜','€','★','↗','✚'];$('#feed').innerHTML=state.feed.slice(0,7).map((f,i)=>`<div class="feed-item ${i===0||majorIcons.includes(f.icon)?'major':''}"><span class="feed-seq">${String(i+1).padStart(2,'0')}</span><div class="feed-icon">${f.icon}</div><div><strong>${f.title}</strong><p>${f.text}</p><time>${f.date}</time></div></div>`).join('')||'<div class="empty-state">故事还没有开始</div>';
+  const majorIcons=['♜','€','★','↗','✚'],feed=Array.isArray(state?.feed)?state.feed:[];$('#feed').innerHTML=feed.slice(0,7).map((f,i)=>`<div class="feed-item ${i===0||majorIcons.includes(f.icon)?'major':''}"><span class="feed-seq">${String(i+1).padStart(2,'0')}</span><div class="feed-icon">${f.icon}</div><div><strong>${f.title}</strong><p>${f.text}</p><time>${f.date}</time></div></div>`).join('')||'<div class="empty-state">故事还没有开始</div>';
 }
 function renderCareer(){
-  if(!state)return;const totals=state.seasons.reduce((a,s)=>{a.apps+=s.apps;a.goals+=s.goals;a.assists+=s.assists;a.clean+=s.cleanSheets;return a},{apps:0,goals:0,assists:0,clean:0});
-  $('#career-total').textContent=`总计 ${totals.apps} 场 · ${state.pos==='GK'?totals.clean+' 零封':totals.goals+' 球'} · ${state.trophies.length} 冠军/奖项`;
-  $('#season-table').innerHTML=`<div class="season-head"><span>俱乐部</span><span>赛季</span><span>出场</span><span>${state.pos==='GK'?'零封':'进球'}</span><span>助攻</span><span>评分</span></div>`+state.seasons.slice().reverse().map(s=>{const c=clubByName(s.club)||['','','#63766a'],titles=seasonTrophies(s.season).map(t=>t.name).join(' · '),rank=s.leagueRank?`联赛第${s.leagueRank}名`:'';return `<div class="season-row"><span class="team-cell"><i class="mini-dot" style="--club:${c[2]}"></i><span class="team-cell-copy"><strong>${s.club}</strong><small>${[rank,titles].filter(Boolean).join(' · ')||'赛季进行中'}</small></span></span><span>${s.season}</span><b>${s.apps}</b><b>${state.pos==='GK'?s.cleanSheets:s.goals}</b><span>${s.assists}</span><span>${s.rating||'—'}</span></div>`}).join('');
-  $('#timeline').innerHTML=state.events.map(e=>`<div class="timeline-item"><time>${e.date}</time><h4>${e.icon} ${e.title}</h4><p>${e.text}</p></div>`).join('');
+  if(!state)return;
+  const seasons=Array.isArray(state.seasons)?state.seasons:[],trophies=Array.isArray(state.trophies)?state.trophies:[],events=Array.isArray(state.events)?state.events:[];
+  const totals=seasons.reduce((a,s)=>{a.apps+=Number(s.apps)||0;a.goals+=Number(s.goals)||0;a.assists+=Number(s.assists)||0;a.clean+=Number(s.cleanSheets)||0;return a},{apps:0,goals:0,assists:0,clean:0});
+  $('#career-total').textContent=`总计 ${totals.apps} 场 · ${state.pos==='GK'?totals.clean+' 零封':totals.goals+' 球'} · ${trophies.length} 冠军/奖项`;
+  $('#season-table').innerHTML=`<div class="season-head"><span>俱乐部</span><span>赛季</span><span>出场</span><span>${state.pos==='GK'?'零封':'进球'}</span><span>助攻</span><span>评分</span></div>`+seasons.slice().reverse().map(s=>{const c=clubByName(s.club)||['','','#63766a'],titles=seasonTrophies(s.season).map(t=>t.name).join(' · '),rank=s.leagueRank?`联赛第${s.leagueRank}名`:'';return `<div class="season-row"><span class="team-cell"><i class="mini-dot" style="--club:${c[2]}"></i><span class="team-cell-copy"><strong>${s.club||state.club}</strong><small>${[rank,titles].filter(Boolean).join(' · ')||'赛季进行中'}</small></span></span><span>${s.season||currentSeason()}</span><b>${Number(s.apps)||0}</b><b>${state.pos==='GK'?(Number(s.cleanSheets)||0):(Number(s.goals)||0)}</b><span>${Number(s.assists)||0}</span><span>${s.rating||'—'}</span></div>`}).join('');
+  $('#timeline').innerHTML=events.map(e=>`<div class="timeline-item"><time>${e.date||'日期未记录'}</time><h4>${e.icon||'✦'} ${e.title||'生涯事件'}</h4><p>${e.text||'旧存档中的事件详情未记录。'}</p></div>`).join('')||'<div class="empty-state">暂无生涯事件，继续推进时间后会在这里记录。</div>';
 }
 function applyEventEffects(e){
   if(e.trust)state.trust+=e.trust;if(e.fitness)state.fitness+=e.fitness;if(e.morale)state.morale+=e.morale;if(e.overall){const changes={};attributeKeys().forEach(k=>changes[k]=e.overall);changeAttributes(changes)}if(e.potential)state.potential=clamp(state.potential+e.potential,40,100);
