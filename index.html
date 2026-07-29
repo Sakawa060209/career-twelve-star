@@ -120,6 +120,9 @@
   .mobile-span-picker button{min-height:36px;border:1px solid var(--line);background:#0b1b13;color:var(--muted);font-size:9px;border-radius:10px}
   .mobile-span-picker button.active{border-color:var(--lime);background:rgba(201,255,56,.11);color:var(--lime);font-weight:800}
   #mobile-advance-btn{width:100%;min-height:48px;border-radius:12px}
+  .mobile-restart-btn{width:100%;min-height:50px;border-radius:12px;background:linear-gradient(135deg,var(--lime),#efffa7);color:#07110d;box-shadow:0 10px 28px rgba(201,255,56,.18)}
+  .mobile-command:has(.mobile-restart-btn:not([hidden])){border-color:rgba(231,187,101,.58);background:linear-gradient(145deg,rgba(36,31,17,.96),rgba(11,25,18,.96))}
+  .mobile-command:has(.mobile-restart-btn:not([hidden])) .mobile-command-head>b{color:var(--gold);border-color:rgba(231,187,101,.25);background:rgba(231,187,101,.08)}
 
   .dashboard-grid{display:block;margin-top:9px}
   .left-col,.right-col{gap:9px}
@@ -167,7 +170,7 @@
   .toast{left:12px;right:12px;bottom:82px;text-align:center;border-radius:12px}
 }
 
-</style>
+  </style>
 </head>
 <body>
   <div class="noise"></div>
@@ -260,6 +263,7 @@
             <button type="button" data-mobile-span="12">一赛季</button>
           </div>
           <button id="mobile-advance-btn" type="button" class="primary">推进两个月 <b>→</b></button>
+          <button id="mobile-restart-btn" type="button" class="primary mobile-restart-btn" hidden>↻ 重新开始生涯</button>
         </div>
 
         <div class="dashboard-grid">
@@ -457,6 +461,7 @@ function init(){
   $('#advance-btn').onclick=advanceTwoMonths;
   $('#advance-span').onchange=updateAdvanceUI;
   $('#mobile-advance-btn').onclick=advanceTwoMonths;
+  $('#mobile-restart-btn').onclick=resetGame;
   $$('[data-mobile-span]').forEach(button=>button.onclick=()=>{
     $('#advance-span').value=button.dataset.mobileSpan;
     updateAdvanceUI();
@@ -540,6 +545,10 @@ function renderMobileSnapshot(){
   const status=state.retired?'生涯已结束':state.injured>0?`${state.injuryDetail?.name||'伤病'} · 还需 ${state.injured} 月`:`${state.club} · ${MONTHS[state.month]}`;
   $('#mobile-status-text').textContent=status;
   $('#mobile-form').textContent=state.injured>0?'伤停':state.fitness>=78?'状态出色':state.fitness>=55?'状态正常':'需要恢复';
+  const restartButton=$('#mobile-restart-btn'),advanceButton=$('#mobile-advance-btn'),spanPicker=$('.mobile-span-picker');
+  restartButton.hidden=!state.retired;
+  advanceButton.hidden=state.retired;
+  spanPicker.hidden=state.retired;
   $('#mobile-snapshot').innerHTML=[
     ['出场',s.apps],
     [isGK?'赛季表现':'进球 / 助攻',output],
@@ -1446,7 +1455,22 @@ function applyMonthlyDevelopment(){
   const base=age<=17?.38:age<=20?.32:age<=24?.2:age<=29?.08:0,bonus=(state.profile?.personality==='自律'?.025:0)+(state.morale>84?.015:0)-(state.fitness<45?.07:0);if(Math.random()>=base+bonus||state.overall>=state.potential)return;
   const pool=developmentPool(),changes={},count=age<=20?(Math.random()<.3?2:1):1;for(let i=0;i<count;i++){const k=pick(pool);if(state.attributes[k]<100)changes[k]=(changes[k]||0)+1}changeAttributes(changes);if(state.overall>old)addFeed('能力稳步提升',`${state.profile?.playStyle||'位置'}训练产生积累，总评 ${old} → ${state.overall}。`,'↑');
 }
-function retire(){state.retired=true;addEvent('宣布退役',`${state.age} 岁的 ${state.name} 正式结束职业球员生涯。`,'◉');addFeed('传奇谢幕',`从 15 岁起步，到 ${state.age} 岁挂靴，这段生涯共收获 ${state.trophies.length} 项冠军与荣誉。`,'◉');renderAll();showInfo('终场哨响',`${state.age} 岁的你决定挂靴。联赛排名、洲际冠军、个人奖项与每一次选择都已经写入履历。`,'15')}
+function retire(){
+  state.retired=true;
+  addEvent('宣布退役',`${state.age} 岁的 ${state.name} 正式结束职业球员生涯。`,'◉');
+  addFeed('传奇谢幕',`从 15 岁起步，到 ${state.age} 岁挂靴，这段生涯共收获 ${state.trophies.length} 项冠军与荣誉。`,'◉');
+  renderAll();
+  showModal({
+    icon:'15',
+    kicker:'生涯终章',
+    title:'终场哨响',
+    body:`${state.age} 岁的你决定挂靴。联赛排名、洲际冠军、个人奖项与每一次选择都已经写入履历。`,
+    actions:[
+      ['重新开始新生涯',resetGame,true,'清除本次存档，返回球员创建页面'],
+      ['回顾生涯履历',()=>{closeModal();showPage('career')},false,'保留本次存档，继续查看数据与荣誉']
+    ]
+  });
+}
 
 /* Version 6: ability-based selection, national teams, three-match form and viewport dashboard. */
 const EXTRA_NATIONALITIES={
@@ -1683,6 +1707,6 @@ function renderClubs(){
 
 init();
 
-</script>
+  </script>
 </body>
 </html>
