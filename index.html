@@ -170,6 +170,25 @@
   .toast{left:12px;right:12px;bottom:82px;text-align:center;border-radius:12px}
 }
 
+/* Version 8: ten-slot manual save library and save controls. */
+.creator-save-button{width:100%;margin-top:9px;padding:12px 14px;border:1px solid #33493c;background:#0a1710;color:#cbd6cf;cursor:pointer;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:space-between}
+.creator-save-button:hover{border-color:var(--lime);color:var(--lime)}.creator-save-button span{font:600 10px 'Oswald';color:var(--gold)}
+#save-manager-btn{height:34px;border:1px solid #31473a;background:#102017;color:#c7d0ca;padding:0 10px;cursor:pointer;font-size:9px;border-radius:3px}#save-manager-btn:hover{border-color:var(--lime);color:var(--lime)}#save-manager-btn b{margin-left:4px;color:var(--gold);font:600 9px 'Oswald'}
+.modal-card:has(.save-library-grid){width:min(760px,100%)}
+.save-library-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-height:47vh;overflow:auto;padding-right:3px}
+.save-slot{min-width:0;min-height:123px;display:grid;grid-template-columns:38px minmax(0,1fr);gap:11px;padding:13px;background:#091710;border:1px solid #2a4033}
+.save-slot-index{width:34px;height:38px;display:grid;place-items:center;background:#15291e;color:var(--lime);font:700 13px 'Oswald';clip-path:polygon(50% 0,94% 16%,88% 76%,50% 100%,12% 76%,6% 16%)}
+.save-slot-copy{min-width:0}.save-slot-title{display:flex;align-items:center;justify-content:space-between;gap:8px}.save-slot-title strong{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.save-slot-title span{color:var(--gold);font-size:8px;white-space:nowrap}
+.save-slot p{margin:5px 0 3px;color:#a1b0a7;font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.save-slot small{display:block;color:#5f7468;font-size:7px}
+.save-slot-actions{display:flex;gap:5px;margin-top:10px}.save-slot-actions button{flex:1;min-height:28px;border:1px solid #30483a;background:#13261b;color:#d8e1db;cursor:pointer;font-size:8px}.save-slot-actions button:first-child{border-color:rgba(201,255,56,.42);color:var(--lime)}.save-slot-actions button.danger{color:#ff918a;border-color:rgba(255,107,98,.25)}
+.save-slot.empty{min-height:82px;align-items:center;border-style:dashed;opacity:.48}.save-slot.empty strong{font-size:10px}.save-slot.empty p{white-space:normal;margin-top:4px}
+@media(max-width:700px){
+  #save-manager-btn{height:32px;padding:0 8px;border-radius:10px}#save-manager-btn b{display:none}
+  .save-library-grid{grid-template-columns:1fr;max-height:48vh}
+  .save-slot{min-height:116px}.save-slot.empty{min-height:70px}
+  .creator-save-button{min-height:44px;border-radius:10px}
+}
+
   </style>
 </head>
 <body>
@@ -208,6 +227,7 @@
         </div>
         <div class="potential"><span>初始档案</span><strong>15 岁 · 青训新星 · 潜力未知</strong></div>
         <button class="primary start" type="submit">踏上职业之路 <b>→</b></button>
+        <button id="creator-saves-btn" class="creator-save-button" type="button">▣ 查看已有存档 <span id="creator-save-count">0 / 10</span></button>
       </form>
     </main>
   </section>
@@ -230,7 +250,7 @@
     <main class="game-main">
       <header class="topbar">
         <div><p id="season-kicker">2026/27 赛季</p><h2 id="page-title">生涯主页</h2></div>
-        <div class="top-actions"><span class="live-dot"></span><span id="calendar">八月 · 第 1 月</span><button id="sound-btn" aria-label="切换音效">♪</button></div>
+        <div class="top-actions"><span class="live-dot"></span><span id="calendar">八月 · 第 1 月</span><button id="save-manager-btn" type="button" aria-label="打开存档管理">▣ 存档 <b>0/10</b></button><button id="sound-btn" aria-label="切换音效">♪</button></div>
       </header>
 
       <section id="overview-page" class="page active">
@@ -415,6 +435,8 @@ const LEAGUE_TROPHY_IMAGES={
 };
 const leagueTrophyImage=short=>LEAGUE_TROPHY_IMAGES[short]||AWARD_IMAGES?.DEFAULT||'';
 const SAVE_KEY='career12-save-v1';
+const SAVE_LIBRARY_KEY='career12-save-library-v1';
+const SAVE_LIMIT=10;
 const TEAM_LOGOS={
   '曼彻斯特蓝月':50,'伦敦枪手':42,'默西塞德红军':40,'北伦敦雄狮':47,'伦敦蓝狮':49,'纽卡斯尔联':34,
   '马德里白衣':541,'加泰罗尼亚红蓝':529,'马德里竞技':530,'巴斯克竞技':531,'塞维利亚红白':536,'皇家社会':548,
@@ -462,6 +484,8 @@ function init(){
   $('#advance-span').onchange=updateAdvanceUI;
   $('#mobile-advance-btn').onclick=advanceTwoMonths;
   $('#mobile-restart-btn').onclick=resetGame;
+  $('#creator-saves-btn').onclick=openSaveManager;
+  $('#save-manager-btn').onclick=openSaveManager;
   $$('[data-mobile-span]').forEach(button=>button.onclick=()=>{
     $('#advance-span').value=button.dataset.mobileSpan;
     updateAdvanceUI();
@@ -476,6 +500,7 @@ function init(){
   $('#modal').onclick=e=>{if(e.target===$('#modal')&&!modalLocked)closeModal()};
   $('#sound-btn').onclick=()=>{state.sound=!state.sound;$('#sound-btn').textContent=state.sound?'♪':'×';save();toast(state.sound?'提示音已开启':'提示音已关闭')};
   $$('#nav button').forEach(b=>b.onclick=()=>{showPage(b.dataset.page);if(b.dataset.page==='leagues')loadRealStandings(false)});
+  updateSaveManagerBadges();
   renderAwards(); renderLeagueTabs();
   const saved=localStorage.getItem(SAVE_KEY);
   if(saved){try{state=JSON.parse(saved);migrateState();showGame();renderAll();}catch(e){localStorage.removeItem(SAVE_KEY)}}
@@ -838,8 +863,105 @@ function showModal({icon,kicker,title,body,extra='',actions=[],locked=false}){mo
 function showInfo(title,body,icon='!'){showModal({icon,kicker:'生涯事件',title,body})}
 function closeModal(){if(modalLocked)return;$('#modal').classList.add('hidden')}
 function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
-function save(){if(state)localStorage.setItem(SAVE_KEY,JSON.stringify(state))}
-function resetGame(){if(!confirm('确定结束当前生涯并创建新球员吗？现有存档将被清除。'))return;localStorage.removeItem(SAVE_KEY);location.reload()}
+function save(){
+  if(!state)return;
+  try{localStorage.setItem(SAVE_KEY,JSON.stringify(state))}
+  catch{toast('自动存档失败：浏览器存储空间不足')}
+}
+function cloneSaveState(value){return JSON.parse(JSON.stringify(value))}
+function getSaveLibrary(){
+  try{
+    const library=JSON.parse(localStorage.getItem(SAVE_LIBRARY_KEY)||'[]');
+    return Array.isArray(library)?library.filter(slot=>slot&&slot.id&&slot.snapshot).slice(0,SAVE_LIMIT):[];
+  }catch{return[]}
+}
+function writeSaveLibrary(library){
+  try{
+    localStorage.setItem(SAVE_LIBRARY_KEY,JSON.stringify(library.slice(0,SAVE_LIMIT)));
+    updateSaveManagerBadges();
+    return true;
+  }catch{
+    toast('浏览器存储空间不足，请删除旧存档后重试');
+    return false;
+  }
+}
+function updateSaveManagerBadges(){
+  const count=getSaveLibrary().length,top=$('#save-manager-btn'),creator=$('#creator-save-count');
+  if(top)top.innerHTML=`▣ 存档 <b>${count}/${SAVE_LIMIT}</b>`;
+  if(creator)creator.textContent=`${count} / ${SAVE_LIMIT}`;
+}
+function saveDateLabel(value){
+  try{return new Date(value).toLocaleString('zh-CN',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false})}
+  catch{return'时间未知'}
+}
+function escapeSaveText(value){
+  return String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+}
+function saveSlotMarkup(slot,index){
+  if(!slot)return`<article class="save-slot empty"><div class="save-slot-index">${String(index+1).padStart(2,'0')}</div><div><strong>空存档位</strong><p>可保存一段新的球员生涯</p></div></article>`;
+  const s=slot.snapshot||{},season=s.year?`${s.year}/${String(s.year+1).slice(-2)}`:'未知赛季',safeId=escapeSaveText(slot.id);
+  return`<article class="save-slot">
+    <div class="save-slot-index">${String(index+1).padStart(2,'0')}</div>
+    <div class="save-slot-copy">
+      <div class="save-slot-title"><strong>${escapeSaveText(s.name||'无名球员')}</strong><span>${escapeSaveText(s.pos||'—')} · ${Number(s.age)||15} 岁</span></div>
+      <p>${escapeSaveText(s.club||'尚未签约')} · ${season} · 总评 ${Number(s.overall)||0}</p>
+      <small>${saveDateLabel(slot.updatedAt)} · ${(s.trophies||[]).length} 项荣誉</small>
+      <div class="save-slot-actions">
+        <button type="button" data-save-load="${safeId}">读取</button>
+        ${state?`<button type="button" data-save-overwrite="${safeId}">覆盖</button>`:''}
+        <button type="button" class="danger" data-save-delete="${safeId}">删除</button>
+      </div>
+    </div>
+  </article>`;
+}
+function openSaveManager(){
+  const library=getSaveLibrary(),slots=Array.from({length:SAVE_LIMIT},(_,index)=>library[index]||null);
+  const canCreate=Boolean(state)&&library.length<SAVE_LIMIT;
+  const body=library.length>=SAVE_LIMIT?'10 个存档位已经全部使用。可先删除旧存档，或用当前生涯覆盖任意存档。':'手动存档独立于自动存档，可随时读取此前的球员生涯。';
+  const actions=canCreate?[
+    ['保存当前生涯',()=>createManualSave(),true,`新建存档 · 还可保存 ${SAVE_LIMIT-library.length} 个`],
+    ['关闭',closeModal,false,'继续当前生涯']
+  ]:[['关闭',closeModal,true,state?'可使用存档卡片上的覆盖按钮':'选择一个已有存档读取']];
+  showModal({icon:'▣',kicker:`存档管理 · ${library.length}/${SAVE_LIMIT}`,title:'我的生涯存档',body,extra:`<div class="save-library-grid">${slots.map(saveSlotMarkup).join('')}</div>`,actions});
+  $$('[data-save-load]').forEach(button=>button.onclick=()=>loadManualSave(button.dataset.saveLoad));
+  $$('[data-save-overwrite]').forEach(button=>button.onclick=()=>overwriteManualSave(button.dataset.saveOverwrite));
+  $$('[data-save-delete]').forEach(button=>button.onclick=()=>deleteManualSave(button.dataset.saveDelete));
+}
+function createManualSave(){
+  if(!state)return;
+  const library=getSaveLibrary();
+  if(library.length>=SAVE_LIMIT){toast('存档已达 10 个上限');openSaveManager();return}
+  save();
+  library.unshift({id:`save-${Date.now()}-${rand(1000,9999)}`,updatedAt:Date.now(),snapshot:cloneSaveState(state)});
+  if(writeSaveLibrary(library)){toast('当前生涯已保存');openSaveManager()}
+}
+function overwriteManualSave(id){
+  if(!state)return;
+  const library=getSaveLibrary(),slot=library.find(item=>item.id===id);
+  if(!slot)return;
+  if(!confirm(`确定用 ${state.name} 的当前进度覆盖“${slot.snapshot?.name||'旧存档'}”吗？`))return;
+  save();slot.updatedAt=Date.now();slot.snapshot=cloneSaveState(state);
+  if(writeSaveLibrary(library)){toast('存档已覆盖');openSaveManager()}
+}
+function loadManualSave(id){
+  const slot=getSaveLibrary().find(item=>item.id===id);
+  if(!slot)return;
+  if(state&&!confirm(`读取 ${slot.snapshot?.name||'该球员'} 的存档吗？当前未手动保存的进度将被替换。`))return;
+  state=cloneSaveState(slot.snapshot);
+  migrateState();
+  save();
+  showGame();
+  showPage('overview');
+  renderAll();
+  closeModal();
+  toast(`已读取 ${state.name} 的生涯`);
+}
+function deleteManualSave(id){
+  const library=getSaveLibrary(),slot=library.find(item=>item.id===id);
+  if(!slot||!confirm(`确定删除 ${slot.snapshot?.name||'该球员'} 的存档吗？此操作无法撤销。`))return;
+  if(writeSaveLibrary(library.filter(item=>item.id!==id))){toast('存档已删除');openSaveManager()}
+}
+function resetGame(){if(!confirm('确定结束当前生涯并创建新球员吗？当前自动进度将被清除，手动存档会保留。'))return;localStorage.removeItem(SAVE_KEY);location.reload()}
 
 /* Version 4: position attributes, realistic development/injuries, multi-club market and award showcase. */
 const PLAY_STYLES={
@@ -1452,8 +1574,15 @@ function applyEventEffects(e){
 }
 function applyMonthlyDevelopment(){
   const old=state.overall,age=state.age;if(age>30){const chance=clamp(.07+(age-30)*.032,.07,.45);if(Math.random()>=chance)return;const pool=state.pos==='GK'?['physical','physical','reflexes','positioning','oneOnOnes']:['pace','pace','physical','physical','dribbling','shooting','defending'],changes={};for(let i=0;i<(Math.random()<.2?2:1);i++){const k=pick(pool);changes[k]=(changes[k]||0)-1}changeAttributes(changes);if(state.overall<old)addFeed('年龄曲线变化',`${age} 岁后身体与技术状态出现随机下滑，总评 ${old} → ${state.overall}。`,'↓');return}
-  const base=age<=17?.38:age<=20?.32:age<=24?.2:age<=29?.08:0,bonus=(state.profile?.personality==='自律'?.025:0)+(state.morale>84?.015:0)-(state.fitness<45?.07:0);if(Math.random()>=base+bonus||state.overall>=state.potential)return;
-  const pool=developmentPool(),changes={},count=age<=20?(Math.random()<.3?2:1):1;for(let i=0;i<count;i++){const k=pick(pool);if(state.attributes[k]<100)changes[k]=(changes[k]||0)+1}changeAttributes(changes);if(state.overall>old)addFeed('能力稳步提升',`${state.profile?.playStyle||'位置'}训练产生积累，总评 ${old} → ${state.overall}。`,'↑');
+  const base=age<=17?.42:age<=20?.36:age<=24?.24:age<=29?.09:0;
+  const potentialGap=Math.max(0,state.potential-state.overall),catchUp=clamp((potentialGap-12)/180,0,.14);
+  const bonus=(state.profile?.personality==='自律'?.035:0)+(state.morale>84?.02:0)-(state.fitness<45?.07:0);
+  const growthChance=clamp(base+catchUp+bonus,.08,.68);
+  if(Math.random()>=growthChance||state.overall>=state.potential)return;
+  const pool=developmentPool(),changes={},count=age<=20?(Math.random()<.3?3:2):age<=24?(Math.random()<.35?2:1):1;
+  for(let i=0;i<count;i++){const k=pick(pool);if(state.attributes[k]<100)changes[k]=(changes[k]||0)+1}
+  changeAttributes(changes);
+  if(state.overall>old)addFeed('能力稳步提升',`${state.profile?.playStyle||'位置'}训练产生积累，总评 ${old} → ${state.overall}。潜力差越大，年轻阶段的成长效率越高。`,'↑');
 }
 function retire(){
   state.retired=true;
