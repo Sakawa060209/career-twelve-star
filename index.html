@@ -5,186 +5,207 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#07110d" />
   <title>十二号新星 · 足球生涯文字模拟</title>
-  <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap');
-:root{--bg:#07110d;--panel:#0d1b15;--panel2:#11241b;--line:#22352b;--lime:#c9ff38;--gold:#e7bb65;--text:#f4f6ef;--muted:#899a90;--danger:#ff6b62;--blue:#70a7ff;--sidebar:220px}
-*{box-sizing:border-box}html{scroll-behavior:auto;overflow-anchor:none}body{margin:0;background:var(--bg);color:var(--text);font-family:'Noto Sans SC',system-ui,sans-serif;min-height:100vh}.noise{position:fixed;inset:0;pointer-events:none;z-index:99;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}.hidden{display:none!important}button,input,select{font:inherit}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.08em}.brand-mark{font:700 17px/38px 'Oswald';text-align:center;width:38px;height:38px;color:#07110d;background:var(--lime);clip-path:polygon(50% 0,93% 20%,86% 78%,50% 100%,14% 78%,7% 20%)}.creator-page{min-height:100vh;background:radial-gradient(circle at 15% 85%,#173d27 0,transparent 34%),radial-gradient(circle at 90% 10%,#26371a 0,transparent 26%),#07110d;overflow:hidden}.creator-page:before{content:'12';position:absolute;left:-1vw;bottom:-15vw;font:900 42vw/.8 'Oswald';color:transparent;-webkit-text-stroke:1px rgba(201,255,56,.08);transform:skew(-7deg);pointer-events:none}.creator-nav{height:88px;display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:auto;padding:0 28px;border-bottom:1px solid rgba(255,255,255,.08)}.save-note{font-size:12px;color:var(--muted)}.save-note:before{content:'●';color:var(--lime);margin-right:8px}.creator-wrap{position:relative;z-index:1;max-width:1200px;margin:auto;padding:8vh 28px;display:grid;grid-template-columns:1.1fr .9fr;gap:8vw;align-items:center}.creator-copy h1{font-size:clamp(48px,6vw,86px);line-height:1.05;margin:20px 0 28px;letter-spacing:-.055em}.creator-copy h1 em{font-style:normal;color:var(--lime)}.eyebrow{font:600 11px 'Oswald';letter-spacing:.22em;color:var(--lime);text-transform:uppercase;margin:0 0 8px}.lead{max-width:560px;color:#a9b6af;font-size:17px;line-height:1.8}.feature-row{display:flex;gap:25px;margin-top:38px;color:#c7d0ca;font-size:12px}.creator-card{background:rgba(15,31,23,.94);border:1px solid #2c4235;padding:34px;box-shadow:0 35px 90px rgba(0,0,0,.45)}.step-label{font-size:13px;font-weight:700;margin-bottom:28px}.step-label span{display:inline-grid;place-items:center;width:30px;height:30px;margin-right:10px;background:var(--lime);color:#07110d}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.field{display:flex;flex-direction:column;gap:8px}.field.full{margin-bottom:18px}.field>span{font-size:11px;color:var(--muted);font-weight:600}.field input,.field select{width:100%;background:#08140e;border:1px solid #2b3e33;color:var(--text);padding:13px 14px;outline:none;border-radius:2px}.field input:focus,.field select:focus{border-color:var(--lime)}.segmented{display:flex;height:47px}.segmented button{flex:1;border:1px solid #2b3e33;background:#08140e;color:var(--muted);cursor:pointer;font-size:12px}.segmented button.active{background:var(--lime);color:#07110d;font-weight:800;border-color:var(--lime)}.potential{margin:25px 0 18px;padding:15px;background:#0a1710;border-left:2px solid var(--lime);display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}.potential strong{color:#dfe8e2}.primary{border:0;background:var(--lime);color:#07110d;font-weight:800;padding:15px 20px;cursor:pointer;transition:.2s}.primary:hover{transform:translateY(-2px);box-shadow:0 9px 30px rgba(201,255,56,.18)}.primary b{margin-left:12px}.start{width:100%}
-.game-page{min-height:100vh}.sidebar{position:fixed;z-index:20;left:0;top:0;bottom:0;width:var(--sidebar);background:#09140f;border-right:1px solid var(--line);padding:25px 18px;display:flex;flex-direction:column}.sidebar .brand{margin:0 9px 42px}.sidebar nav{display:flex;flex-direction:column;gap:5px}.sidebar nav button,.sidebar-bottom button{border:0;background:transparent;color:#75887d;text-align:left;padding:13px 14px;cursor:pointer;font-size:13px;border-radius:3px;transition:.2s}.sidebar nav button span{display:inline-block;width:25px}.sidebar nav button:hover,.sidebar nav button.active{color:var(--text);background:#13251b}.sidebar nav button.active{box-shadow:inset 2px 0 var(--lime)}.sidebar-bottom{margin-top:auto;border-top:1px solid var(--line);padding-top:18px}.sidebar-bottom button{padding-left:8px}.sidebar-bottom small{display:block;color:#4f6257;font-size:9px;padding:8px}.game-main{margin-left:var(--sidebar);min-height:100vh}.topbar{height:88px;padding:0 32px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:15;background:rgba(7,17,13,.91);backdrop-filter:blur(14px)}.topbar p{font:500 10px 'Oswald';letter-spacing:.16em;color:var(--muted);margin:0 0 5px}.topbar h2{margin:0;font-size:18px}.top-actions{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:11px}.live-dot{width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 9px var(--lime)}#sound-btn{margin-left:10px;width:32px;height:32px;background:#102017;border:1px solid var(--line);color:var(--muted);cursor:pointer}.page{display:none;padding:28px 32px 50px;max-width:1440px;margin:auto}.page.active{display:block}.panel{background:linear-gradient(145deg,rgba(17,36,27,.95),rgba(11,25,18,.95));border:1px solid var(--line);border-radius:3px}.player-hero{height:190px;position:relative;overflow:hidden;display:flex;align-items:center;padding:30px 40px;gap:28px;background:radial-gradient(circle at 78% 50%,rgba(201,255,56,.12),transparent 30%),linear-gradient(120deg,#10251a,#09150f)}.hero-stripe{position:absolute;right:-20px;top:-80px;width:280px;height:360px;border:1px solid rgba(201,255,56,.18);transform:rotate(24deg);box-shadow:-42px 0 rgba(201,255,56,.025)}.crest{width:56px;height:64px;display:grid;place-items:center;flex:none;color:white;font:700 17px 'Oswald';background:var(--club,#315a46);border:3px solid color-mix(in srgb,var(--club),white 38%);clip-path:polygon(50% 0,94% 16%,88% 76%,50% 100%,12% 76%,6% 16%);filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}.crest.large{width:91px;height:106px;font-size:26px;border-width:5px}.player-identity{min-width:0}.player-identity h1{margin:0 0 12px;font-size:38px;letter-spacing:-.04em}.meta{display:flex;gap:8px;flex-wrap:wrap}.meta span{font-size:11px;padding:5px 8px;background:#172a20;color:#b8c5bd;border:1px solid #2a3c32}.overall{margin-left:auto;z-index:1;text-align:center;border-left:1px solid var(--line);padding:12px 35px}.overall span,.overall small{display:block;color:var(--muted);font-size:10px}.overall strong{font:700 58px/1 'Oswald';color:var(--lime);display:block}.dashboard-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(330px,.7fr);gap:18px;margin-top:18px}.left-col,.right-col{display:flex;flex-direction:column;gap:18px}.stats-panel,.news-panel,.contract-panel{padding:25px}.section-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px}.section-head h3{margin:0;font-size:17px}.tag{font:500 10px 'Oswald';letter-spacing:.09em;padding:5px 8px;background:rgba(201,255,56,.1);border:1px solid rgba(201,255,56,.23);color:var(--lime)}.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);margin-bottom:23px}.stat{padding:18px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat span{font-size:10px;color:var(--muted);display:block}.stat b{font:600 28px 'Oswald';display:block;margin-top:4px}.meter-row{display:grid;grid-template-columns:70px 1fr 30px;gap:12px;align-items:center;margin:13px 0;font-size:10px;color:var(--muted)}.meter{height:4px;background:#26352d}.meter i{display:block;height:100%;background:var(--lime);transition:.5s}.meter.gold i{background:var(--gold)}.meter.blue i{background:var(--blue)}.meter-row b{font-size:10px;color:#c5cec8}.action-panel{padding:24px;display:flex;align-items:center;justify-content:space-between;border-color:#3c533c;background:linear-gradient(110deg,#122a1c,#162619)}.action-panel h3{margin:0 0 6px}.action-panel p:not(.eyebrow){margin:0;color:var(--muted);font-size:11px}.news-panel{min-height:364px}.pulse{color:var(--lime);font-size:9px}.feed{display:flex;flex-direction:column}.feed-item{display:grid;grid-template-columns:35px 1fr;gap:11px;padding:13px 0;border-top:1px solid var(--line)}.feed-item:first-child{border:0;padding-top:0}.feed-icon{width:30px;height:30px;display:grid;place-items:center;background:#172b20;color:var(--lime);font-size:12px}.feed-item strong{display:block;font-size:11px;margin-bottom:3px}.feed-item p{color:var(--muted);font-size:10px;line-height:1.55;margin:0}.feed-item time{color:#53655b;font-size:8px}.club-row{display:flex;align-items:center;gap:14px}.club-row>div:not(.crest){display:flex;flex-direction:column;gap:3px}.club-row small{font-size:10px;color:var(--muted)}.contract-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:20px;padding-top:17px;border-top:1px solid var(--line)}.contract-grid span,.contract-grid b{display:block}.contract-grid span{font-size:9px;color:var(--muted)}.contract-grid b{font:500 15px 'Oswald';margin-top:3px}.page-intro{padding:20px 0 30px}.page-intro h1{font-size:38px;margin:5px 0 8px;letter-spacing:-.04em}.page-intro>p:last-child{font-size:12px;color:var(--muted)}.career-layout{display:grid;grid-template-columns:1.35fr .65fr;gap:18px}.career-layout>.panel,.trophy-log{padding:25px}.season-head,.season-row{display:grid;grid-template-columns:1.4fr .7fr repeat(4,.45fr);gap:10px;align-items:center;padding:13px 7px;border-bottom:1px solid var(--line);font-size:11px}.season-head{color:var(--muted);font-size:9px}.season-row .team-cell{display:flex;align-items:center;gap:9px}.mini-dot{width:9px;height:9px;background:var(--club);transform:rotate(45deg)}.season-row b{font-family:'Oswald';font-size:13px}.timeline{border-left:1px solid #31473a;margin-left:6px}.timeline-item{position:relative;padding:0 0 23px 22px}.timeline-item:before{content:'';position:absolute;left:-4px;top:5px;width:7px;height:7px;background:var(--lime);border-radius:50%;box-shadow:0 0 0 4px #15291e}.timeline-item time{color:var(--lime);font:500 9px 'Oswald';letter-spacing:.1em}.timeline-item h4{margin:4px 0;font-size:12px}.timeline-item p{margin:0;color:var(--muted);font-size:10px;line-height:1.5}.league-tabs{display:flex;gap:7px;overflow-x:auto;padding-bottom:10px}.league-tabs button{white-space:nowrap;border:1px solid var(--line);background:#0c1912;color:var(--muted);padding:9px 12px;cursor:pointer;font-size:10px}.league-tabs button.active{color:#08120d;background:var(--lime);border-color:var(--lime);font-weight:800}.club-database{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:15px}.club-card{background:#0d1b15;border:1px solid var(--line);padding:17px;display:flex;gap:14px;align-items:center}.club-card .crest{width:44px;height:50px;font-size:13px}.club-card strong{font-size:12px;display:block}.club-card small{font-size:9px;color:var(--muted)}.stars{color:var(--gold);font-size:9px;margin-top:5px;letter-spacing:1px}.award-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:18px}.award-card{min-height:230px;padding:22px;background:#0d1b15;border:1px solid var(--line);position:relative;overflow:hidden}.award-card:after{content:attr(data-mark);position:absolute;right:-4px;bottom:-28px;color:rgba(231,187,101,.05);font:700 120px 'Oswald'}.trophy-symbol{font-size:38px;color:var(--gold);margin-bottom:28px}.award-card h3{margin:0 0 7px;font-size:15px}.award-card p{font-size:10px;color:var(--muted);line-height:1.6}.award-card .eligibility{display:inline-block;margin-top:14px;font-size:9px;color:var(--gold);border-top:1px solid #4b412b;padding-top:7px}.trophy-item,.empty-state{padding:16px 0;border-top:1px solid var(--line);font-size:11px}.trophy-item{display:flex;justify-content:space-between}.trophy-item span{color:var(--gold)}.empty-state{color:var(--muted);text-align:center;padding:35px}.modal{position:fixed;z-index:100;inset:0;background:rgba(1,7,4,.78);display:grid;place-items:center;padding:20px;backdrop-filter:blur(7px)}.modal-card{position:relative;width:min(510px,100%);background:#112219;border:1px solid #39503f;padding:38px;box-shadow:0 30px 90px #000}.modal-close{position:absolute;right:14px;top:12px;border:0;background:transparent;color:#71847a;font-size:24px;cursor:pointer}.modal-icon{width:52px;height:58px;display:grid;place-items:center;background:var(--lime);color:#07110d;font:700 24px 'Oswald';clip-path:polygon(50% 0,94% 16%,88% 76%,50% 100%,12% 76%,6% 16%);margin-bottom:20px}.modal-card h2{font-size:25px;margin:7px 0 12px}.modal-card>p:not(.eyebrow){color:#a7b6ad;font-size:12px;line-height:1.8}.modal-extra{margin:18px 0}.offer-box{display:flex;align-items:center;gap:15px;padding:14px;background:#0a1710;border:1px solid var(--line)}.offer-box .crest{width:48px;height:55px;font-size:13px}.offer-box small{display:block;color:var(--muted);font-size:9px;margin-top:3px}.modal-actions{display:flex;gap:10px;margin-top:24px}.modal-actions button{flex:1;border:1px solid #34483b;background:#14261c;color:#dce5df;padding:13px;cursor:pointer;font-weight:700;font-size:11px}.modal-actions button.primary{background:var(--lime);color:#07110d;border-color:var(--lime)}.toast{position:fixed;z-index:200;right:26px;bottom:26px;background:#d5ff61;color:#07110d;padding:12px 18px;font-size:11px;font-weight:800;transform:translateY(90px);opacity:0;transition:.3s}.toast.show{transform:translateY(0);opacity:1}
-@media(max-width:1000px){.creator-wrap{grid-template-columns:1fr;gap:45px;padding-top:50px}.creator-copy h1{font-size:58px}.dashboard-grid,.career-layout{grid-template-columns:1fr}.club-database{grid-template-columns:repeat(2,1fr)}.award-cards{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:700px){:root{--sidebar:0px}.sidebar{position:fixed;top:auto;right:0;width:100%;height:calc(64px + env(safe-area-inset-bottom,0px));padding:6px 10px env(safe-area-inset-bottom,0px);flex-direction:row;align-items:center;z-index:250;pointer-events:auto}.sidebar .brand,.sidebar-bottom{display:none}.sidebar nav{width:100%;display:grid;grid-template-columns:repeat(4,1fr)}.sidebar nav button{text-align:center;padding:9px 3px;font-size:9px;touch-action:manipulation;-webkit-tap-highlight-color:transparent}.sidebar nav button span{display:block;width:auto;font-size:15px}.game-main{margin:0;padding-bottom:calc(65px + env(safe-area-inset-bottom,0px))}.topbar{padding:0 16px;height:72px}.page{padding:16px}.player-hero{height:auto;min-height:190px;padding:25px 20px;gap:15px;align-items:flex-start}.crest.large{width:65px;height:76px;font-size:20px}.player-identity h1{font-size:26px}.overall{position:absolute;right:9px;bottom:18px;padding:8px 18px}.overall strong{font-size:38px}.overall span{display:none}.stat-grid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.action-panel{align-items:flex-start;gap:18px;flex-direction:column}.action-panel .primary{width:100%}.club-database{grid-template-columns:1fr}.award-cards{grid-template-columns:1fr 1fr}.creator-nav{height:70px}.creator-wrap{padding:35px 18px}.creator-copy h1{font-size:45px}.feature-row{gap:12px;flex-wrap:wrap}.creator-card{padding:23px}.form-grid{grid-template-columns:1fr}.potential{flex-direction:column;gap:6px}.season-head,.season-row{grid-template-columns:1.4fr .7fr repeat(2,.5fr)}.season-head span:nth-child(5),.season-head span:nth-child(6),.season-row span:nth-child(5),.season-row span:nth-child(6){display:none}.top-actions #calendar{display:none}}
-@media(max-width:430px){.award-cards{grid-template-columns:1fr}.creator-copy h1{font-size:39px}.player-hero{padding-bottom:74px}.meta{max-width:210px}}
+  <link rel="stylesheet" href="style.css?v=3.0.2" />
+</head>
+<body>
+  <div class="noise"></div>
+  <section id="creator" class="creator-page">
+    <header class="creator-nav">
+      <div class="brand"><span class="brand-mark">12</span><span>十二号新星</span></div>
+      <span class="save-note">本地自动存档</span>
+    </header>
+    <main class="creator-wrap">
+      <div class="creator-copy">
+        <p class="eyebrow">FOOTBALL LIFE · TEXT SIMULATOR</p>
+        <h1>你的名字，<br><em>会响彻哪座球场？</em></h1>
+        <p class="lead">从 15 岁的青训新星开始。训练、选择、受伤、转会——每一步都在改写你的足球人生。</p>
+        <div class="feature-row">
+          <span>◉ 20 大联赛</span><span>↕ 五大联赛升降级</span><span>↗ 主动转会</span>
+        </div>
+      </div>
+      <form id="player-form" class="creator-card">
+        <div class="step-label"><span>01</span> 建立你的球员</div>
+        <label class="field full"><span>球员姓名</span><input id="name" maxlength="16" value="林默" required /></label>
+        <div class="form-grid">
+          <label class="field"><span>国家 / 地区</span><select id="country"></select></label>
+          <label class="field"><span>场上位置</span><select id="position"></select></label>
+          <label class="field"><span>球衣号码</span><input id="number" type="number" min="1" max="99" value="17" required /></label>
+          <div class="field"><span>惯用脚</span><div class="segmented"><button type="button" data-foot="左脚">左脚</button><button type="button" class="active" data-foot="右脚">右脚</button><button type="button" data-foot="双足">双足</button></div></div>
+          <label class="field full-span"><span>球员风格</span><select id="playStyle"></select></label>
+        </div>
+        <div class="profile-title"><span>02</span> 决定你的成长取向</div>
+        <div class="form-grid profile-grid">
+          <label class="field"><span>核心性格</span><select id="personality"><option value="自律">自律 · 稳定成长</option><option value="好胜">好胜 · 关键战更强</option><option value="沉稳">沉稳 · 抗压出色</option><option value="外向">外向 · 更衣室领袖</option></select></label>
+          <label class="field"><span>成长重点</span><select id="development"><option value="技术">技术 · 控球与创造</option><option value="速度">速度 · 爆发与冲刺</option><option value="身体">身体 · 对抗与耐久</option><option value="战术">战术 · 位置与阅读</option></select></label>
+          <label class="field"><span>家庭背景</span><select id="background"><option value="普通家庭">普通家庭 · 脚踏实地</option><option value="足球世家">足球世家 · 人脉与期待</option><option value="体育家庭">体育家庭 · 身体基础</option><option value="异国成长">异国成长 · 适应力更强</option></select></label>
+          <label class="field"><span>经纪人策略</span><select id="agentStyle"><option value="稳健">稳健 · 重视出场时间</option><option value="忠诚">忠诚 · 倾向长期留队</option><option value="进取">进取 · 主动寻求转会</option><option value="商业">商业 · 品牌价值优先</option></select></label>
+          <label class="field full-span"><span>生涯首要目标</span><select id="careerGoal"><option value="成为世界最佳">成为世界最佳 · 冲击金球奖</option><option value="俱乐部传奇">成为俱乐部传奇 · 一人一城</option><option value="国家队荣誉">为国家队赢得最高荣誉</option><option value="体验多国联赛">征服不同国家的联赛</option></select></label>
+        </div>
+        <div class="potential"><span>初始档案</span><strong>15 岁 · 青训新星 · 能力随生涯变化</strong></div>
+        <button class="primary start" type="submit">踏上职业之路 <b>→</b></button>
+        <button id="creator-saves-btn" class="creator-save-button" type="button">▣ 查看已有存档 <span id="creator-save-count">0 / 10</span></button>
+      </form>
+    </main>
+  </section>
 
-.attribute-head{display:flex;justify-content:space-between;align-items:center;margin:2px 0 10px;color:#cbd6cf;font-size:10px}.attribute-head small{color:var(--lime);max-width:70%;text-align:right}
-.attribute-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px}.attribute-item{padding:10px 11px;background:#091710;border:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.attribute-item span{font-size:9px;color:var(--muted)}.attribute-item b{font:600 18px 'Oswald';color:#eef4ef}.attribute-item.key{border-color:rgba(201,255,56,.34)}.attribute-item.key b{color:var(--lime)}
-.injury-status{margin:0 0 18px;padding:12px 14px;border:1px solid rgba(255,107,98,.38);background:rgba(255,107,98,.07)}.injury-status strong,.injury-status span{display:block}.injury-status strong{font-size:11px;color:#ff938b}.injury-status span{font-size:9px;color:#b9a6a3;margin-top:4px;line-height:1.55}
-.award-showcase{padding:0;overflow:hidden;min-height:150px;display:grid;grid-template-columns:132px 1fr}.award-showcase img{width:132px;height:100%;min-height:150px;object-fit:cover;background:#172018}.award-showcase-copy{padding:20px}.award-showcase-copy .eyebrow{color:var(--gold)}.award-showcase-copy h3{margin:5px 0 7px;font-size:18px}.award-showcase-copy p{font-size:10px;color:var(--muted);line-height:1.6;margin:0}.award-showcase-copy small{display:block;margin-top:10px;color:var(--gold);font-size:9px}
-.offer-list{display:grid;gap:8px}.offer-list .offer-box{padding:10px}.offer-rank{margin-left:auto;text-align:right;color:var(--gold);font:600 11px 'Oswald'}.offer-rank small{font:400 8px sans-serif}.modal-actions{flex-wrap:wrap}.modal-actions button{min-width:145px}.modal-actions button small{display:block;margin-top:5px;color:#809188;font-size:8px;font-weight:400}.modal-actions button.primary small{color:#3d4e22}
-.trophy-item{align-items:center;gap:15px}.trophy-item>div{display:flex;flex-direction:column;gap:4px}.trophy-item small{font-size:9px;color:var(--muted);line-height:1.5}
-@media(max-width:700px){.attribute-grid{grid-template-columns:repeat(2,1fr)}.award-showcase{grid-template-columns:104px 1fr}.award-showcase img{width:104px}.modal-actions button{min-width:100%}}
+  <section id="game" class="game-page hidden">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">12</span><span>十二号新星</span></div>
+      <nav id="nav">
+        <button type="button" class="active" data-page="overview"><span>⌂</span> 生涯主页</button>
+        <button type="button" data-page="career"><span>⌁</span> 生涯履历</button>
+        <button type="button" data-page="leagues"><span>◫</span> 联赛数据库</button>
+        <button type="button" data-page="awards"><span>♜</span> 荣誉殿堂</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <button id="reset-btn">↻ 开启新生涯</button>
+        <small>游戏每次行动后自动保存</small>
+      </div>
+    </aside>
 
-.advance-controls{display:flex;align-items:flex-end;gap:10px}.advance-controls label{display:flex;flex-direction:column;gap:5px}.advance-controls label span{font-size:8px;color:var(--muted);letter-spacing:.08em}.advance-controls select{height:46px;background:#0a1710;border:1px solid #3c533c;color:#e4eee7;padding:0 30px 0 12px}.advance-controls .primary{height:46px}
-.award-showcase{display:block;padding:22px;border-color:rgba(231,187,101,.48);background:radial-gradient(circle at 100% 0,rgba(231,187,101,.22),transparent 42%),linear-gradient(135deg,#172619,#0b1811);box-shadow:0 0 34px rgba(231,187,101,.08)}.honour-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.honour-title h3{margin:3px 0 0;font-size:19px}.honour-title span{font:600 11px 'Oswald';color:var(--gold);border:1px solid rgba(231,187,101,.45);padding:5px 8px}.honour-grid{display:grid;gap:9px}.honour-card{display:grid;grid-template-columns:58px 1fr;gap:12px;align-items:center;padding:10px;background:rgba(4,12,7,.48);border:1px solid rgba(231,187,101,.18);position:relative;overflow:hidden}.honour-card:first-child{border-color:var(--gold);box-shadow:inset 3px 0 var(--gold)}.honour-card img{width:58px;height:62px;min-height:0;object-fit:contain;background:transparent}.honou…86406 tokens truncated…rom:18,playoffRank:0,autoUp:2,playoffUp:[3,4,5,6],label:'末三名直接降级；西乙前二和附加赛冠军升级'},
-  '德甲':{second:'德乙',directFrom:17,playoffRank:16,autoUp:2,playoffUp:[3],label:'末两名直接降级；第16名参加两回合保级附加赛'},
-  '意甲':{second:'意乙',directFrom:18,playoffRank:0,autoUp:2,playoffUp:[3,4,5,6,7,8],label:'末三名降级；意乙前二和升级附加赛球队升级'},
-  '法甲':{second:'法乙',directFrom:17,playoffRank:16,autoUp:2,playoffUp:[3,4,5],label:'末两名直接降级；第16名参加升降级附加赛'}
-};
+    <main class="game-main">
+      <header class="topbar">
+        <div><p id="season-kicker">2026/27 赛季</p><h2 id="page-title">生涯主页</h2></div>
+        <div class="top-actions"><span class="live-dot"></span><span id="calendar">八月 · 第 1 月</span><button id="save-manager-btn" type="button" aria-label="打开存档管理">▣ 存档 <b>0/10</b></button><button id="sound-btn" aria-label="切换音效">♪</button></div>
+      </header>
 
-function applyLeagueMove(move,record=false){
-  const from=LEAGUES.find(l=>l.short===move.from),to=LEAGUES.find(l=>l.short===move.to);if(!from||!to)return false;
-  if(to.clubs.some(c=>c[0]===move.club))return true;
-  const index=from.clubs.findIndex(c=>c[0]===move.club);if(index<0)return false;
-  const [club]=from.clubs.splice(index,1);to.clubs.push(club);
-  if(record){state.leagueMovements=state.leagueMovements||[];state.leagueMovements.push({...move,season:currentSeason()})}
-  return true;
-}
-function applyStoredLeagueMovements(){
-  LEAGUES.forEach(league=>{if(LEAGUE_BASE_CLUBS[league.short])league.clubs=LEAGUE_BASE_CLUBS[league.short].map(c=>[...c])});
-  (state.leagueMovements||[]).forEach(move=>applyLeagueMove(move,false));
-}
-function leagueMove(club,from,to,reason){
-  const moved=applyLeagueMove({club,from,to,reason},true);
-  if(moved)addFeed(reason==='升级'?'升级席位确认':'降级席位确认',`${club}：${from} → ${to}（${reason}）。`,reason==='升级'?'↑':'↓');
-  return moved;
-}
-function promotionCandidate(second,exclude=[]){
-  return second.clubs.filter(c=>!exclude.includes(c[0])).slice().sort((a,b)=>(b[3]+Math.random()*7)-(a[3]+Math.random()*7))[0];
-}
-function settlePromotionRelegation(s){
-  const league=LEAGUES.find(l=>l.short===s.leagueShort)||leagueForClub(state.club);if(!league)return;
-  const topShort=league.tier===2?league.parentShort:league.short,system=PROMOTION_SYSTEMS[topShort];if(!system)return;
-  const top=LEAGUES.find(l=>l.short===topShort),second=LEAGUES.find(l=>l.short===system.second);if(!top||!second)return;
-  s.leagueMovements=[];s.promotionRule=system.label;
-  if(league.tier!==2){
-    const relegated=s.leagueTable.filter(row=>row.rank>=system.directFrom).map(row=>row.name);
-    if(system.playoffRank){
-      const playoff=s.leagueTable.find(row=>row.rank===system.playoffRank),challenger=promotionCandidate(second);
-      if(playoff&&challenger){
-        const topClub=top.clubs.find(c=>c[0]===playoff.name),surviveChance=clamp(.54+((topClub?.[3]||72)-challenger[3])*.022,.28,.76),survived=Math.random()<surviveChance;
-        s.relegationPlayoff={club:playoff.name,opponent:challenger[0],survived};
-        addFeed('保级附加赛',`${playoff.name} 对阵 ${challenger[0]}，${survived?'两回合守住顶级联赛席位':'附加赛失利并降入二级联赛'}。`,survived?'✓':'↓');
-        if(!survived)relegated.push(playoff.name);
-      }
-    }
-    const promoted=[];for(let i=0;i<relegated.length;i++){const candidate=promotionCandidate(second,promoted);if(candidate)promoted.push(candidate[0])}
-    relegated.forEach((club,i)=>{if(leagueMove(club,top.short,second.short,'降级'))s.leagueMovements.push({club,from:top.short,to:second.short,direction:'down'});const promotedClub=promoted[i];if(promotedClub&&leagueMove(promotedClub,second.short,top.short,'升级'))s.leagueMovements.push({club:promotedClub,from:second.short,to:top.short,direction:'up'})});
-    if(relegated.includes(state.club)){
-      s.relegated=true;state.flags.relegatedRecently=true;state.flags.relegationChoicePending=true;state.morale=clamp(state.morale-12,0,100);state.trust=clamp(state.trust-5,0,100);
-      addEvent('随队降级',`${state.club} 在 ${s.season} 赛季从 ${top.short} 降入 ${second.short}。你必须决定留队冲甲还是推动转会。`,'↓');
-    }
-  }else{
-    let promoted=s.leagueRank<=system.autoUp;
-    if(!promoted&&system.playoffUp.includes(s.leagueRank)){
-      const rankEdge=(system.playoffUp.length-system.playoffUp.indexOf(s.leagueRank))*0.055,promoteChance=clamp(.31+rankEdge+(state.clubStrength-72)*.025,.22,.72);promoted=Math.random()<promoteChance;
-      s.promotionPlayoff={rank:s.leagueRank,promoted};addFeed('升级附加赛',`${state.club} ${promoted?'赢下升级附加赛，重返顶级联赛':'在升级附加赛中止步'}。`,promoted?'↑':'×');
-    }
-    if(promoted){
-      const relegatedClub=top.clubs.slice().sort((a,b)=>(a[3]+Math.random()*5)-(b[3]+Math.random()*5))[0];
-      if(relegatedClub&&leagueMove(relegatedClub[0],top.short,second.short,'降级'))s.leagueMovements.push({club:relegatedClub[0],from:top.short,to:second.short,direction:'down'});
-      if(leagueMove(state.club,second.short,top.short,'升级'))s.leagueMovements.push({club:state.club,from:second.short,to:top.short,direction:'up'});
-      s.promoted=true;state.flags.promotedRecently=true;state.flags.promotionChoicePending=true;state.morale=clamp(state.morale+12,0,100);state.trust=clamp(state.trust+8,0,100);addEvent('升入顶级联赛',`${state.club} 从 ${second.short} 升入 ${top.short}。新赛季的阵容竞争和曝光度都将提升。`,'↑');
-    }
-  }
-}
+      <section id="overview-page" class="page active">
+        <div class="player-hero panel">
+          <div id="club-crest" class="crest large"></div>
+          <div class="player-identity">
+            <p id="club-line" class="eyebrow"></p>
+            <div class="player-title-row">
+              <h1 id="player-name"></h1>
+              <div class="hero-finance">
+                <span>身价 <b id="value"></b></span>
+                <span>周薪 <b id="wage"></b></span>
+              </div>
+            </div>
+            <div class="meta" id="player-meta"></div>
+          </div>
+          <div class="overall"><span>综合能力</span><strong id="overall">46</strong><small id="potential-text">能力值 / 100</small></div>
+          <div class="hero-stripe"></div>
+        </div>
 
-function renderTransferRequestControl(){
-  const button=$('#transfer-request-btn'),note=$('#transfer-request-note');if(!button||!note)return;
-  if(state.age<16){button.disabled=true;button.textContent='16 岁后可提交转会申请';note.textContent='青训阶段不进入职业转会申请流程。';note.className='';return}
-  if(state.retired){button.disabled=true;button.textContent='生涯已结束';note.textContent='退役后可在生涯履历中回顾所有转会。';note.className='';return}
-  button.disabled=false;
-  if(state.flags.frozenOut){button.textContent='转会申请处理中 · 已被降低顺位';note.textContent='俱乐部没有立即放人，教练组已减少你的比赛机会。可再次进入沟通并撤回申请。';note.className='request-warning';return}
-  if(state.flags.transferRequested){button.textContent='转会申请处理中';note.textContent='经纪人会在下一个转会窗口优先寻找多家报价；你也可以撤回申请。';note.className='request-warning';return}
-  button.textContent='向俱乐部提交转会申请';note.textContent='主动申请可能加快报价，也可能导致教练组降低你的出场顺位。';note.className='';
-}
-function submitTransferRequest(){
-  const years=Math.max(0,(state.contractEnd||state.year)-state.year),coach=state.relationships.coach||50;
-  const freezeChance=clamp(.18+years*.065+(state.trust<48?.12:0)+(coach<45?.1:0),.18,.68);
-  state.flags.transferRequested=true;state.flags.transferRequestMonth=state.year*12+state.month;state.trust=clamp(state.trust-rand(7,13),0,100);state.relationships.coach=clamp(coach-rand(5,11),0,100);state.relationships.agent=clamp((state.relationships.agent||50)+6,0,100);
-  const frozen=Math.random()<freezeChance;if(frozen){state.flags.frozenOut=true;state.trust=clamp(state.trust-8,0,100)}
-  addEvent('主动提交转会申请',`${state.name} 正式要求离开 ${state.club}。${frozen?'俱乐部拒绝立即放人，教练组将你调低了出场顺位。':'俱乐部接受经纪人接触潜在买家。'}`,'↗');
-  addFeed(frozen?'转会申请引发弃用':'主动进入转会市场',frozen?`申请引起教练组不满，预计出场概率额外下降 24%；下个窗口仍会优先生成报价。`:`经纪人开始联系多家俱乐部，下个转会窗口获得报价的概率显著提高。`,frozen?'!':'↗');
-  renderAll();showInfo(frozen?'俱乐部强硬回应':'转会申请已提交',frozen?'这是一次有代价的选择：转会推动速度提高，但在离队前可能持续缺少比赛。':'经纪人会在转会窗口集中收集报价；现俱乐部的信任已经下降。',frozen?'!':'↗');
-}
-function withdrawTransferRequest(){
-  delete state.flags.transferRequested;delete state.flags.frozenOut;delete state.flags.transferRequestMonth;state.trust=clamp(state.trust+5,0,100);state.relationships.coach=clamp((state.relationships.coach||50)+4,0,100);addFeed('撤回转会申请','你向教练和管理层说明将重新争取位置，弃用状态解除。','↩');closeModal();renderAll();
-}
-function openTransferRequest(){
-  if(state.age<16||state.retired)return;
-  if(state.flags.transferRequested){
-    showModal({icon:'↗',kicker:'TRANSFER REQUEST · 主动转会',title:state.flags.frozenOut?'俱乐部正在将你排除在主要轮换之外':'你的转会申请仍在处理中',body:'你可以坚持申请并等待窗口、要求经纪人立即收集意向，或撤回申请修复教练关系。',actions:[
-      ['要求经纪人立即收集报价',()=>{state.flags.transferWindowOpen=true;closeModal();transferOffer()},true,'立即生成 2–4 家符合能力与球队实力的潜在报价'],
-      ['撤回申请，重新竞争位置',withdrawTransferRequest,false,'解除弃用 · 教练信任 +5 · 仍保留当前合同'],
-      ['继续等待下个窗口',()=>{closeModal();addFeed('坚持转会立场','你没有撤回申请，经纪人继续寻找合适方案。','↗');renderAll()},false,'维持更高报价概率，也继续承担出场顺位风险']
-    ]});return;
-  }
-  showModal({icon:'↗',kicker:'TRANSFER REQUEST · 风险选择',title:`是否正式要求离开 ${state.club}？`,body:'主动申请不会保证转会成功。合同年限较长、教练关系较差或球队不愿放人时，原俱乐部可能降低你的比赛顺位。',actions:[
-    ['正式提交转会申请',submitTransferRequest,true,'下个窗口报价概率大幅提高 · 教练信任下降 · 18%–68% 概率被弃用'],
-    ['先与主教练沟通角色',()=>{state.trust=clamp(state.trust+4,0,100);state.relationships.coach=clamp((state.relationships.coach||50)+5,0,100);closeModal();addFeed('暂缓转会申请','你先与主教练确认定位，关系得到改善，但没有进入转会市场。','◇');renderAll()},false,'教练信任 +4 · 教练关系 +5 · 不进入转会市场'],
-    ['暂不提交',closeModal,false,'不产生即时影响']
-  ]});
-}
+        <div id="mobile-command" class="mobile-command panel" aria-label="手机快捷操作">
+          <div class="mobile-command-head">
+            <div><span>生涯速览</span><strong id="mobile-status-text">准备下一阶段</strong></div>
+            <b id="mobile-form">状态良好</b>
+          </div>
+          <div id="mobile-snapshot" class="mobile-snapshot"></div>
+          <button id="mobile-contract-btn" class="mobile-contract-button" type="button">
+            <span><small>当前合同</small><strong id="mobile-contract-summary">查看合同与转会</strong></span><b>合同 / 转会 →</b>
+          </button>
+          <div class="mobile-span-picker" role="group" aria-label="选择推进跨度">
+            <button type="button" class="active" data-mobile-span="2">2 个月</button>
+            <button type="button" data-mobile-span="6">半赛季</button>
+            <button type="button" data-mobile-span="12">一赛季</button>
+          </div>
+          <button id="mobile-advance-btn" type="button" class="primary">推进两个月 <b>→</b></button>
+          <button id="mobile-restart-btn" type="button" class="primary mobile-restart-btn" hidden>↻ 重新开始生涯</button>
+        </div>
 
-const foreignClub=s=>{const league=leagueForClub(s.club);return !!league&&league.country!==s.country};
-CAREER_EVENT_DECK.push(
-  {id:'relegation_decision',category:'relegation',title:'降级后的十字路口',icon:'↓',minAge:16,cooldown:10,maxRepeat:4,condition:s=>s.flags.relegationChoicePending,body:s=>`${s.club} 已经降入 ${leagueForClub(s.club)?.short||'二级联赛'}。预算、工资和阵容都会变化，你需要向教练和经纪人明确下一步。`,choices:[
-    {label:'留下并承担冲甲核心',outcome:'你选择对球队负责，教练给予更重要角色；曝光度会暂时下降。',effects:{trust:13,morale:7,valuePct:.95,relation:{coach:9,teammates:8},clearFlags:['relegationChoicePending','transferRequested','frozenOut']}},
-    {label:'要求经纪人寻找顶级联赛',outcome:'你把竞技平台放在首位，转会机会增加，但部分球迷与队友认为你在逃离。',effects:{trust:-8,morale:4,relation:{agent:10,teammates:-6,fans:-5},flags:{transferRequested:true,transferWindowOpen:true},clearFlag:'relegationChoicePending'}},
-    {label:'接受降薪，换取合理解约条款',outcome:'周薪下降，但俱乐部同意降低离队阻力，你仍可在二级联赛争取出场。',effects:{wagePct:.82,trust:6,morale:-2,relation:{agent:5,coach:4},flags:{transferRequested:true},clearFlag:'relegationChoicePending'}}
-  ]},
-  {id:'promotion_role_talk',category:'promotion',title:'升级后的阵容定位会议',icon:'↑',minAge:16,cooldown:10,maxRepeat:4,condition:s=>s.flags.promotionChoicePending,body:'球队升入顶级联赛后计划补强。教练给出三条同样有价值、方向不同的发展路线。',choices:[
-    {label:'保住熟悉位置，竞争首发',outcome:'你专注本职位置，短期信任更高，但竞争压力消耗体能。',effects:{trust:9,fitness:-6,morale:4,clearFlag:'promotionChoicePending'}},
-    {label:'接受多位置轮换',outcome:'出场路径更宽，个人数据可能更分散。',effects:{overall:1,trust:5,morale:2,clearFlag:'promotionChoicePending'}},
-    {label:'要求按表现重新谈薪',outcome:'周薪和商业地位提高，教练要求你迅速证明自己。',effects:{wagePct:1.18,trust:-3,morale:7,relation:{agent:6},clearFlag:'promotionChoicePending'}}
-  ]},
-  {id:'coach_tactical_conflict',category:'coach',title:'你与主教练发生战术分歧',icon:'△',minAge:17,cooldown:52,maxRepeat:2,body:'连续几场比赛后，你认为过于保守的站位限制了发挥；主教练则认为你没有完成无球职责。',choices:[
-    {label:'接受要求，先把纪律做好',outcome:'教练关系改善，进攻自由度与士气短期下降。',effects:{trust:9,morale:-5,relation:{coach:8}}},
-    {label:'用比赛录像坚持观点',outcome:'你争取到部分自由，但对话让关系更紧张。',effects:{overall:1,trust:-5,morale:6,relation:{coach:-7}}},
-    {label:'请助教设计折中方案',outcome:'双方各退一步，战术理解提高，也占用额外恢复时间。',effects:{trust:5,fitness:-5,relation:{coach:4}}}
-  ]},
-  {id:'coach_public_criticism',category:'media',title:'主教练公开批评你的比赛态度',icon:'!',minAge:18,cooldown:60,maxRepeat:2,condition:s=>(s.relationships.coach||50)<58,body:'赛后发布会上，主教练点名批评你的回防和训练态度。媒体要求你立即回应。',choices:[
-    {label:'公开承担责任',outcome:'舆论快速降温，教练认可态度，但你的自信受到影响。',effects:{trust:8,morale:-7,relation:{coach:6,fans:3}}},
-    {label:'私下沟通，不公开争辩',outcome:'关系有修复空间，外界仍会讨论几天。',effects:{trust:3,morale:-2,relation:{coach:8}}},
-    {label:'公开反驳教练',outcome:'球迷欣赏直率，教练组明显降低你的顺位。',effects:{trust:-12,morale:8,relation:{coach:-12,fans:6},flags:{frozenOut:true}}}
-  ]},
-  {id:'teammate_pass_conflict',category:'team',title:'你与队友因一次传球选择争执',icon:'◇',minAge:16,cooldown:44,maxRepeat:2,body:'关键反击中你选择射门而没有横传，队友在更衣室指责你过于自我。',choices:[
-    {label:'承认判断失误并请客',outcome:'更衣室很快翻篇，你的个人气势略有下降。',effects:{morale:-2,relation:{teammates:10}}},
-    {label:'坚持射门选择正确',outcome:'你保住进攻者的自信，但队友关系变差。',effects:{morale:7,trust:2,relation:{teammates:-9}}},
-    {label:'一起复盘再决定',outcome:'双方发现跑位和视野都有问题，协作与比赛理解同步提升。',effects:{overall:1,fitness:-4,relation:{teammates:5}}}
-  ]},
-  {id:'locker_room_clique',category:'team',title:'更衣室小团体邀请你选边',icon:'≋',minAge:18,cooldown:66,maxRepeat:2,body:'队内两组资深球员因训练强度产生分歧，双方都希望你公开支持。',choices:[
-    {label:'支持高强度训练派',outcome:'竞技状态受益，另一部分队友认为你缺乏体谅。',effects:{fitness:-7,overall:1,relation:{teammates:-4},trust:5}},
-    {label:'支持负荷管理派',outcome:'身体恢复更好，教练怀疑你在回避竞争。',effects:{fitness:10,trust:-5,relation:{teammates:4}}},
-    {label:'拒绝站队并促成会议',outcome:'你承担沟通压力，最终获得更广泛的尊重。',effects:{morale:-3,trust:4,relation:{teammates:9,coach:3}}}
-  ]},
-  {id:'foreign_food_adaptation',category:'adaptation',title:'异国饮食让身体状态失衡',icon:'≈',minAge:16,cooldown:42,maxRepeat:2,condition:s=>foreignClub(s)&&(s.flags.needsAdaptation||s.flags.foreignAdaptationMonths),body:s=>`来到${leagueForClub(s.club)?.country}后，饮食、作息和训练补给与过去差异明显。队医发现你的恢复指标持续波动。`,choices:[
-    {label:'聘请熟悉家乡饮食的营养师',outcome:'身体状态稳定，额外安排减少了自由时间。',effects:{fitness:10,morale:-2,relation:{agent:3},clearFlag:'needsAdaptation'}},
-    {label:'完全尝试融入当地饮食',outcome:'适应过程更慢，但你与队友建立了共同生活话题。',effects:{fitness:-4,morale:6,relation:{teammates:8},clearFlag:'needsAdaptation'}},
-    {label:'要求俱乐部制定混合方案',outcome:'恢复和融入取得平衡，俱乐部认可你的职业沟通。',effects:{fitness:5,trust:4,relation:{coach:3},clearFlag:'needsAdaptation'}}
-  ]},
-  {id:'foreign_language_barrier',category:'adaptation',title:'战术会议中的语言误解',icon:'文',minAge:16,cooldown:54,maxRepeat:2,condition:foreignClub,body:'一次训练失位源自战术术语理解错误。主教练要求你尽快解决语言问题。',choices:[
-    {label:'每天增加语言课程',outcome:'沟通能力持续提高，但恢复时间被压缩。',effects:{trust:7,fitness:-6,relation:{coach:5,teammates:3}}},
-    {label:'依靠双语队友翻译',outcome:'短期效率更高，也让你更依赖特定队友。',effects:{trust:3,relation:{teammates:9}}},
-    {label:'要求教练提供图像化战术资料',outcome:'全队都受益于更清晰的资料，你主动提出方案获得认可。',effects:{trust:6,morale:4,relation:{coach:4}}}
-  ]},
-  {id:'foreign_homesickness',category:'personal',title:'远离家乡的适应低谷',icon:'⌂',minAge:17,cooldown:72,maxRepeat:2,condition:foreignClub,body:'节日期间队友大多与家人团聚，你第一次明显感到孤独，训练注意力开始下降。',choices:[
-    {label:'安排家人短期探访',outcome:'情绪恢复明显，但行程与私人安排增加。',effects:{morale:12,fitness:-3,valuePct:.99}},
-    {label:'主动参加球队社区活动',outcome:'当地归属感提升，身体休息略少。',effects:{morale:7,fitness:-5,relation:{fans:8,teammates:5}}},
-    {label:'把情绪转化为额外训练',outcome:'能力细节有进步，但心理压力没有完全消失。',effects:{overall:1,morale:-4,fitness:-7,trust:4}}
-  ]},
-  {id:'relegation_wage_cut',category:'contract',title:'降级工资条款被触发',icon:'€',minAge:17,cooldown:30,maxRepeat:3,condition:s=>s.flags.relegatedRecently&&s.wage>0,body:'俱乐部因降级启动工资调整条款。经纪人认为你可以接受、申诉，或把降薪换成更低的解约金。',choices:[
-    {label:'接受统一降薪方案',outcome:'更衣室认可你与球队共担风险，周薪明显下降。',effects:{wagePct:.78,trust:8,relation:{teammates:7},clearFlag:'relegatedRecently'}},
-    {label:'正式提出合同申诉',outcome:'保住更多收入，但俱乐部与球迷对你的态度转冷。',effects:{wagePct:.94,trust:-8,relation:{agent:7,fans:-6},clearFlag:'relegatedRecently'}},
-    {label:'用降薪换取离队条款',outcome:'收入下降较小，转会阻力也随之降低。',effects:{wagePct:.86,relation:{agent:8},flags:{transferRequested:true},clearFlag:'relegatedRecently'}}
-  ]},
-  {id:'relegation_squad_exodus',category:'relegation',title:'降级后多名主力准备离队',icon:'↗',minAge:17,cooldown:40,maxRepeat:2,condition:s=>s.flags.relegatedRecently,body:'更衣室里不断出现离队消息，教练希望你帮助稳定阵容，经纪人则提醒这是寻找新平台的窗口。',choices:[
-    {label:'公开承诺留队冲甲',outcome:'你成为重建核心，商业曝光暂时下降。',effects:{trust:12,morale:5,valuePct:.94,relation:{fans:10,teammates:7},clearFlag:'relegatedRecently'}},
-    {label:'保持沉默，评估报价',outcome:'你保留全部选项，团队信任小幅下降。',effects:{trust:-4,relation:{agent:6,teammates:-4},flags:{transferRequested:true},clearFlag:'relegatedRecently'}},
-    {label:'只承诺完成当前窗口',outcome:'态度务实，教练暂时保留你的位置。',effects:{trust:4,morale:2,relation:{coach:3,agent:3},clearFlag:'relegatedRecently'}}
-  ]}
-);
+        <div class="dashboard-grid">
+          <div class="left-col">
+            <div class="panel stats-panel">
+              <div class="section-head"><div><p class="eyebrow">SEASON STATS</p><h3>本赛季数据</h3></div><span id="role-badge" class="tag">青训</span></div>
+              <div id="stat-grid" class="stat-grid"></div>
+              <div class="attribute-head"><span>位置能力</span><small id="style-effect"></small></div>
+              <div id="attribute-grid" class="attribute-grid"></div>
+              <div id="injury-status" class="injury-status hidden"></div>
+              <div class="meter-row"><span>体能</span><div class="meter"><i id="fitness-bar"></i></div><b id="fitness-value"></b></div>
+              <div class="meter-row"><span>士气</span><div class="meter gold"><i id="morale-bar"></i></div><b id="morale-value"></b></div>
+              <div class="meter-row"><span>教练信任</span><div class="meter blue"><i id="trust-bar"></i></div><b id="trust-value"></b></div>
+            </div>
+            <div id="season-objective-panel" class="panel objective-panel">
+              <div class="section-head"><div><p class="eyebrow">SEASON OBJECTIVE</p><h3>本赛季目标</h3></div><span id="objective-status" class="tag">待选择</span></div>
+              <div id="objective-content"></div>
+            </div>
+            <div class="panel reports-panel">
+              <div class="section-head"><div><p class="eyebrow">MATCH REPORTS</p><h3>近期单场表现</h3></div><span id="report-count" class="tag"></span></div>
+              <div id="match-reports" class="match-reports"></div>
+            </div>
+            <div class="panel action-panel">
+              <div><p class="eyebrow">NEXT CHAPTER</p><h3 id="next-title">新月份即将开始</h3><p id="next-desc">训练、比赛和意想不到的故事都在前方。</p></div>
+              <div class="advance-controls"><label><span>推进跨度</span><select id="advance-span"><option value="2">两个月</option><option value="6">半个赛季</option><option value="12">一个赛季</option></select></label><button id="advance-btn" class="primary">推进两个月 <b>→</b></button></div>
+            </div>
+          </div>
+          <div class="right-col">
+            <div id="award-showcase" class="panel award-showcase hidden"></div>
+            <div id="season-summary-panel" class="panel season-summary-panel hidden"></div>
+            <div class="panel domestic-cup-panel">
+              <div class="section-head"><div><p class="eyebrow">DOMESTIC CUP</p><h3>国内杯赛</h3></div><span id="domestic-cup-status" class="tag"></span></div>
+              <div id="domestic-cup-content"></div>
+            </div>
+            <div class="panel europe-panel">
+              <div class="section-head"><div><p class="eyebrow">CONTINENTAL CLUB COMPETITIONS</p><h3>洲际赛事</h3></div><span id="europe-status" class="tag"></span></div>
+              <div id="europe-content"></div>
+            </div>
+            <div class="panel national-panel">
+              <div class="section-head"><div><p class="eyebrow">INTERNATIONAL CAREER</p><h3>国家队赛事</h3></div><span id="national-status" class="tag"></span></div>
+              <div id="national-content"></div>
+            </div>
+            <div class="panel news-panel">
+              <div class="section-head"><div><p class="eyebrow">CAREER FEED</p><h3>生涯动态</h3></div><span class="pulse">实时</span></div>
+              <div id="feed" class="feed"></div>
+            </div>
+            <div class="panel contract-panel">
+              <div class="section-head"><h3>当前合约</h3><span id="contract-status" class="tag"></span></div>
+              <div class="club-row"><div id="mini-crest" class="crest"></div><div><strong id="contract-club"></strong><small id="contract-league"></small></div></div>
+              <div class="contract-grid"><div><span>合约至</span><b id="contract-end"></b></div><div><span>队内角色</span><b id="contract-role"></b></div><div><span>赛季奖金</span><b id="contract-bonus"></b></div></div>
+              <div id="contract-terms" class="contract-terms"></div>
+              <div class="contract-actions">
+                <button id="transfer-request-btn" type="button">向俱乐部提交转会申请</button>
+                <button id="contract-negotiate-btn" type="button">与经纪人商谈新合同</button>
+                <small id="transfer-request-note">主动申请可能加快报价，也可能导致教练组降低你的出场顺位。</small>
+              </div>
+              <div class="profile-summary"><span id="profile-route"></span><span id="profile-goal"></span></div>
+            </div>
+            <div class="panel insight-panel">
+              <div class="section-head"><div><p class="eyebrow">SQUAD INTELLIGENCE</p><h3>比赛机会与下一目标</h3></div><span class="tag">动态</span></div>
+              <div id="selection-insights"></div>
+            </div>
+          </div>
+        </div>
+        <button id="mobile-more-btn" class="mobile-more-btn" type="button" aria-expanded="false">查看更多生涯信息</button>
+      </section>
 
-init();
+      <section id="career-page" class="page">
+        <div class="page-intro"><p class="eyebrow">YOUR STORY</p><h1>每一步，都算数。</h1><p>从第一堂青训课到聚光灯下的决赛，这里记录你的完整轨迹。</p></div>
+        <div class="career-layout">
+          <div class="panel"><div class="section-head"><h3>赛季履历</h3><span id="career-total"></span></div><div id="season-table" class="season-table"></div></div>
+          <div class="panel"><div class="section-head"><h3>关键节点</h3></div><div id="timeline" class="timeline"></div></div>
+        </div>
+      </section>
 
-  </script>
+      <section id="leagues-page" class="page">
+        <div class="page-intro"><p class="eyebrow">LEAGUE CLUBS · REFERENCE RANKING</p><h1>全球足球版图</h1><p>查看各联赛参赛球队、队徽与俱乐部参考排名。</p></div>
+        <div id="league-tabs" class="league-tabs"></div>
+        <div id="club-database" class="club-database"></div>
+      </section>
+
+      <section id="awards-page" class="page">
+        <div class="page-intro"><p class="eyebrow">HALL OF HONOUR</p><h1>追逐最高荣誉</h1><p>奖项在每年六月根据位置、数据、能力与球队级别评选。</p></div>
+        <div id="award-cards" class="award-cards"></div>
+        <div class="panel trophy-log"><div class="section-head"><h3>我的荣誉</h3><span id="trophy-count"></span></div><div id="trophy-list"></div></div>
+      </section>
+    </main>
+  </section>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button id="modal-close" class="modal-close" aria-label="关闭">×</button>
+      <div id="modal-scroll" class="modal-scroll">
+        <div id="modal-icon" class="modal-icon">!</div>
+        <p id="modal-kicker" class="eyebrow"></p>
+        <h2 id="modal-title"></h2>
+        <p id="modal-body"></p>
+        <div id="modal-extra" class="modal-extra"></div>
+      </div>
+      <div id="modal-actions" class="modal-actions"></div>
+    </div>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="app.js?v=3.0.2"></script>
 </body>
 </html>
-
