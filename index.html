@@ -8,10 +8,10 @@
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap');
 :root{--bg:#07110d;--panel:#0d1b15;--panel2:#11241b;--line:#22352b;--lime:#c9ff38;--gold:#e7bb65;--text:#f4f6ef;--muted:#899a90;--danger:#ff6b62;--blue:#70a7ff;--sidebar:220px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:'Noto Sans SC',system-ui,sans-serif;min-height:100vh}.noise{position:fixed;inset:0;pointer-events:none;z-index:99;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}.hidden{display:none!important}button,input,select{font:inherit}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.08em}.brand-mark{font:700 17px/38px 'Oswald';text-align:center;width:38px;height:38px;color:#07110d;background:var(--lime);clip-path:polygon(50% 0,93% 20%,86% 78%,50% 100%,14% 78%,7% 20%)}.creator-page{min-height:100vh;background:radial-gradient(circle at 15% 85%,#173d27 0,transparent 34%),radial-gradient(circle at 90% 10%,#26371a 0,transparent 26%),#07110d;overflow:hidden}.creator-page:before{content:'12';position:absolute;left:-1vw;bottom:-15vw;font:900 42vw/.8 'Oswald';color:transparent;-webkit-text-stroke:1px rgba(201,255,56,.08);transform:skew(-7deg);pointer-events:none}.creator-nav{height:88px;display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:auto;padding:0 28px;border-bottom:1px solid rgba(255,255,255,.08)}.save-note{font-size:12px;color:var(--muted)}.save-note:before{content:'●';color:var(--lime);margin-right:8px}.creator-wrap{position:relative;z-index:1;max-width:1200px;margin:auto;padding:8vh 28px;display:grid;grid-template-columns:1.1fr .9fr;gap:8vw;align-items:center}.creator-copy h1{font-size:clamp(48px,6vw,86px);line-height:1.05;margin:20px 0 28px;letter-spacing:-.055em}.creator-copy h1 em{font-style:normal;color:var(--lime)}.eyebrow{font:600 11px 'Oswald';letter-spacing:.22em;color:var(--lime);text-transform:uppercase;margin:0 0 8px}.lead{max-width:560px;color:#a9b6af;font-size:17px;line-height:1.8}.feature-row{display:flex;gap:25px;margin-top:38px;color:#c7d0ca;font-size:12px}.creator-card{background:rgba(15,31,23,.94);border:1px solid #2c4235;padding:34px;box-shadow:0 35px 90px rgba(0,0,0,.45)}.step-label{font-size:13px;font-weight:700;margin-bottom:28px}.step-label span{display:inline-grid;place-items:center;width:30px;height:30px;margin-right:10px;background:var(--lime);color:#07110d}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.field{display:flex;flex-direction:column;gap:8px}.field.full{margin-bottom:18px}.field>span{font-size:11px;color:var(--muted);font-weight:600}.field input,.field select{width:100%;background:#08140e;border:1px solid #2b3e33;color:var(--text);padding:13px 14px;outline:none;border-radius:2px}.field input:focus,.field select:focus{border-color:var(--lime)}.segmented{display:flex;height:47px}.segmented button{flex:1;border:1px solid #2b3e33;background:#08140e;color:var(--muted);cursor:pointer;font-size:12px}.segmented button.active{background:var(--lime);color:#07110d;font-weight:800;border-color:var(--lime)}.potential{margin:25px 0 18px;padding:15px;background:#0a1710;border-left:2px solid var(--lime);display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}.potential strong{color:#dfe8e2}.primary{border:0;background:var(--lime);color:#07110d;font-weight:800;padding:15px 20px;cursor:pointer;transition:.2s}.primary:hover{transform:translateY(-2px);box-shadow:0 9px 30px rgba(201,255,56,.18)}.primary b{margin-left:12px}.start{width:100%}
+*{box-sizing:border-box}html{scroll-behavior:auto;overflow-anchor:none}body{margin:0;background:var(--bg);color:var(--text);font-family:'Noto Sans SC',system-ui,sans-serif;min-height:100vh}.noise{position:fixed;inset:0;pointer-events:none;z-index:99;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}.hidden{display:none!important}button,input,select{font:inherit}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.08em}.brand-mark{font:700 17px/38px 'Oswald';text-align:center;width:38px;height:38px;color:#07110d;background:var(--lime);clip-path:polygon(50% 0,93% 20%,86% 78%,50% 100%,14% 78%,7% 20%)}.creator-page{min-height:100vh;background:radial-gradient(circle at 15% 85%,#173d27 0,transparent 34%),radial-gradient(circle at 90% 10%,#26371a 0,transparent 26%),#07110d;overflow:hidden}.creator-page:before{content:'12';position:absolute;left:-1vw;bottom:-15vw;font:900 42vw/.8 'Oswald';color:transparent;-webkit-text-stroke:1px rgba(201,255,56,.08);transform:skew(-7deg);pointer-events:none}.creator-nav{height:88px;display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:auto;padding:0 28px;border-bottom:1px solid rgba(255,255,255,.08)}.save-note{font-size:12px;color:var(--muted)}.save-note:before{content:'●';color:var(--lime);margin-right:8px}.creator-wrap{position:relative;z-index:1;max-width:1200px;margin:auto;padding:8vh 28px;display:grid;grid-template-columns:1.1fr .9fr;gap:8vw;align-items:center}.creator-copy h1{font-size:clamp(48px,6vw,86px);line-height:1.05;margin:20px 0 28px;letter-spacing:-.055em}.creator-copy h1 em{font-style:normal;color:var(--lime)}.eyebrow{font:600 11px 'Oswald';letter-spacing:.22em;color:var(--lime);text-transform:uppercase;margin:0 0 8px}.lead{max-width:560px;color:#a9b6af;font-size:17px;line-height:1.8}.feature-row{display:flex;gap:25px;margin-top:38px;color:#c7d0ca;font-size:12px}.creator-card{background:rgba(15,31,23,.94);border:1px solid #2c4235;padding:34px;box-shadow:0 35px 90px rgba(0,0,0,.45)}.step-label{font-size:13px;font-weight:700;margin-bottom:28px}.step-label span{display:inline-grid;place-items:center;width:30px;height:30px;margin-right:10px;background:var(--lime);color:#07110d}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.field{display:flex;flex-direction:column;gap:8px}.field.full{margin-bottom:18px}.field>span{font-size:11px;color:var(--muted);font-weight:600}.field input,.field select{width:100%;background:#08140e;border:1px solid #2b3e33;color:var(--text);padding:13px 14px;outline:none;border-radius:2px}.field input:focus,.field select:focus{border-color:var(--lime)}.segmented{display:flex;height:47px}.segmented button{flex:1;border:1px solid #2b3e33;background:#08140e;color:var(--muted);cursor:pointer;font-size:12px}.segmented button.active{background:var(--lime);color:#07110d;font-weight:800;border-color:var(--lime)}.potential{margin:25px 0 18px;padding:15px;background:#0a1710;border-left:2px solid var(--lime);display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}.potential strong{color:#dfe8e2}.primary{border:0;background:var(--lime);color:#07110d;font-weight:800;padding:15px 20px;cursor:pointer;transition:.2s}.primary:hover{transform:translateY(-2px);box-shadow:0 9px 30px rgba(201,255,56,.18)}.primary b{margin-left:12px}.start{width:100%}
 .game-page{min-height:100vh}.sidebar{position:fixed;z-index:20;left:0;top:0;bottom:0;width:var(--sidebar);background:#09140f;border-right:1px solid var(--line);padding:25px 18px;display:flex;flex-direction:column}.sidebar .brand{margin:0 9px 42px}.sidebar nav{display:flex;flex-direction:column;gap:5px}.sidebar nav button,.sidebar-bottom button{border:0;background:transparent;color:#75887d;text-align:left;padding:13px 14px;cursor:pointer;font-size:13px;border-radius:3px;transition:.2s}.sidebar nav button span{display:inline-block;width:25px}.sidebar nav button:hover,.sidebar nav button.active{color:var(--text);background:#13251b}.sidebar nav button.active{box-shadow:inset 2px 0 var(--lime)}.sidebar-bottom{margin-top:auto;border-top:1px solid var(--line);padding-top:18px}.sidebar-bottom button{padding-left:8px}.sidebar-bottom small{display:block;color:#4f6257;font-size:9px;padding:8px}.game-main{margin-left:var(--sidebar);min-height:100vh}.topbar{height:88px;padding:0 32px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:15;background:rgba(7,17,13,.91);backdrop-filter:blur(14px)}.topbar p{font:500 10px 'Oswald';letter-spacing:.16em;color:var(--muted);margin:0 0 5px}.topbar h2{margin:0;font-size:18px}.top-actions{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:11px}.live-dot{width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 9px var(--lime)}#sound-btn{margin-left:10px;width:32px;height:32px;background:#102017;border:1px solid var(--line);color:var(--muted);cursor:pointer}.page{display:none;padding:28px 32px 50px;max-width:1440px;margin:auto}.page.active{display:block}.panel{background:linear-gradient(145deg,rgba(17,36,27,.95),rgba(11,25,18,.95));border:1px solid var(--line);border-radius:3px}.player-hero{height:190px;position:relative;overflow:hidden;display:flex;align-items:center;padding:30px 40px;gap:28px;background:radial-gradient(circle at 78% 50%,rgba(201,255,56,.12),transparent 30%),linear-gradient(120deg,#10251a,#09150f)}.hero-stripe{position:absolute;right:-20px;top:-80px;width:280px;height:360px;border:1px solid rgba(201,255,56,.18);transform:rotate(24deg);box-shadow:-42px 0 rgba(201,255,56,.025)}.crest{width:56px;height:64px;display:grid;place-items:center;flex:none;color:white;font:700 17px 'Oswald';background:var(--club,#315a46);border:3px solid color-mix(in srgb,var(--club),white 38%);clip-path:polygon(50% 0,94% 16%,88% 76%,50% 100%,12% 76%,6% 16%);filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}.crest.large{width:91px;height:106px;font-size:26px;border-width:5px}.player-identity{min-width:0}.player-identity h1{margin:0 0 12px;font-size:38px;letter-spacing:-.04em}.meta{display:flex;gap:8px;flex-wrap:wrap}.meta span{font-size:11px;padding:5px 8px;background:#172a20;color:#b8c5bd;border:1px solid #2a3c32}.overall{margin-left:auto;z-index:1;text-align:center;border-left:1px solid var(--line);padding:12px 35px}.overall span,.overall small{display:block;color:var(--muted);font-size:10px}.overall strong{font:700 58px/1 'Oswald';color:var(--lime);display:block}.dashboard-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(330px,.7fr);gap:18px;margin-top:18px}.left-col,.right-col{display:flex;flex-direction:column;gap:18px}.stats-panel,.news-panel,.contract-panel{padding:25px}.section-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px}.section-head h3{margin:0;font-size:17px}.tag{font:500 10px 'Oswald';letter-spacing:.09em;padding:5px 8px;background:rgba(201,255,56,.1);border:1px solid rgba(201,255,56,.23);color:var(--lime)}.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);margin-bottom:23px}.stat{padding:18px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat span{font-size:10px;color:var(--muted);display:block}.stat b{font:600 28px 'Oswald';display:block;margin-top:4px}.meter-row{display:grid;grid-template-columns:70px 1fr 30px;gap:12px;align-items:center;margin:13px 0;font-size:10px;color:var(--muted)}.meter{height:4px;background:#26352d}.meter i{display:block;height:100%;background:var(--lime);transition:.5s}.meter.gold i{background:var(--gold)}.meter.blue i{background:var(--blue)}.meter-row b{font-size:10px;color:#c5cec8}.action-panel{padding:24px;display:flex;align-items:center;justify-content:space-between;border-color:#3c533c;background:linear-gradient(110deg,#122a1c,#162619)}.action-panel h3{margin:0 0 6px}.action-panel p:not(.eyebrow){margin:0;color:var(--muted);font-size:11px}.news-panel{min-height:364px}.pulse{color:var(--lime);font-size:9px}.feed{display:flex;flex-direction:column}.feed-item{display:grid;grid-template-columns:35px 1fr;gap:11px;padding:13px 0;border-top:1px solid var(--line)}.feed-item:first-child{border:0;padding-top:0}.feed-icon{width:30px;height:30px;display:grid;place-items:center;background:#172b20;color:var(--lime);font-size:12px}.feed-item strong{display:block;font-size:11px;margin-bottom:3px}.feed-item p{color:var(--muted);font-size:10px;line-height:1.55;margin:0}.feed-item time{color:#53655b;font-size:8px}.club-row{display:flex;align-items:center;gap:14px}.club-row>div:not(.crest){display:flex;flex-direction:column;gap:3px}.club-row small{font-size:10px;color:var(--muted)}.contract-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:20px;padding-top:17px;border-top:1px solid var(--line)}.contract-grid span,.contract-grid b{display:block}.contract-grid span{font-size:9px;color:var(--muted)}.contract-grid b{font:500 15px 'Oswald';margin-top:3px}.page-intro{padding:20px 0 30px}.page-intro h1{font-size:38px;margin:5px 0 8px;letter-spacing:-.04em}.page-intro>p:last-child{font-size:12px;color:var(--muted)}.career-layout{display:grid;grid-template-columns:1.35fr .65fr;gap:18px}.career-layout>.panel,.trophy-log{padding:25px}.season-head,.season-row{display:grid;grid-template-columns:1.4fr .7fr repeat(4,.45fr);gap:10px;align-items:center;padding:13px 7px;border-bottom:1px solid var(--line);font-size:11px}.season-head{color:var(--muted);font-size:9px}.season-row .team-cell{display:flex;align-items:center;gap:9px}.mini-dot{width:9px;height:9px;background:var(--club);transform:rotate(45deg)}.season-row b{font-family:'Oswald';font-size:13px}.timeline{border-left:1px solid #31473a;margin-left:6px}.timeline-item{position:relative;padding:0 0 23px 22px}.timeline-item:before{content:'';position:absolute;left:-4px;top:5px;width:7px;height:7px;background:var(--lime);border-radius:50%;box-shadow:0 0 0 4px #15291e}.timeline-item time{color:var(--lime);font:500 9px 'Oswald';letter-spacing:.1em}.timeline-item h4{margin:4px 0;font-size:12px}.timeline-item p{margin:0;color:var(--muted);font-size:10px;line-height:1.5}.league-tabs{display:flex;gap:7px;overflow-x:auto;padding-bottom:10px}.league-tabs button{white-space:nowrap;border:1px solid var(--line);background:#0c1912;color:var(--muted);padding:9px 12px;cursor:pointer;font-size:10px}.league-tabs button.active{color:#08120d;background:var(--lime);border-color:var(--lime);font-weight:800}.club-database{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:15px}.club-card{background:#0d1b15;border:1px solid var(--line);padding:17px;display:flex;gap:14px;align-items:center}.club-card .crest{width:44px;height:50px;font-size:13px}.club-card strong{font-size:12px;display:block}.club-card small{font-size:9px;color:var(--muted)}.stars{color:var(--gold);font-size:9px;margin-top:5px;letter-spacing:1px}.award-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:18px}.award-card{min-height:230px;padding:22px;background:#0d1b15;border:1px solid var(--line);position:relative;overflow:hidden}.award-card:after{content:attr(data-mark);position:absolute;right:-4px;bottom:-28px;color:rgba(231,187,101,.05);font:700 120px 'Oswald'}.trophy-symbol{font-size:38px;color:var(--gold);margin-bottom:28px}.award-card h3{margin:0 0 7px;font-size:15px}.award-card p{font-size:10px;color:var(--muted);line-height:1.6}.award-card .eligibility{display:inline-block;margin-top:14px;font-size:9px;color:var(--gold);border-top:1px solid #4b412b;padding-top:7px}.trophy-item,.empty-state{padding:16px 0;border-top:1px solid var(--line);font-size:11px}.trophy-item{display:flex;justify-content:space-between}.trophy-item span{color:var(--gold)}.empty-state{color:var(--muted);text-align:center;padding:35px}.modal{position:fixed;z-index:100;inset:0;background:rgba(1,7,4,.78);display:grid;place-items:center;padding:20px;backdrop-filter:blur(7px)}.modal-card{position:relative;width:min(510px,100%);background:#112219;border:1px solid #39503f;padding:38px;box-shadow:0 30px 90px #000}.modal-close{position:absolute;right:14px;top:12px;border:0;background:transparent;color:#71847a;font-size:24px;cursor:pointer}.modal-icon{width:52px;height:58px;display:grid;place-items:center;background:var(--lime);color:#07110d;font:700 24px 'Oswald';clip-path:polygon(50% 0,94% 16%,88% 76%,50% 100%,12% 76%,6% 16%);margin-bottom:20px}.modal-card h2{font-size:25px;margin:7px 0 12px}.modal-card>p:not(.eyebrow){color:#a7b6ad;font-size:12px;line-height:1.8}.modal-extra{margin:18px 0}.offer-box{display:flex;align-items:center;gap:15px;padding:14px;background:#0a1710;border:1px solid var(--line)}.offer-box .crest{width:48px;height:55px;font-size:13px}.offer-box small{display:block;color:var(--muted);font-size:9px;margin-top:3px}.modal-actions{display:flex;gap:10px;margin-top:24px}.modal-actions button{flex:1;border:1px solid #34483b;background:#14261c;color:#dce5df;padding:13px;cursor:pointer;font-weight:700;font-size:11px}.modal-actions button.primary{background:var(--lime);color:#07110d;border-color:var(--lime)}.toast{position:fixed;z-index:200;right:26px;bottom:26px;background:#d5ff61;color:#07110d;padding:12px 18px;font-size:11px;font-weight:800;transform:translateY(90px);opacity:0;transition:.3s}.toast.show{transform:translateY(0);opacity:1}
 @media(max-width:1000px){.creator-wrap{grid-template-columns:1fr;gap:45px;padding-top:50px}.creator-copy h1{font-size:58px}.dashboard-grid,.career-layout{grid-template-columns:1fr}.club-database{grid-template-columns:repeat(2,1fr)}.award-cards{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:700px){:root{--sidebar:0px}.sidebar{position:fixed;top:auto;right:0;width:100%;height:64px;padding:6px 10px;flex-direction:row;align-items:center}.sidebar .brand,.sidebar-bottom{display:none}.sidebar nav{width:100%;display:grid;grid-template-columns:repeat(4,1fr)}.sidebar nav button{text-align:center;padding:9px 3px;font-size:9px}.sidebar nav button span{display:block;width:auto;font-size:15px}.game-main{margin:0;padding-bottom:65px}.topbar{padding:0 16px;height:72px}.page{padding:16px}.player-hero{height:auto;min-height:190px;padding:25px 20px;gap:15px;align-items:flex-start}.crest.large{width:65px;height:76px;font-size:20px}.player-identity h1{font-size:26px}.overall{position:absolute;right:9px;bottom:18px;padding:8px 18px}.overall strong{font-size:38px}.overall span{display:none}.stat-grid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.action-panel{align-items:flex-start;gap:18px;flex-direction:column}.action-panel .primary{width:100%}.club-database{grid-template-columns:1fr}.award-cards{grid-template-columns:1fr 1fr}.creator-nav{height:70px}.creator-wrap{padding:35px 18px}.creator-copy h1{font-size:45px}.feature-row{gap:12px;flex-wrap:wrap}.creator-card{padding:23px}.form-grid{grid-template-columns:1fr}.potential{flex-direction:column;gap:6px}.season-head,.season-row{grid-template-columns:1.4fr .7fr repeat(2,.5fr)}.season-head span:nth-child(5),.season-head span:nth-child(6),.season-row span:nth-child(5),.season-row span:nth-child(6){display:none}.top-actions #calendar{display:none}}
+@media(max-width:700px){:root{--sidebar:0px}.sidebar{position:fixed;top:auto;right:0;width:100%;height:calc(64px + env(safe-area-inset-bottom,0px));padding:6px 10px env(safe-area-inset-bottom,0px);flex-direction:row;align-items:center;z-index:250;pointer-events:auto}.sidebar .brand,.sidebar-bottom{display:none}.sidebar nav{width:100%;display:grid;grid-template-columns:repeat(4,1fr)}.sidebar nav button{text-align:center;padding:9px 3px;font-size:9px;touch-action:manipulation;-webkit-tap-highlight-color:transparent}.sidebar nav button span{display:block;width:auto;font-size:15px}.game-main{margin:0;padding-bottom:calc(65px + env(safe-area-inset-bottom,0px))}.topbar{padding:0 16px;height:72px}.page{padding:16px}.player-hero{height:auto;min-height:190px;padding:25px 20px;gap:15px;align-items:flex-start}.crest.large{width:65px;height:76px;font-size:20px}.player-identity h1{font-size:26px}.overall{position:absolute;right:9px;bottom:18px;padding:8px 18px}.overall strong{font-size:38px}.overall span{display:none}.stat-grid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.action-panel{align-items:flex-start;gap:18px;flex-direction:column}.action-panel .primary{width:100%}.club-database{grid-template-columns:1fr}.award-cards{grid-template-columns:1fr 1fr}.creator-nav{height:70px}.creator-wrap{padding:35px 18px}.creator-copy h1{font-size:45px}.feature-row{gap:12px;flex-wrap:wrap}.creator-card{padding:23px}.form-grid{grid-template-columns:1fr}.potential{flex-direction:column;gap:6px}.season-head,.season-row{grid-template-columns:1.4fr .7fr repeat(2,.5fr)}.season-head span:nth-child(5),.season-head span:nth-child(6),.season-row span:nth-child(5),.season-row span:nth-child(6){display:none}.top-actions #calendar{display:none}}
 @media(max-width:430px){.award-cards{grid-template-columns:1fr}.creator-copy h1{font-size:39px}.player-hero{padding-bottom:74px}.meta{max-width:210px}}
 
 .attribute-head{display:flex;justify-content:space-between;align-items:center;margin:2px 0 10px;color:#cbd6cf;font-size:10px}.attribute-head small{color:var(--lime);max-width:70%;text-align:right}
@@ -116,6 +116,8 @@
   .mobile-snapshot{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
   .mobile-snapshot>div{min-width:0;padding:8px;background:#08150e;border:1px solid var(--line);border-radius:10px}
   .mobile-snapshot span,.mobile-snapshot b{display:block}.mobile-snapshot span{font-size:7px;color:var(--muted)}.mobile-snapshot b{font:600 13px 'Oswald';margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mobile-contract-button{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:7px;padding:10px 11px;border:1px solid rgba(201,255,56,.24);border-radius:11px;background:#0b1b13;color:var(--text);text-align:left}
+  .mobile-contract-button span{min-width:0}.mobile-contract-button small,.mobile-contract-button strong{display:block}.mobile-contract-button small{font-size:7px;color:var(--muted)}.mobile-contract-button strong{margin-top:2px;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mobile-contract-button>b{flex:none;color:var(--lime);font-size:9px}
   .mobile-span-picker{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin:9px 0 7px}
   .mobile-span-picker button{min-height:36px;border:1px solid var(--line);background:#0b1b13;color:var(--muted);font-size:9px;border-radius:10px}
   .mobile-span-picker button.active{border-color:var(--lime);background:rgba(201,255,56,.11);color:var(--lime);font-weight:800}
@@ -138,13 +140,17 @@
   #overview-page:not(.mobile-expanded) .right-col>.panel:not(.award-showcase):not(.news-panel){display:none}
   #overview-page .right-col{margin-top:9px}
   #overview-page .right-col>.panel{padding:14px}
+  #overview-page .right-col .contract-panel{order:-2;border-color:rgba(201,255,56,.28)}
+  #overview-page .contract-panel .section-head{margin-bottom:11px}
+  #overview-page .contract-panel .contract-grid{margin-top:11px;padding-top:10px}
+  #overview-page .contract-panel .contract-actions{margin-top:11px;padding-top:11px}
   #overview-page .right-col .award-showcase.hidden{display:none}
-  #overview-page .right-col .feed-item:nth-child(n+4){display:none}
-  #overview-page.mobile-expanded .right-col .feed-item:nth-child(n+4){display:grid}
+  #overview-page .right-col .feed-item:nth-child(n+3){display:none}
+  #overview-page.mobile-expanded .right-col .feed-item:nth-child(n+3){display:grid}
   .mobile-more-btn{display:block;width:100%;margin:10px 0 0;min-height:45px;border:1px solid #31473a;background:#0d1b15;color:#c7d0ca;border-radius:14px;font-size:10px;font-weight:700}
   .match-report{padding:9px 0}.match-detail p{font-size:8px}
 
-  .sidebar{height:68px;padding:5px 7px;border-top:1px solid #263a2f;border-right:0;background:rgba(7,17,13,.97);backdrop-filter:blur(15px)}
+  .sidebar{height:calc(68px + env(safe-area-inset-bottom,0px));padding:5px 7px env(safe-area-inset-bottom,0px);border-top:1px solid #263a2f;border-right:0;background:rgba(7,17,13,.97);backdrop-filter:blur(15px)}
   .sidebar nav{gap:3px}.sidebar nav button{min-height:56px;padding:6px 2px;border-radius:12px;font-size:8px}
   .sidebar nav button span{font-size:16px;margin-bottom:2px}.sidebar nav button.active{box-shadow:none;background:#16271d;color:var(--lime)}
   .sidebar nav button:hover:not(.active){background:transparent;color:#75887d}
@@ -207,6 +213,7 @@ body{font-size:16px}
 .award-card:after{display:none}.award-card h3{font-size:17px}.award-card p{font-size:11px;line-height:1.65}
 .award-card .eligibility{font-size:10px}.league-image-source{font-size:9px}
 .award-rule-source{position:relative;z-index:2;display:inline-flex;margin-top:10px;color:var(--lime);font-size:10px;text-decoration:none;border-bottom:1px solid rgba(201,255,56,.32);padding-bottom:2px}
+.modal-card>p:not(.eyebrow){white-space:pre-line}
 .award-rule-source:hover{color:#efffa7}
 .national-trophy-gallery{grid-template-columns:repeat(4,minmax(70px,1fr))}
 .trophy-item strong{font-size:13px}.trophy-item small{font-size:10px}
@@ -307,10 +314,10 @@ body{font-size:16px}
     <aside class="sidebar">
       <div class="brand"><span class="brand-mark">12</span><span>十二号新星</span></div>
       <nav id="nav">
-        <button class="active" data-page="overview"><span>⌂</span> 生涯主页</button>
-        <button data-page="career"><span>⌁</span> 生涯履历</button>
-        <button data-page="leagues"><span>◫</span> 联赛数据库</button>
-        <button data-page="awards"><span>♜</span> 荣誉殿堂</button>
+        <button type="button" class="active" data-page="overview"><span>⌂</span> 生涯主页</button>
+        <button type="button" data-page="career"><span>⌁</span> 生涯履历</button>
+        <button type="button" data-page="leagues"><span>◫</span> 联赛数据库</button>
+        <button type="button" data-page="awards"><span>♜</span> 荣誉殿堂</button>
       </nav>
       <div class="sidebar-bottom">
         <button id="reset-btn">↻ 开启新生涯</button>
@@ -348,6 +355,9 @@ body{font-size:16px}
             <b id="mobile-form">状态良好</b>
           </div>
           <div id="mobile-snapshot" class="mobile-snapshot"></div>
+          <button id="mobile-contract-btn" class="mobile-contract-button" type="button">
+            <span><small>当前合同</small><strong id="mobile-contract-summary">查看合同与转会</strong></span><b>合同 / 转会 →</b>
+          </button>
           <div class="mobile-span-picker" role="group" aria-label="选择推进跨度">
             <button type="button" class="active" data-mobile-span="2">2 个月</button>
             <button type="button" data-mobile-span="6">半赛季</button>
@@ -405,15 +415,24 @@ body{font-size:16px}
             </div>
             <div class="panel insight-panel">
               <div class="section-head"><div><p class="eyebrow">SQUAD INTELLIGENCE</p><h3>比赛机会与下一目标</h3></div><span class="tag">动态</span></div>
-  …208 tokens truncated…履历</h3><span id="career-total"></span></div><div id="season-table" class="season-table"></div></div>
+              <div id="selection-insights"></div>
+            </div>
+          </div>
+        </div>
+        <button id="mobile-more-btn" class="mobile-more-btn" type="button" aria-expanded="false">查看更多生涯信息</button>
+      </section>
+
+      <section id="career-page" class="page">
+        <div class="page-intro"><p class="eyebrow">YOUR STORY</p><h1>每一步，都算数。</h1><p>从第一堂青训课到聚光灯下的决赛，这里记录你的完整轨迹。</p></div>
+        <div class="career-layout">
+          <div class="panel"><div class="section-head"><h3>赛季履历</h3><span id="career-total"></span></div><div id="season-table" class="season-table"></div></div>
           <div class="panel"><div class="section-head"><h3>关键节点</h3></div><div id="timeline" class="timeline"></div></div>
         </div>
       </section>
 
       <section id="leagues-page" class="page">
-        <div class="page-intro"><p class="eyebrow">LIVE TABLES · SCOUTING NETWORK</p><h1>全球足球版图</h1><p>五大联赛、欧洲主流联赛、沙特联、美职联与中超数据库。联网积分榜用于现实赛季，生涯未来赛季以真实实力为基准继续模拟。</p></div>
+        <div class="page-intro"><p class="eyebrow">LEAGUE CLUBS · REFERENCE RANKING</p><h1>全球足球版图</h1><p>查看各联赛参赛球队、队徽与俱乐部参考排名。</p></div>
         <div id="league-tabs" class="league-tabs"></div>
-        <div id="real-standings" class="panel real-standings"></div>
         <div id="club-database" class="club-database"></div>
       </section>
 
@@ -479,7 +498,7 @@ const MONTHS=['八月','九月','十月','十一月','十二月','一月','二�
 const AWARDS=[
   {name:'金球奖',icon:'◈',mark:'B',desc:'全球范围个人奖项，依次参考个人表现、球队成绩与荣誉，以及球员风度和公平竞赛。',rule:'全球联赛均可参评 · 顶级表现与重大冠军更有利',source:'金球奖官方规则',sourceUrl:'https://ballondor.com/the-ballon-dor'},
   {name:'欧洲金童奖',icon:'✦',mark:'G',desc:'授予效力欧洲顶级联赛、表现最出色的年轻球员。',rule:'21 岁以下 · 仅欧洲顶级联赛球员',source:'Golden Boy 官方说明',sourceUrl:'https://www.goldenboyaward.com/'},
-  {name:'欧洲金靴奖',icon:'♞',mark:'S',desc:'依据欧洲顶级联赛进球数乘以联赛强度系数，计算跨联赛射手排名。',rule:'非门将 · 仅欧洲联赛 · 进球 × 系数',source:'UEFA 计分说明',sourceUrl:'https://www.uefa.com/uefachampionsleague/news/0252-0cda34062034-e692869a9b96-1000--lionel-messi-europe-s-top-scorer/'},
+  {name:'欧洲金靴奖',icon:'♞',mark:'S',desc:'授予欧洲顶级联赛赛季射手表现最出色的球员。',rule:'非门将 · 仅欧洲顶级联赛球员参与',source:'UEFA 计分说明',sourceUrl:'https://www.uefa.com/uefachampionsleague/news/0252-0cda34062034-e692869a9b96-1000--lionel-messi-europe-s-top-scorer/'},
   {name:'雅辛奖 · 金手套',icon:'♜',mark:'Y',desc:'全球范围年度最佳门将荣誉，综合零封、扑救、稳定性与球队成绩。',rule:'全球联赛门将均可参评',source:'金球奖官方排名说明',sourceUrl:'https://ballondor.com/all-rankings'},
   {name:'联赛冠军',icon:'♛',mark:'C',type:'league',desc:'赛季结束时随俱乐部登上积分榜首位。奖杯使用游戏数据库中对应联赛的联网标识。',rule:'所有位置 · 球队最终排名第 1'},
   {name:'国家队冠军',icon:'⚑',mark:'N',type:'national',desc:'随国家队赢得世界杯或所属大洲最高级别国家队赛事，冠军标识会进入荣誉橱窗。',rule:'入选国家队并随队夺冠'}
@@ -559,7 +578,7 @@ const leagueForClub=name=>LEAGUES.find(l=>l.clubs.some(c=>c[0]===name));
 const clubByName=name=>LEAGUES.flatMap(l=>l.clubs).find(c=>c[0]===name);
 const money=n=>{if(n<1)return'€0m';const millions=n/100,digits=millions<10?2:millions<100?1:0;return`€${millions.toFixed(digits)}m`};
 const currentSeason=()=>`${state.year}/${String(state.year+1).slice(-2)}`;
-const seasonStats=()=>state.seasons[state.seasons.length-1];
+const seasonStats=()=>{const season=state.seasons[state.seasons.length-1];ensureSeasonBreakdown(season);return season};
 
 function init(){
   $('#country').innerHTML=COUNTRIES.map(c=>`<option>${c}</option>`).join('');
@@ -571,6 +590,7 @@ function init(){
   $('#advance-span').onchange=updateAdvanceUI;
   $('#mobile-advance-btn').onclick=advanceTwoMonths;
   $('#mobile-restart-btn').onclick=resetGame;
+  $('#mobile-contract-btn').onclick=openContractManager;
   $('#transfer-request-btn').onclick=openTransferRequest;
   $('#creator-saves-btn').onclick=openSaveManager;
   $('#save-manager-btn').onclick=openSaveManager;
@@ -587,7 +607,7 @@ function init(){
   $('#modal-close').onclick=closeModal;
   $('#modal').onclick=e=>{if(e.target===$('#modal')&&!modalLocked)closeModal()};
   $('#sound-btn').onclick=()=>{state.sound=!state.sound;$('#sound-btn').textContent=state.sound?'♪':'×';save();toast(state.sound?'提示音已开启':'提示音已关闭')};
-  $$('#nav button').forEach(b=>b.onclick=()=>{showPage(b.dataset.page);if(b.dataset.page==='leagues')loadRealStandings(false)});
+  $$('#nav button').forEach(b=>b.onclick=()=>showPage(b.dataset.page));
   updateSaveManagerBadges();
   renderAwards(); renderLeagueTabs();
   const saved=localStorage.getItem(SAVE_KEY);
@@ -621,7 +641,32 @@ function startingAcademy(country){
   const candidates=league.clubs.filter(c=>c[3]<90);
   return pick(candidates.length?candidates:league.clubs);
 }
-function newSeason(year,club){return {season:`${year}/${String(year+1).slice(-2)}`,club,apps:0,starts:0,goals:0,assists:0,cleanSheets:0,rating:0,minutes:0,done:false}}
+function emptyStatLine(){return{apps:0,starts:0,goals:0,assists:0,cleanSheets:0,minutes:0,rating:0}}
+function emptyTeamRecord(){return{played:0,wins:0,draws:0,losses:0,gf:0,ga:0,points:0}}
+function newSeason(year,club){const teamLeagueRecord=emptyTeamRecord();return {season:`${year}/${String(year+1).slice(-2)}`,club,finalClub:club,apps:0,starts:0,goals:0,assists:0,cleanSheets:0,rating:0,minutes:0,done:false,stats:{league:emptyStatLine(),cup:emptyStatLine(),continental:emptyStatLine(),total:emptyStatLine()},stints:[{club,fromMonth:0,toMonth:null,apps:0,starts:0,goals:0,assists:0,cleanSheets:0,minutes:0,rating:0}],teamLeagueRecord,teamLeagueRecords:{[club]:teamLeagueRecord},leagueSchedules:{}}}
+function ensureSeasonBreakdown(s){
+  if(!s)return s;
+  const legacy={apps:Number(s.apps)||0,starts:Number(s.starts)||0,goals:Number(s.goals)||0,assists:Number(s.assists)||0,cleanSheets:Number(s.cleanSheets)||0,minutes:Number(s.minutes)||0,rating:s.rating||0};
+  if(!s.stats||typeof s.stats!=='object')s.stats={league:{...legacy},cup:emptyStatLine(),continental:emptyStatLine(),total:{...legacy}};
+  ['league','cup','continental','total'].forEach(key=>{s.stats[key]={...emptyStatLine(),...(s.stats[key]||{})}});
+  if(!Array.isArray(s.stints)||!s.stints.length)s.stints=[{club:s.club||state?.club,fromMonth:0,toMonth:s.done?11:null,...legacy}];
+  s.teamLeagueRecord={...emptyTeamRecord(),...(s.teamLeagueRecord||{})};
+  if(!s.teamLeagueRecords||typeof s.teamLeagueRecords!=='object')s.teamLeagueRecords={[s.finalClub||s.club||state?.club]:s.teamLeagueRecord};
+  if(!s.leagueSchedules||typeof s.leagueSchedules!=='object')s.leagueSchedules={};
+  s.finalClub=s.finalClub||s.stints[s.stints.length-1]?.club||s.club;
+  return s;
+}
+function currentTeamLeagueRecord(s=seasonStats(),club=state.club){
+  ensureSeasonBreakdown(s);if(!s.teamLeagueRecords[club])s.teamLeagueRecords[club]=emptyTeamRecord();s.teamLeagueRecord=s.teamLeagueRecords[club];return s.teamLeagueRecord;
+}
+function currentSeasonStint(s=seasonStats()){
+  ensureSeasonBreakdown(s);let stint=s.stints[s.stints.length-1];
+  if(!stint||stint.club!==state.club||stint.toMonth!==null){stint={club:state.club,fromMonth:state.month,toMonth:null,...emptyStatLine()};s.stints.push(stint)}
+  return stint;
+}
+function addAppearanceToLine(line,{start,minutes,goals,assists,cleanSheet,rating}){
+  const oldApps=Number(line.apps)||0,oldRating=Number(line.rating)||0;line.apps=oldApps+1;if(start)line.starts=(Number(line.starts)||0)+1;line.minutes=(Number(line.minutes)||0)+minutes;line.goals=(Number(line.goals)||0)+goals;line.assists=(Number(line.assists)||0)+assists;if(cleanSheet)line.cleanSheets=(Number(line.cleanSheets)||0)+1;line.rating=((oldRating*oldApps+rating)/(oldApps+1)).toFixed(2);
+}
 function showGame(){$('#creator').classList.add('hidden');$('#game').classList.remove('hidden')}
 function showPage(name){
   const target=$(`#${name}-page`);
@@ -630,7 +675,8 @@ function showPage(name){
   $$('.page').forEach(p=>p.classList.remove('active'));target.classList.add('active');
   const titles={overview:'生涯主页',career:'生涯履历',leagues:'联赛数据库',awards:'荣誉殿堂'};$('#page-title').textContent=titles[name]||'十二号新星';
   if(name==='career')renderCareer(); if(name==='leagues')renderClubs(); if(name==='awards')renderAwards();
-  target.scrollTop=0;
+  const resetPageScroll=()=>{target.scrollTop=0;document.documentElement.scrollTop=0;document.body.scrollTop=0;window.scrollTo(0,0)};
+  resetPageScroll();requestAnimationFrame(resetPageScroll);setTimeout(resetPageScroll,0);
 }
 function renderAll(){
   const c=clubByName(state.club)||[state.club,state.clubCode,state.clubColor,state.clubStrength], s=seasonStats(), league=leagueForClub(state.club);
@@ -671,6 +717,12 @@ function renderMobileSnapshot(){
     [isGK?'赛季表现':'进球 / 助攻',output],
     ['能力 / 体能',`${state.overall} / ${state.fitness}`]
   ].map(([label,value])=>`<div><span>${label}</span><b>${value}</b></div>`).join('');
+  $('#mobile-contract-summary').textContent=state.age<16?`${state.club} · 青训合同`: `${state.club} · 至 ${state.contractEnd} · ${weeklySalaryText(state.wage||0)}`;
+}
+function openContractManager(){
+  const league=leagueForClub(state.club),role=state.injured>0?'伤停名单':state.trust>75?'核心球员':state.trust>55?'轮换球员':'替补球员',body=state.age<16?`你目前效力 ${state.club} 青训学院。16 岁签署职业合同后，才可正式提交职业转会申请。`:`效力俱乐部：${state.club}\n所属联赛：${league?.short||'地区联赛'}\n合同期限：至 ${state.contractEnd}\n固定周薪：${weeklySalaryText(state.wage||0)}\n队内角色：${role}`;
+  const actions=state.age>=16&&!state.retired?[[state.flags.transferRequested?'查看转会申请进度':'提交转会申请',()=>{closeModal();openTransferRequest()},true],['暂不处理',closeModal,false]]:[];
+  showModal({icon:'§',kicker:'CONTRACT · 球员合同',title:state.age<16?'青训合同':'职业合同与转会沟通',body,actions});
 }
 function logoUrl(name){return TEAM_LOGOS[name]?`https://media.api-sports.io/football/teams/${TEAM_LOGOS[name]}.png`:''}
 function crestContent(c){const url=logoUrl(c[0]);return url?`<span>${c[1]}</span><img src="${url}" alt="${c[0]}徽标" onerror="this.remove()">`:`<span>${c[1]}</span>`}
@@ -711,7 +763,7 @@ function advanceTwoMonths(){
 }
 
 function simulateMonth(){
-  const youth=state.age<16,fixtures=youth?rand(2,4):rand(3,5);let apps=0,goals=0,assists=0,clean=0;const monthReports=[];
+  const youth=state.age<16,league=leagueForClub(state.club),targetMatches=league?.short==='美职联'?34:league?.short==='苏超'?38:Math.max(1,((league?.clubs.length||20)-1)*2),record=currentTeamLeagueRecord(),remaining=Math.max(0,targetMatches-record.played),scheduledByMonth=state.month>=10?targetMatches:Math.round(targetMatches*(state.month+1)/10),fixtures=youth?rand(2,4):Math.min(remaining,Math.max(0,scheduledByMonth-record.played));let apps=0,goals=0,assists=0,clean=0;const monthReports=[];
   for(let i=0;i<fixtures;i++){
     const report=simulateFixture(youth?'青年联赛':leagueForClub(state.club)?.short||'国内联赛',pickDomesticOpponent(),false);
     monthReports.push(report);if(report.appeared){apps++;goals+=report.goals;assists+=report.assists;clean+=report.cleanSheet?1:0}
@@ -891,15 +943,18 @@ function triggerCareerEvent(forcedId=''){
     const h=state.eventHistory[e.id];if(state.age<(e.minAge||12)||state.age>(e.maxAge||99))return false;if(e.condition&&!e.condition(state))return false;
     if(h&&e.once)return false;if(h&&h.count>=(e.maxRepeat||3))return false;if(h&&now-h.last<(e.cooldown||36))return false;if(e.category===state.flags.lastEventCategory)return false;return true;
   });
-  if(!eligible.length)return;
+  if(!eligible.length)return false;
   const profileValues=Object.values(state.profile||{});const weighted=[];eligible.forEach(e=>{let weight=2;if(e.tags?.some(t=>profileValues.includes(t)))weight+=2;for(let i=0;i<weight;i++)weighted.push(e)});const event=(forcedId&&eligible.find(e=>e.id===forcedId))||pick(weighted);
   const body=typeof event.body==='function'?event.body(state):event.body;
-  showModal({icon:event.icon,kicker:`职业生涯事件 · ${event.category.toUpperCase()}`,title:event.title,body,locked:true,actions:event.choices.map(c=>[c.label,()=>resolveCareerEvent(event,c),false,describeEffects(c.effects)])});
+  showModal({icon:event.icon,kicker:`职业生涯事件 · ${event.category.toUpperCase()}`,title:event.title,body,locked:true,actions:event.choices.map(c=>[c.label,()=>resolveCareerEvent(event,c),false])});
+  return true;
 }
 
 function resolveCareerEvent(event,choice){
   const now=state.year*12+state.month,h=state.eventHistory[event.id]||{count:0};state.eventHistory[event.id]={last:now,count:h.count+1};state.flags.lastEventCategory=event.category;
-  applyEventEffects(choice.effects||{});if(choice.custom)choice.custom(state);
+  const oldPosition=state.pos;applyEventEffects(choice.effects||{});if(choice.custom)choice.custom(state);
+  if(state.pos!==oldPosition){const styles=PLAY_STYLES[state.pos]||['全能型'];if(!styles.includes(state.profile.playStyle))state.profile.playStyle=styles[0];ensureDetailedAttributes();recalculateOverall();state.flags.positionTransitionMonths=rand(2,6);addFeed('位置改造进入适应期',`${oldPosition} → ${state.pos}，预计需要 ${state.flags.positionTransitionMonths} 个月完成位置熟练度适应。`,'↔')}
+  else recalculateOverall();
   state.trust=clamp(state.trust,0,100);state.fitness=clamp(state.fitness,0,100);state.morale=clamp(state.morale,0,100);state.overall=clamp(state.overall,35,state.potential);
   addFeed(event.title,choice.outcome,event.icon);addEvent(event.title,choice.outcome,event.icon);renderAll();showInfo('选择产生了影响',choice.outcome,event.icon);
 }
@@ -1222,7 +1277,7 @@ function simulateFixture(competition,opponent,isContinental){
   const form=recentFormScore(),squadBenchmark=youth?50:state.clubStrength-20,qualityGap=state.overall-squadBenchmark,endurance=a.stamina??a.physical??50;
   const requestPenalty=state.flags?.frozenOut?.24:state.flags?.transferRequested?.07:0;
   const chance=clamp((youth?.62:.46)+qualityGap*.035+(state.trust-50)*.006+(form-6.5)*.09+(endurance-50)*.0015-(isContinental?.07:0)-requestPenalty,.02,.98);
-  const appeared=state.injured<=0&&Math.random()<chance,startChance=clamp(.34+qualityGap*.04+(state.trust-50)*.007+(form-6.5)*.12-(isContinental?.04:0),.06,.94),start=appeared&&Math.random()<startChance,minutes=appeared?(start?rand(68,95):rand(8,35)):0;
+  const appeared=state.injured<=0&&!state.flags?.playerUnavailableThisMonth&&Math.random()<chance,startChance=clamp(.34+qualityGap*.04+(state.trust-50)*.007+(form-6.5)*.12-(isContinental?.04:0),.06,.94),start=appeared&&Math.random()<startChance,minutes=appeared?(start?rand(68,95):rand(8,35)):0;
   const teamEdge=(state.clubStrength-opponent[3])/18,home=Math.random()<.5;let teamGoals=rand(0,2)+(Math.random()<clamp(.36+teamEdge*.12,.1,.72)?1:0),oppGoals=rand(0,2)+(Math.random()<clamp(.35-teamEdge*.12,.1,.7)?1:0);
   let goals=0,assists=0,cleanSheet=false,rating=null,shots=0,keyPasses=0,tackles=0,interceptions=0,saves=0,passAccuracy=0,dribbles=0,aerials=0;
   if(appeared){
@@ -1249,9 +1304,11 @@ function simulateFixture(competition,opponent,isContinental){
       else rating=5.7+goals*.52+assists*.48+tackles*.07+interceptions*.09+aerials*.05+(oppGoals===0?.34:0)-(oppGoals>=3?.28:0);
     }
     rating=clamp(rating+Math.random()*.75+(teamGoals>oppGoals?.18:teamGoals<oppGoals?-.12:0)+(endurance-50)*full*.002,4.5,10);
-    const oldApps=s.apps,oldRating=+s.rating||0;s.apps++;if(start)s.starts++;s.minutes+=minutes;s.goals+=goals;s.assists+=assists;if(cleanSheet)s.cleanSheets++;s.rating=((oldRating*oldApps+rating)/(oldApps+1)).toFixed(2);
+    const appearance={start,minutes,goals,assists,cleanSheet,rating},oldApps=s.apps,oldRating=+s.rating||0;s.apps++;if(start)s.starts++;s.minutes+=minutes;s.goals+=goals;s.assists+=assists;if(cleanSheet)s.cleanSheets++;s.rating=((oldRating*oldApps+rating)/(oldApps+1)).toFixed(2);
+    ensureSeasonBreakdown(s);addAppearanceToLine(s.stats[isContinental?'continental':'league'],appearance);addAppearanceToLine(s.stats.total,appearance);addAppearanceToLine(currentSeasonStint(s),appearance);
   }
   rating=rating?+rating.toFixed(1):null;const result=teamGoals>oppGoals?'胜':teamGoals<oppGoals?'负':'平';
+  if(!isContinental&&!youth){const record=currentTeamLeagueRecord(s);record.played++;record.gf+=teamGoals;record.ga+=oppGoals;if(result==='胜'){record.wins++;record.points+=3}else if(result==='平'){record.draws++;record.points++}else record.losses++}
   const report={season:currentSeason(),date:MONTHS[state.month],competition,club:state.club,clubCode:state.clubCode,clubColor:state.clubColor,position:state.pos,opponent:opponent[0],opponentCode:opponent[1],opponentColor:opponent[2],appearanceChance:+chance.toFixed(2),home,teamGoals,oppGoals,result,appeared,start,minutes,goals,assists,cleanSheet,rating,shots,keyPasses,tackles,interceptions,saves,passAccuracy,dribbles,aerials,highlight:appeared&&(rating>=8||goals+assists>=2||cleanSheet&&rating>=7.5)};
   state.matchReports.unshift(report);state.matchReports=state.matchReports.slice(0,80);return report;
 }
@@ -1308,6 +1365,7 @@ function triggerInjury(){
     ['遵循完整康复方案',()=>startInjury(injury,months,false),false,`缺席 ${months} 个月 · 恢复较完整 · 复发风险低`],
     ['选择加速复出计划',()=>startInjury(injury,months,true),false,`少缺席 1 个月 · 额外掉属性 · 复发和长期损失上升`]
   ]});
+  return true;
 }
 function finishRecovery(){
   const d=state.injuryDetail;if(d?.restore)changeAttributes(d.restore);if(state.flags.rushedReturn){state.flags.rushedReturnMonths=3;delete state.flags.rushedReturn}
@@ -1416,16 +1474,19 @@ function renderAwards(){
   $('#award-cards').innerHTML=AWARDS.map(a=>{
     let visual=`<div class="trophy-symbol">${a.icon}</div>`,source='';
     if(a.type==='league'){
-      visual=`<div class="league-trophy-gallery">${LEAGUES.map(l=>`<span class="league-trophy-icon" title="${l.name}冠军奖杯"><i>🏆</i><img src="${leagueTrophyImage(l.short)}" alt="${l.short}联赛冠军奖杯图标" loading="lazy" onerror="this.remove()"><small>${l.short}</small></span>`).join('')}</div>`;
-      source='<em class="league-image-source">在线联赛标识：API-Sports · 断网时保留奖杯图标</em>';
+      const league=state?leagueForClub(state.club):LEAGUES[0];
+      visual=`<div class="league-trophy-gallery compact-trophy-gallery"><span class="league-trophy-icon" title="${league.name}冠军奖杯"><i>🏆</i><img src="${leagueTrophyImage(league.short)}" alt="${league.short}联赛冠军奖杯图标" loading="lazy" onerror="this.remove()"><small>${league.short}</small></span></div>`;
+      source='<em class="league-image-source">赢得联赛后显示对应赛事奖杯图标</em>';
     }else if(a.type==='national'){
-      visual=`<div class="league-trophy-gallery national-trophy-gallery">${NATIONAL_TROPHY_GALLERY.map(([key,label])=>`<span class="league-trophy-icon" title="${label}冠军标识"><i>🏆</i><img src="${nationalTrophyImage(key)}" alt="${label}冠军图标" loading="lazy" onerror="this.remove()"><small>${label}</small></span>`).join('')}</div>`;
-      source='<em class="league-image-source">在线赛事标识：API-Sports · 夺冠后自动进入荣誉橱窗</em>';
+      const competition=state?.national?.continentalCup||nationalProfile(state?.country||'中国').continentalCup;
+      visual=`<div class="league-trophy-gallery national-trophy-gallery compact-trophy-gallery"><span class="league-trophy-icon" title="${competition}冠军标识"><i>🏆</i><img src="${nationalTrophyImage(competition)}" alt="${competition}冠军图标" loading="lazy" onerror="this.remove()"><small>${competition}</small></span></div>`;
+      source='<em class="league-image-source">国家队夺冠后显示对应赛事奖杯图标</em>';
     }
     const ruleSource=a.sourceUrl?`<a class="award-rule-source" href="${a.sourceUrl}" target="_blank" rel="noopener">${a.source} ↗</a>`:'';
     return`<div class="award-card ${a.type?'league-award-card':''}" data-mark="${a.mark}">${visual}${source}<h3>${a.name}</h3><p>${a.desc}</p><span class="eligibility">${a.rule}</span>${ruleSource}</div>`;
   }).join('');if(!state)return;
-  $('#trophy-count').textContent=`${state.trophies.length} 座奖杯`;$('#trophy-list').innerHTML=state.trophies.length?state.trophies.map(t=>`<div class="trophy-item"><span class="trophy-item-image ${t.type==='league'||String(t.name).includes('联赛冠军')?'league':t.national?'national':''}"><i>🏆</i><img src="${t.image||awardImage(t.name)}" alt="${t.name}奖杯图标" loading="lazy" onerror="this.remove()"></span><div><strong>${t.name}</strong><small>${t.reason||'随队或个人获得的重要荣誉。'}</small></div><span>${t.season}</span></div>`).join(''):'<div class="empty-state">奖杯柜还空着。继续前进，你会来到这里。</div>';
+  const trophies=Array.isArray(state.trophies)?state.trophies:[];
+  $('#trophy-count').textContent=`${trophies.length} 座奖杯`;$('#trophy-list').innerHTML=trophies.length?trophies.map(t=>`<div class="trophy-item"><span class="trophy-item-image ${t.type==='league'||String(t.name).includes('联赛冠军')?'league':t.national?'national':''}"><i>🏆</i><img src="${t.image||awardImage(t.name)}" alt="${t.name}奖杯图标" loading="lazy" onerror="this.remove()"></span><div><strong>${t.name}</strong><small>${t.reason||'随队或个人获得的重要荣誉。'}</small></div><span>${t.season}</span></div>`).join(''):'<div class="empty-state">奖杯柜还空着。继续前进，你会来到这里。</div>';
 }
 function renderClubs(){
   const l=LEAGUES[activeLeague];$('#club-database').innerHTML=l.clubs.map(c=>`<div class="club-card"><div class="crest" style="--club:${c[2]}">${crestContent(c)}</div><div><strong>${c[0]}</strong><small>${l.name} · 实力 ${c[3]} · 参考排名 #${worldRank(c[0])}</small><div class="stars">${'★'.repeat(Math.max(1,Math.round((c[3]-55)/9)))}${'☆'.repeat(Math.max(0,5-Math.round((c[3]-55)/9)))}</div></div></div>`).join('');
@@ -1509,8 +1570,8 @@ CAREER_EVENT_DECK.push(
     {label:'完全采用俱乐部方案',outcome:'训练节奏稳定，教练信任提高，但个人偏科改善较慢。',effects:{trust:8,fitness:6}},
     {label:'让双方共同制定计划',outcome:'沟通耗时，却得到兼顾个性和负荷的折中方案。',effects:{potential:1,fitness:3,relation:{coach:4,agent:4}}}]},
   {id:'captain_penalty_choice',category:'match',title:'点球大战第五罚',icon:'◎',minAge:18,cooldown:60,maxRepeat:2,condition:s=>s.pos!=='GK',body:'杯赛进入点球大战，教练询问你愿意承担第几轮。越靠后压力越大，但可能直接决定比赛。',choices:[
-    {label:'主动承担第五罚',outcome:'你接受最高压力的位置；命中率取决于射门、沉稳和体能。',effects:{trust:4},custom:s=>resolvePenalty(s,.66,'第五罚')},
-    {label:'选择第三罚稳定局势',outcome:'你承担中段主罚，用更稳定的节奏帮助球队。',effects:{trust:3,morale:2},custom:s=>resolvePenalty(s,.78,'第三罚')},
+    {label:'主动承担第五罚',outcome:'你接受最高压力的位置；命中率取决于射门、沉稳和体能。',effects:{trust:4},custom:s=>resolvePenalty(s,.66,'第五罚',{countsAsOfficialGoal:false})},
+    {label:'选择第三罚稳定局势',outcome:'你承担中段主罚，用更稳定的节奏帮助球队。',effects:{trust:3,morale:2},custom:s=>resolvePenalty(s,.78,'第三罚',{countsAsOfficialGoal:false})},
     {label:'专注比赛不主罚',outcome:'你诚实说明当日脚感不佳，避免盲目逞强，但会失去部分关注。',effects:{morale:3,relation:{teammates:4,fans:-3}}}]},
   {id:'transfer_role_promise',category:'transfer',title:'新球队提出战术承诺',icon:'↗',minAge:18,cooldown:54,maxRepeat:2,condition:s=>s.overall>=72,body:'潜在买家提出三种不同规划：立即主力、位置改造，或先轮换适应。每种路线都有相等但方向不同的优势。',choices:[
     {label:'要求立即主力',outcome:'出场承诺更强，但必须承担更高表现压力。',effects:{trust:7,morale:-3,fitness:-7}},
@@ -1518,9 +1579,9 @@ CAREER_EVENT_DECK.push(
     {label:'先轮换适应环境',outcome:'身体和心理适应更加平稳，曝光和数据增长较慢。',effects:{fitness:10,morale:6,trust:-2}}]}
 );
 
-function resolvePenalty(s,base,label){
+function resolvePenalty(s,base,label,{countsAsOfficialGoal=true}={}){
   const shooting=s.pos==='GK'?(s.attributes?.kicking||50):((s.attributes?.finishing||50)*.65+(s.attributes?.shooting||50)*.35),mental=(s.profile?.personality==='沉稳'?8:s.profile?.personality==='好胜'?3:0),chance=clamp(base+(shooting-65)*.004+mental*.006+(s.fitness-70)*.0015,.38,.92);
-  if(Math.random()<chance){seasonStats().goals++;s.trust=clamp(s.trust+8,0,100);s.morale=clamp(s.morale+8,0,100);addFeed('点球命中',`${label}主罚成功，皮球入网。你的点球命中概率为 ${Math.round(chance*100)}%。`,'★')}
+  if(Math.random()<chance){if(countsAsOfficialGoal){const season=seasonStats();season.goals++;season.stats.league.goals++;season.stats.total.goals++;currentSeasonStint(season).goals++}s.trust=clamp(s.trust+8,0,100);s.morale=clamp(s.morale+8,0,100);addFeed('点球命中',`${label}主罚成功，皮球入网。${countsAsOfficialGoal?'该进球计入正式比赛数据。':'点球大战进球不计入正式比赛进球。'}`,'★')}
   else{s.trust=clamp(s.trust-4,0,100);s.morale=clamp(s.morale-9,0,100);addFeed('点球罚失',`${label}主罚未能得分。失误会成为经历，但不会预设下一次结果。`,'×')}
 }
 function initialAttributes(pos,base,style){
@@ -1546,6 +1607,7 @@ function migrateState(){
   state.continentalHistory=Array.isArray(state.continentalHistory)?state.continentalHistory:[];
   state.trophies=Array.isArray(state.trophies)?state.trophies:[];
   state.seasons=Array.isArray(state.seasons)&&state.seasons.length?state.seasons:[newSeason(state.year||2026,state.club)];
+  state.seasons.forEach(ensureSeasonBreakdown);
   state.leagueMovements=Array.isArray(state.leagueMovements)?state.leagueMovements:[];applyStoredLeagueMovements();
   state.trophies.forEach(t=>{t.reason=t.reason||`${t.season} 赛季获得的重要荣誉。`;if(String(t.name).includes('联赛冠军')){t.type='league';t.league=t.league||LEAGUES.find(l=>String(t.name).includes(l.short))?.short;t.image=leagueTrophyImage(t.league)}else if(nationalTrophyImage(t.name)){t.national=true;t.image=nationalTrophyImage(t.name)}else t.image=t.image||awardImage(t.name)});
   const c=clubByName(state.club);if(c){state.clubCode=c[1];state.clubColor=c[2];state.clubStrength=c[3]}recalculateOverall();if(state.age>=16&&!state.continentalCurrent)state.continentalCurrent=createContinentalCampaign();ensureNational();state.version=8;
@@ -1600,11 +1662,21 @@ function playEuropeanRound(c,stage,nextStage,legs){
   const won=aggregateFor>aggregateAgainst||(aggregateFor===aggregateAgainst&&Math.random()<clamp(.5+(state.clubStrength-opponent[3])*.018,.25,.75));if(!won){eliminateFromEurope(c,stage);return}
   if(nextStage==='冠军'){c.stage='冠军';c.wonTitle=true;const trophy=`${c.competition} 冠军`,reason=`${currentSeason()} 随 ${state.club} 赢得 ${c.competition}，洲际赛事出场 ${c.played} 次。`;state.trophies.unshift({name:trophy,season:currentSeason(),reason,image:awardImage(trophy),team:true});addFeed('洲际冠军之夜',`${state.club} 击败 ${opponent[0]}，捧起 ${c.competition} 奖杯。`,'♜');addEvent('赢得洲际冠军',reason,'♜')}else{c.stage=nextStage;addFeed('洲际赛事晋级',`${state.club} 淘汰 ${opponent[0]}，晋级${nextStage}。`,'◆')}
 }
-function simulateMonth(){
-  const youth=state.age<16,fixtures=youth?rand(2,4):rand(3,5);let apps=0,goals=0,assists=0,clean=0;const monthReports=[];
-  for(let i=0;i<fixtures;i++){const r=simulateFixture(youth?'青年联赛':leagueForClub(state.club)?.short||'国内联赛',pickDomesticOpponent(),false);monthReports.push(r);if(r.appeared){apps++;goals+=r.goals;assists+=r.assists;clean+=r.cleanSheet?1:0}}
-  const perf=goals*4+assists*3+clean*2+apps;state.trust=clamp(state.trust+rand(-2,2)+Math.floor(perf/6),10,100);state.fitness=clamp(state.fitness-rand(6,14)+rand(2,7),20,100);state.morale=clamp(state.morale+rand(-4,5)+(goals+assists+clean>1?3:0),10,100);applyMonthlyDevelopment();
-  const summary=state.pos==='GK'?`${apps} 次出场，完成 ${clean} 场零封。`:`${apps} 次出场，贡献 ${goals} 球 ${assists} 助攻。`;addFeed(`${MONTHS[state.month]}战报`,summary,goals+assists+clean?'★':'›');
+function leagueMatchTarget(league){return league?.short==='美职联'?34:league?.short==='苏超'?38:Math.max(1,((league?.clubs.length||20)-1)*2)}
+function currentLeagueSchedule(s,league,club=state.club){
+  ensureSeasonBreakdown(s);if(s.leagueSchedules[club])return s.leagueSchedules[club];
+  const opponents=league.clubs.filter(team=>team[0]!==club),target=leagueMatchTarget(league),schedule=[];
+  while(schedule.length<target){schedule.push(...opponents.slice().sort(()=>Math.random()-.5).map(team=>team[0]))}
+  return s.leagueSchedules[club]=schedule.slice(0,target);
+}
+function seedTeamRecordForArrival(league,clubStrength,month){
+  const played=Math.round(leagueMatchTarget(league)*Math.min(month,10)/10),winRate=clamp(.27+(clubStrength-70)*.012,.2,.72),drawRate=.24,wins=Math.min(played,Math.round(played*winRate)),draws=Math.min(played-wins,Math.round(played*drawRate)),losses=played-wins-draws,gf=Math.max(0,Math.round(played*(1.15+(clubStrength-70)*.018))),ga=Math.max(0,Math.round(played*(1.35-(clubStrength-70)*.012)));return{played,wins,draws,losses,gf,ga,points:wins*3+draws};
+}
+function simulateMonth(playerUnavailable=false){
+  const youth=state.age<16,league=leagueForClub(state.club),season=seasonStats(),targetMatches=leagueMatchTarget(league),record=currentTeamLeagueRecord(season),schedule=youth?[]:currentLeagueSchedule(season,league),remaining=Math.max(0,targetMatches-record.played),scheduledByMonth=state.month>=10?targetMatches:Math.round(targetMatches*(state.month+1)/10),fixtures=youth?rand(2,4):Math.min(remaining,Math.max(0,scheduledByMonth-record.played));let apps=0,goals=0,assists=0,clean=0;const monthReports=[];
+  for(let i=0;i<fixtures;i++){const opponentName=schedule[record.played],opponent=league?.clubs.find(team=>team[0]===opponentName)||pickDomesticOpponent(),r=simulateFixture(youth?'青年联赛':league?.short||'国内联赛',opponent,false);monthReports.push(r);if(r.appeared){apps++;goals+=r.goals;assists+=r.assists;clean+=r.cleanSheet?1:0}}
+  const perf=goals*4+assists*3+clean*2+apps;if(!playerUnavailable){state.trust=clamp(state.trust+rand(-2,2)+Math.floor(perf/6),10,100);state.fitness=clamp(state.fitness-rand(6,14)+rand(2,7),20,100);state.morale=clamp(state.morale+rand(-4,5)+(goals+assists+clean>1?3:0),10,100);applyMonthlyDevelopment()}
+  const summary=playerUnavailable?`球队完成 ${fixtures} 场联赛，你因伤缺席。`:state.pos==='GK'?`${apps} 次出场，完成 ${clean} 场零封。`:`${apps} 次出场，贡献 ${goals} 球 ${assists} 助攻。`;addFeed(`${MONTHS[state.month]}战报`,summary,goals+assists+clean?'★':'›');
   const standout=monthReports.filter(r=>r.appeared).sort((a,b)=>(b.rating||0)-(a.rating||0))[0];if(standout&&standout.rating>=8)addFeed('单场高光',`${standout.competition}对阵 ${standout.opponent}：${reportPerformanceText(standout)}，获评 ${standout.rating}。`,'★');
 }
 function simulateLeagueTable(s){
@@ -1614,8 +1686,10 @@ function simulateLeagueTable(s){
   const poisson=lambda=>{const limit=Math.exp(-lambda);let product=1,count=0;do{count++;product*=Math.random()}while(product>limit&&count<9);return count-1};
   const play=(homeName,awayName)=>{const home=byName[homeName],away=byName[awayName],edge=home.strength-away.strength,homeGoals=poisson(clamp(1.42+edge*.045,.28,3.35)),awayGoals=poisson(clamp(1.08-edge*.04,.22,3.05));home.played++;away.played++;home.gf+=homeGoals;home.ga+=awayGoals;away.gf+=awayGoals;away.ga+=homeGoals;if(homeGoals>awayGoals){home.wins++;away.losses++;home.points+=3}else if(homeGoals<awayGoals){away.wins++;home.losses++;away.points+=3}else{home.draws++;away.draws++;home.points++;away.points++}};
   let cycle=0;while(table.some(t=>t.played<targetMatches)&&cycle<6){for(let r=0;r<rounds.length&&table.some(t=>t.played<targetMatches);r++){rounds[r].forEach(([a,b],i)=>{if(byName[a].played>=targetMatches||byName[b].played>=targetMatches)return;const swap=(cycle+r+i)%2===1;play(swap?b:a,swap?a:b)})}cycle++}
-  table.forEach(t=>{t.gd=t.gf-t.ga;t.strength=Math.round(t.strength)});table.sort((a,b)=>b.points-a.points||b.gd-a.gd||b.gf-a.gf||b.wins-a.wins);
-  table.forEach((t,i)=>t.rank=i+1);const mine=table.find(t=>t.name===state.club);s.leagueRank=mine?.rank||clubs.length;s.leaguePoints=mine?.points||0;s.leagueTable=table;s.leagueName=league.name;s.leagueShort=league.short;s.leagueTier=league.tier||1;s.leagueMatches=targetMatches;
+  table.forEach(t=>{t.gd=t.gf-t.ga;t.strength=Math.round(t.strength)});
+  const mine=table.find(t=>t.name===state.club),record=currentTeamLeagueRecord(s,state.club);if(mine&&record.played){Object.assign(mine,{played:record.played,wins:record.wins,draws:record.draws,losses:record.losses,gf:record.gf,ga:record.ga,points:record.points,gd:record.gf-record.ga})}
+  table.sort((a,b)=>b.points-a.points||b.gd-a.gd||b.gf-a.gf||b.wins-a.wins);table.forEach((t,i)=>t.rank=i+1);
+  s.finalClub=state.club;s.leagueRank=mine?.rank||clubs.length;s.leaguePoints=mine?.points||0;s.leagueTable=table;s.leagueName=league.name;s.leagueShort=league.short;s.leagueTier=league.tier||1;s.leagueMatches=targetMatches;
   if(s.leagueRank===1){const name=`${league.short} 联赛冠军`,reason=`${s.season} 赛季以 ${s.leaguePoints} 分随 ${state.club} 获得 ${league.name} 冠军。`;state.trophies.unshift({name,season:s.season,reason,image:leagueTrophyImage(league.short),league:league.short,type:'league',team:true});addEvent('赢得联赛冠军',reason,'♜');addFeed('联赛冠军',`${state.club} 登上 ${league.short} 积分榜首位，你收获一座联赛奖杯。`,'♜')}return table;
 }
 function leagueGoldenTarget(league,s){
@@ -1624,27 +1698,27 @@ function leagueGoldenTarget(league,s){
 function addTrophy(name,s,reason,personal=true){
   if(state.trophies.some(t=>t.name===name&&t.season===s.season))return;state.trophies.unshift({name,season:s.season,reason,image:awardImage(name),personal});addEvent(`赢得${name}`,reason,'♜');addFeed(`荣膺${name}`,`${state.name} 获得 ${name}，奖项已经加入主页荣誉橱窗。`,'♜');
 }
-if(!AWARDS.some(a=>a.name==='联赛金靴奖'))AWARDS.splice(3,0,{name:'联赛金靴奖',icon:'♟',mark:'L',desc:'授予所在国内联赛当赛季进球最多的球员，与欧洲金靴的跨联赛加权排名分开计算。',rule:'非门将 · 超过该联赛模拟最佳射手线'});
+if(!AWARDS.some(a=>a.name==='联赛金靴奖'))AWARDS.splice(3,0,{name:'联赛金靴奖',icon:'♟',mark:'L',desc:'授予所在国内联赛当赛季获得金靴的球员。',rule:'非门将 · 所在联赛赛季金靴'});
 function awardImage(name){
   const national=nationalTrophyImage(name);if(national)return national;const league=LEAGUES.find(l=>String(name).includes(l.short)&&String(name).includes('联赛冠军'));if(league)return leagueTrophyImage(league.short);if(String(name).includes('金靴'))return AWARD_IMAGES['欧洲金靴奖'];if(String(name).includes('金球'))return AWARD_IMAGES['金球奖'];if(String(name).includes('雅辛')||String(name).includes('金手套'))return AWARD_IMAGES['雅辛奖 · 金手套'];if(String(name).includes('金童'))return AWARD_IMAGES['欧洲金童奖'];return AWARD_IMAGES.DEFAULT;
 }
 function evaluateAwards(s){
-  const league=leagueForClub(state.club),rating=+s.rating||0,output=state.pos==='GK'?s.cleanSheets*3+s.apps+rating*2:s.goals*4+s.assists*2+s.apps*.3+rating*2;
+  ensureSeasonBreakdown(s);const league=leagueForClub(state.club),leagueStats=s.stats.league,totalStats=s.stats.total,rating=+totalStats.rating||0,output=state.pos==='GK'?totalStats.cleanSheets*3+totalStats.apps+rating*2:totalStats.goals*4+totalStats.assists*2+totalStats.apps*.3+rating*2;
   if(regionForLeague(league)==='UEFA'&&league?.tier!==2&&state.age<=21&&output>58&&state.overall>=70)addTrophy('欧洲金童奖',s,awardReason('欧洲金童奖',s));
-  if(state.pos==='GK'&&s.cleanSheets>=12&&state.overall>=78)addTrophy('雅辛奖 · 金手套',s,awardReason('雅辛奖 · 金手套',s));
+  if(state.pos==='GK'&&leagueStats.cleanSheets>=12&&state.overall>=78)addTrophy('雅辛奖 · 金手套',s,awardReason('雅辛奖 · 金手套',s));
   if(state.pos!=='GK'){
-    const target=leagueGoldenTarget(league,s);if(s.goals>=target)addTrophy(`${league?.short||'联赛'}金靴奖`,s,`${s.season} 赛季攻入 ${s.goals} 个联赛进球，超过该联赛最佳射手参考线 ${target} 球。`);
-    if(regionForLeague(league)==='UEFA'&&league?.tier!==2){const multiplier=['英超','西甲','德甲','意甲','法甲'].includes(league.short)?2:1.5,points=s.goals*multiplier,targetPoints=s.europeGoldenTargetPoints=s.europeGoldenTargetPoints||rand(56,66);if(points>=targetPoints)addTrophy('欧洲金靴奖',s,`${s.season} 赛季以 ${s.goals} 球 × ${multiplier} 的联赛强度系数获得 ${points} 分，超过欧洲参考线 ${targetPoints} 分。`)}
+    const leagueGoals=leagueStats.goals,target=leagueGoldenTarget(league,s);if(leagueGoals>=target)addTrophy(`${league?.short||'联赛'}金靴奖`,s,`${s.season} 赛季攻入 ${leagueGoals} 个联赛进球，获得 ${league?.short||'所在联赛'}金靴奖。`);
+    if(regionForLeague(league)==='UEFA'&&league?.tier!==2){const multiplier=['英超','西甲','德甲','意甲','法甲'].includes(league.short)?2:1.5,points=leagueGoals*multiplier,targetPoints=s.europeGoldenTargetPoints=s.europeGoldenTargetPoints||rand(56,66);if(points>=targetPoints)addTrophy('欧洲金靴奖',s,`${s.season} 赛季凭借 ${leagueGoals} 个联赛进球获得欧洲金靴奖。`)}
   }
   if(state.overall>=88&&output>108)addTrophy('金球奖',s,awardReason('金球奖',s));
 }
 function settleSeasonValue(s){
   const before=state.value||0;updateValue();if(state.flags.pendingValueMultiplier){state.value=Math.round(state.value*state.flags.pendingValueMultiplier);delete state.flags.pendingValueMultiplier}updateSalary();s.valueBefore=before;s.valueAfter=state.value;s.valueChange=state.value-before;
   if(before<10000&&state.value>=10000){s.valueMilestone=true;addEvent('身价突破一亿欧元',`${s.season} 赛季结算后身价达到 ${money(state.value)}，正式进入足坛亿元球星行列。`,'€');addFeed('亿元球星诞生',`赛季身价结算：${money(before)} → ${money(state.value)}。俱乐部和媒体给予最高级别关注。`,'€')}
-  else addFeed('赛季身价结算',`${money(before)} → ${money(state.value)}（${s.valueChange>=0?'+':''}${money(Math.abs(s.valueChange))}）。身价只在赛季结束时更新。`,'€');
+  else{const sign=s.valueChange>0?'+':s.valueChange<0?'-':'';addFeed('赛季身价结算',`${money(before)} → ${money(state.value)}（${sign}${money(Math.abs(s.valueChange))}）。身价只在赛季结束时更新。`,'€')}
 }
 function endSeason(silent=false){
-  const s=seasonStats();s.done=true;simulateLeagueTable(s);evaluateAwards(s);if(state.continentalCurrent)state.continentalHistory.push({...state.continentalCurrent});settlePromotionRelegation(s);const oldAge=state.age;state.year++;state.age++;
+  const s=seasonStats(),stint=currentSeasonStint(s);stint.toMonth=11;s.finalClub=state.club;s.done=true;simulateLeagueTable(s);evaluateAwards(s);if(state.continentalCurrent)state.continentalHistory.push({...state.continentalCurrent});settlePromotionRelegation(s);const oldAge=state.age;state.year++;state.age++;
   if(oldAge===15){state.contractEnd=state.year+4;state.trust=48;addEvent('签下职业合同',`年满 16 岁，与 ${state.club} 签下第一份职业合同。`,'✎');addFeed('升入一线队',`${state.name} 正式进入 ${state.club} 一线队名单。`,'↑')}
   settleSeasonValue(s);if(state.age>=35&&Math.random()<.22+(state.age-35)*.18){retire();return s}
   state.month=0;state.flags.seasonEventCount=0;state.flags.lastEventCategory='';state.seasons.push(newSeason(state.year,state.club));state.continentalCurrent=createContinentalCampaign();state.fitness=state.injured?state.fitness:94;state.morale=clamp(state.morale+5,0,100);state.trust=clamp(state.trust-5,20,100);addFeed('新赛季开始',`${currentSeason()} 赛季拉开帷幕。上赛季联赛排名：第 ${s.leagueRank} 名。`,'◉');renderAll();if(!silent)showSeasonRecap(s);return s;
@@ -1659,29 +1733,35 @@ function ambientEvent(){
   ],e=pick(pool);state.fitness=clamp(state.fitness+(e[2].fitness||0),0,100);state.morale=clamp(state.morale+(e[2].morale||0),0,100);if(e[2].trust)state.trust=clamp(state.trust+e[2].trust,0,100);if(e[2].fans)state.relationships.fans=clamp(state.relationships.fans+e[2].fans,0,100);addFeed(e[0],e[1],e[3]);
 }
 function maybeRandomEvent(months=2){
-  if(state.flags.relegationChoicePending){state.flags.seasonEventCount=(state.flags.seasonEventCount||0)+1;triggerCareerEvent('relegation_decision');return}
-  if(state.flags.promotionChoicePending){state.flags.seasonEventCount=(state.flags.seasonEventCount||0)+1;triggerCareerEvent('promotion_role_talk');return}
+  if(state.flags.relegationChoicePending){state.flags.seasonEventCount=(state.flags.seasonEventCount||0)+1;return triggerCareerEvent('relegation_decision')}
+  if(state.flags.promotionChoicePending){state.flags.seasonEventCount=(state.flags.seasonEventCount||0)+1;return triggerCareerEvent('promotion_role_talk')}
   const profile=state.profile||{},now=state.year*12+state.month,injuryRisk=clamp(((profile.personality==='自律'?.035:.05)+(state.flags.overloaded?.03:0)+(state.flags.rushedReturnMonths?.05:0)+(state.fitness<45?.04:0))*(months/2),.025,.24);
-  if(state.flags.rushedReturnMonths){state.flags.rushedReturnMonths--;if(!state.flags.rushedReturnMonths)delete state.flags.rushedReturnMonths}if(!state.injured&&Math.random()<injuryRisk){triggerInjury();return}
-  const transferChance=state.flags.transferRequested?.72:(profile.agentStyle==='进取'?.16:profile.agentStyle==='忠诚'?.055:.1);if(state.flags.transferWindowOpen&&state.age>=16&&Math.random()<transferChance){state.flags.transferWindowOpen=false;transferOffer();return}state.flags.transferWindowOpen=false;
-  const count=state.flags.seasonEventCount||0,cool=now-(state.flags.lastInteractiveEventMonth||-99);if(count<4&&cool>=2&&Math.random()<clamp(.16*months,.28,.9)){state.flags.seasonEventCount=count+1;state.flags.lastInteractiveEventMonth=now;triggerCareerEvent()}
+  if(state.flags.rushedReturnMonths){state.flags.rushedReturnMonths--;if(!state.flags.rushedReturnMonths)delete state.flags.rushedReturnMonths}if(!state.injured&&Math.random()<injuryRisk)return triggerInjury();
+  const transferChance=state.flags.transferRequested?.72:(profile.agentStyle==='进取'?.16:profile.agentStyle==='忠诚'?.055:.1);if(state.flags.transferWindowOpen&&state.age>=16&&Math.random()<transferChance){state.flags.transferWindowOpen=false;return transferOffer()}state.flags.transferWindowOpen=false;
+  const count=state.flags.seasonEventCount||0,cool=now-(state.flags.lastInteractiveEventMonth||-99);if(count<4&&cool>=2&&Math.random()<clamp(.16*months,.16,.72)){state.flags.seasonEventCount=count+1;state.flags.lastInteractiveEventMonth=now;return triggerCareerEvent()}
+  return false;
 }
 function advanceCareer(monthCount){
-  if(state.retired)return;let finished=null;state.flags.transferWindowOpen=false;
+  if(state.retired)return;delete state.flags.pendingAdvanceMonths;state.flags.transferWindowOpen=false;
   for(let step=0;step<monthCount&&!state.retired;step++){
     if([0,5,10,11].includes(state.month))state.flags.transferWindowOpen=true;
-    if(state.injured>0){state.injured--;state.fitness=clamp(state.fitness+rand(12,21),0,100);state.morale=clamp(state.morale+rand(-3,4),0,100);if(!state.injured)finishRecovery();else if(step%2===0)addFeed('康复进度',`${state.injuryDetail?.name||'伤病'}恢复中，预计还需 ${state.injured} 个月。`,'+')}
-    else simulateMonth();simulateContinentalMonth();simulateNationalMonth();state.month++;if(state.month>=12)finished=endSeason(true);
+    const wasInjured=state.injured>0;state.flags.playerUnavailableThisMonth=wasInjured;simulateMonth(wasInjured);simulateContinentalMonth();simulateNationalMonth();
+    if(wasInjured){state.injured--;state.fitness=clamp(state.fitness+rand(12,21),0,100);state.morale=clamp(state.morale+rand(-3,4),0,100);if(!state.injured)finishRecovery();else if(step%2===0)addFeed('康复进度',`${state.injuryDetail?.name||'伤病'}恢复中，预计还需 ${state.injured} 个月。`,'+')}
+    if(state.flags.positionTransitionMonths){state.flags.positionTransitionMonths--;if(!state.flags.positionTransitionMonths){delete state.flags.positionTransitionMonths;addFeed('位置适应完成',`你已经完成 ${state.pos} 位置的熟练度适应。`,'↔')}}
+    delete state.flags.playerUnavailableThisMonth;state.month++;
+    const remaining=monthCount-step-1;
+    if(state.month>=12){const finished=endSeason(true);if(remaining>0)state.flags.pendingAdvanceMonths=remaining;renderAll();showSeasonRecap(finished,remaining);return}
+    if(!wasInjured&&maybeRandomEvent(1)){if(remaining>0)state.flags.pendingAdvanceMonths=remaining;renderAll();updateAdvanceUI();return}
   }
-  if(state.retired)return;if(monthCount>=6)for(let i=0;i<(monthCount===12?2:1);i++)ambientEvent();renderAll();if(finished)showSeasonRecap(finished,monthCount);else maybeRandomEvent(monthCount);
+  if(state.retired)return;if(monthCount>=6)ambientEvent();renderAll();
 }
-function advanceTwoMonths(){advanceCareer(+($('#advance-span')?.value||2))}
+function advanceTwoMonths(){const pending=Number(state.flags.pendingAdvanceMonths)||0;if(pending)delete state.flags.pendingAdvanceMonths;advanceCareer(pending||+($('#advance-span')?.value||2))}
 function updateAdvanceUI(){
-  const select=$('#advance-span');if(!select||!state)return;const months=+select.value,label=months===2?'两个月':months===6?'半个赛季':'一个赛季';
-  $('#next-title').textContent=state.retired?'传奇已经谢幕':state.injured?`${label}：康复与赛程继续推进`:`推进${label}`;
-  $('#next-desc').textContent=state.retired?'你的生涯数据已经定格。':`将模拟未来 ${months} 个月的联赛、洲际赛事、训练、伤病和转会窗口。`;
-  $('#advance-btn').innerHTML=state.retired?'生涯已结束':`推进${label} <b>→</b>`;
-  $('#mobile-advance-btn').disabled=state.retired;$('#mobile-advance-btn').innerHTML=state.retired?'生涯已结束':`推进${label} <b>→</b>`;
+  const select=$('#advance-span');if(!select||!state)return;const pending=Number(state.flags.pendingAdvanceMonths)||0,months=pending||+select.value,label=pending?`剩余 ${pending} 个月`:months===2?'两个月':months===6?'半个赛季':'一个赛季';
+  $('#next-title').textContent=state.retired?'传奇已经谢幕':pending?`继续推进${label}`:state.injured?`${label}：康复与赛程继续推进`:`推进${label}`;
+  $('#next-desc').textContent=state.retired?'你的生涯数据已经定格。':pending?'上一段推进因关键事件暂停；处理完成后可从这里继续。':`将逐月模拟未来 ${months} 个月，关键伤病、转会或选择会立即暂停推进。`;
+  $('#advance-btn').innerHTML=state.retired?'生涯已结束':`${pending?'继续推进':'推进'}${label} <b>→</b>`;
+  $('#mobile-advance-btn').disabled=state.retired;$('#mobile-advance-btn').innerHTML=state.retired?'生涯已结束':`${pending?'继续推进':'推进'}${label} <b>→</b>`;
   $$('[data-mobile-span]').forEach(button=>button.classList.toggle('active',+button.dataset.mobileSpan===months));
 }
 function destinationSalaryFactor(short){const league=LEAGUES.find(l=>l.short===short);if(league?.tier===2)return.58;return short==='沙特联'?1.9:short==='美职联'?1.05:short==='中超'?.72:['J1联赛','K联赛1'].includes(short)?.76:1}
@@ -1694,15 +1774,18 @@ function transferOffers(){
   return clubs.slice(0,Math.min(clubs.length,rand(2,4))).map(x=>{const years=Math.max(1,state.contractEnd-state.year),fee=Math.round(state.value*(.9+Math.random()*.22)*(1+Math.min(4,years)*.025)),factor=destinationSalaryFactor(x.league.short),wage=Math.min(x.league.short==='沙特联'?1600000:x.league.short==='美职联'?900000:x.league.short==='中超'?250000:750000,Math.max(600,Math.round(Math.exp((state.overall-55)/6.15)*820*(x.club[3]/82)*factor*(1+perf*.04)/100)*100));return{club:x.club,league:x.league,wage,fee,rank:worldRank(x.club[0])}}).sort((a,b)=>a.rank-b.rank);
 }
 function transferOffer(){
-  if(state.age<16){addFeed('转会规则限制','未满 16 岁，暂不进入职业转会市场。','×');return}const offers=transferOffers();if(!offers.length)return;
+  if(state.age<16){addFeed('转会规则限制','未满 16 岁，暂不进入职业转会市场。','×');return false}const offers=transferOffers();if(!offers.length)return false;
   const restriction=state.age<18?'未成年球员阶段仅生成同国俱乐部报价。':'报价由能力、位置数据、年龄与发展空间、赛季表现和俱乐部参考排名共同生成。';
   const extra=`<div class="offer-list">${offers.map(o=>`<div class="offer-box"><div class="crest" style="--club:${o.club[2]}">${crestContent(o.club)}</div><div><strong>${o.club[0]}</strong><small>${o.league.name} · 周薪 ${weeklySalaryText(o.wage)} · 转会报价 ${money(o.fee)}</small></div><div class="offer-rank">#${o.rank}<small>参考排名</small></div></div>`).join('')}</div>`;
   const actions=offers.map((o,i)=>[`加盟 ${o.club[0]}`,()=>completeTransfer(o),i===0,`周薪 ${weeklySalaryText(o.wage)} · 新队内顺位重新计算`]);actions.push(['全部拒绝',()=>{state.morale=clamp(state.morale+2,0,100);state.trust=clamp(state.trust+4,0,100);addFeed('决定留队',`你拒绝 ${offers.length} 份报价，继续效力 ${state.club}。`,'↩');closeModal();renderAll()},false,'保留现有合同、身价和队内地位']);
   showModal({icon:'↗',kicker:'转会窗口 · 多队报价',title:`${offers.length} 家俱乐部正式求购`,body:restriction,extra,locked:true,actions});
+  return true;
 }
 function completeTransfer(offer){
-  const c=offer.club,old=state.club,oldLeague=leagueForClub(old);state.club=c[0];state.clubCode=c[1];state.clubColor=c[2];state.clubStrength=c[3];state.wage=offer.wage;
-  state.trust=clamp(48+(state.overall-(c[3]-12))*2,25,72);state.contractEnd=state.year+rand(3,5);if(oldLeague&&offer.league.country!==oldLeague.country){state.flags.needsAdaptation=true;state.flags.foreignAdaptationMonths=rand(4,10)}delete state.flags.transferRequested;delete state.flags.frozenOut;delete state.flags.transferRequestMonth;seasonStats().club=c[0];
+  const c=offer.club,old=state.club,oldLeague=leagueForClub(old),season=seasonStats(),oldStint=currentSeasonStint(season);oldStint.toMonth=state.month;
+  state.club=c[0];state.clubCode=c[1];state.clubColor=c[2];state.clubStrength=c[3];state.wage=offer.wage;season.finalClub=c[0];season.stints.push({club:c[0],fromMonth:state.month,toMonth:null,...emptyStatLine()});
+  if(!season.teamLeagueRecords[c[0]])season.teamLeagueRecords[c[0]]=seedTeamRecordForArrival(offer.league,c[3],state.month);season.teamLeagueRecord=season.teamLeagueRecords[c[0]];
+  state.trust=clamp(48+(state.overall-(c[3]-12))*2,25,72);state.contractEnd=state.year+rand(3,5);if(oldLeague&&offer.league.country!==oldLeague.country){state.flags.needsAdaptation=true;state.flags.foreignAdaptationMonths=rand(4,10)}delete state.flags.transferRequested;delete state.flags.frozenOut;delete state.flags.transferRequestMonth;
   addFeed('转会完成',`${state.name} 以约 ${money(offer.fee)} 的报价从 ${old} 转会加盟 ${c[0]}，周薪 ${weeklySalaryText(offer.wage)}。身价仍将在赛季末统一结算。`,'↗');addEvent('完成转会',`加盟参考排名第 ${offer.rank} 的 ${c[0]}。`,'↗');closeModal();renderAll();toast('转会已完成');
 }
 function recentSeason(){return state.seasons.slice().reverse().find(s=>s.done&&s.leagueRank)}
@@ -1718,7 +1801,7 @@ function showSeasonRecap(s,postMonths=0){
   if(s.valueMilestone)badges.unshift('★ 身价突破一亿欧元');
   const table=(s.leagueTable||[]).map(t=>`<div class="standing-row ${t.name===s.club?'me':t.rank===1?'champion':t.rank<=4?'europe-zone':t.rank>(s.leagueTable.length-3)?'relegation':''}"><span>${t.rank}</span><span>${t.name}</span><span>${t.played}</span><span>${t.wins}</span><span>${t.draws}</span><span>${t.losses}</span><span>${t.gf}:${t.ga}</span><span>${t.gd>=0?'+':''}${t.gd}</span><b>${t.points}</b></div>`).join('');
   const head='<div class="standing-row standing-head"><span>#</span><span>球队</span><span>赛</span><span>胜</span><span>平</span><span>负</span><span>进:失</span><span>净胜</span><b>分</b></div>';
-  showModal({icon:s.leagueRank===1?'♜':'✓',kicker:'赛季结束 · 最终积分榜',title:`${s.club} 最终排名第 ${s.leagueRank}`,body:`${s.season} 赛季已经结算。身价 ${money(s.valueBefore||0)} → ${money(s.valueAfter||0)}，新赛季周薪为 ${weeklySalaryText(state.wage||0)}。`,extra:`<div class="season-badges">${badges.map(b=>`<span>${b}</span>`).join('')}</div><div class="standings-modal">${head}${table}</div>`,actions:postMonths?[['进入新赛季',()=>{closeModal();maybeRandomEvent(postMonths)},true,'赛季事件频率已均衡，可能出现一次新的选择']]:[]});
+  showModal({icon:s.leagueRank===1?'♜':'✓',kicker:'赛季结束 · 最终积分榜',title:`${s.finalClub||s.club} 最终排名第 ${s.leagueRank}`,body:`${s.season} 赛季已经结算。身价 ${money(s.valueBefore||0)} → ${money(s.valueAfter||0)}，新赛季周薪为 ${weeklySalaryText(state.wage||0)}。${postMonths?` 本次批量推进还剩 ${postMonths} 个月，已在赛季边界暂停。`:''}`,extra:`<div class="season-badges">${badges.map(b=>`<span>${b}</span>`).join('')}</div><div class="standings-modal">${head}${table}</div>`,actions:postMonths?[[`继续推进剩余 ${postMonths} 个月`,()=>{closeModal();delete state.flags.pendingAdvanceMonths;advanceCareer(postMonths)},true,'从新赛季八月开始逐月推进，下一次关键事件仍会立即暂停']]:[]});
 }
 function renderAwardShowcase(){
   const el=$('#award-showcase'),items=(state.trophies||[]).slice(0,4);if(!items.length){el.classList.add('hidden');el.innerHTML='';return}el.classList.remove('hidden');
@@ -1732,7 +1815,10 @@ function renderCareer(){
   const seasons=Array.isArray(state.seasons)?state.seasons:[],trophies=Array.isArray(state.trophies)?state.trophies:[],events=Array.isArray(state.events)?state.events:[];
   const totals=seasons.reduce((a,s)=>{a.apps+=Number(s.apps)||0;a.goals+=Number(s.goals)||0;a.assists+=Number(s.assists)||0;a.clean+=Number(s.cleanSheets)||0;return a},{apps:0,goals:0,assists:0,clean:0});
   $('#career-total').textContent=`总计 ${totals.apps} 场 · ${state.pos==='GK'?totals.clean+' 零封':totals.goals+' 球'} · ${trophies.length} 冠军/奖项`;
-  $('#season-table').innerHTML=`<div class="season-head"><span>俱乐部</span><span>赛季</span><span>出场</span><span>${state.pos==='GK'?'零封':'进球'}</span><span>助攻</span><span>评分</span></div>`+seasons.slice().reverse().map(s=>{const c=clubByName(s.club)||['','','#63766a'],titles=seasonTrophies(s.season).map(t=>t.name).join(' · '),rank=s.leagueRank?`联赛第${s.leagueRank}名`:'';return `<div class="season-row"><span class="team-cell"><i class="mini-dot" style="--club:${c[2]}"></i><span class="team-cell-copy"><strong>${s.club||state.club}</strong><small>${[rank,titles].filter(Boolean).join(' · ')||'赛季进行中'}</small></span></span><span>${s.season||currentSeason()}</span><b>${Number(s.apps)||0}</b><b>${state.pos==='GK'?(Number(s.cleanSheets)||0):(Number(s.goals)||0)}</b><span>${Number(s.assists)||0}</span><span>${s.rating||'—'}</span></div>`}).join('');
+  $('#season-table').innerHTML=`<div class="season-head"><span>俱乐部</span><span>赛季</span><span>出场</span><span>${state.pos==='GK'?'零封':'进球'}</span><span>助攻</span><span>评分</span></div>`+seasons.slice().reverse().map(s=>{
+    ensureSeasonBreakdown(s);const stints=s.stints||[],mainClub=stints[stints.length-1]?.club||s.finalClub||s.club||state.club,c=clubByName(mainClub)||['','','#63766a'],titles=seasonTrophies(s.season).map(t=>t.name).join(' · '),rank=s.leagueRank?`联赛第${s.leagueRank}名`:'',clubs=stints.map(stint=>`${stint.club} ${Number(stint.apps)||0}场`).join(' → '),detail=stints.length>1?[clubs,rank,titles].filter(Boolean).join(' · '):[rank,titles].filter(Boolean).join(' · ')||'赛季进行中';
+    return `<div class="season-row"><span class="team-cell"><i class="mini-dot" style="--club:${c[2]}"></i><span class="team-cell-copy"><strong>${stints.length>1?'赛季内转会':mainClub}</strong><small>${detail}</small></span></span><span>${s.season||currentSeason()}</span><b>${Number(s.apps)||0}</b><b>${state.pos==='GK'?(Number(s.cleanSheets)||0):(Number(s.goals)||0)}</b><span>${Number(s.assists)||0}</span><span>${s.rating||'—'}</span></div>`;
+  }).join('');
   $('#timeline').innerHTML=events.map(e=>`<div class="timeline-item"><time>${e.date||'日期未记录'}</time><h4>${e.icon||'✦'} ${e.title||'生涯事件'}</h4><p>${e.text||'旧存档中的事件详情未记录。'}</p></div>`).join('')||'<div class="empty-state">暂无生涯事件，继续推进时间后会在这里记录。</div>';
 }
 function applyEventEffects(e){
@@ -2019,11 +2105,10 @@ async function loadRealStandings(force=false){
 }
 function renderLeagueTabs(){
   $('#league-tabs').innerHTML=LEAGUES.map((l,i)=>`<button data-league="${i}" class="${i===activeLeague?'active':''}">${l.short}</button>`).join('');
-  $$('#league-tabs button').forEach(b=>b.onclick=()=>{activeLeague=+b.dataset.league;renderLeagueTabs();renderClubs();renderRealStandingsShell(readRealCache(LEAGUES[activeLeague]));loadRealStandings(false)});
-  renderRealStandingsShell(realTableMemory[REAL_LEAGUE_IDS[LEAGUES[activeLeague].short]]||readRealCache(LEAGUES[activeLeague]));
+  $$('#league-tabs button').forEach(b=>b.onclick=()=>{activeLeague=+b.dataset.league;renderLeagueTabs();renderClubs()});
 }
 function renderClubs(){
-  const l=LEAGUES[activeLeague],tier=`<span class="tier-label">${l.tier===2?'第二级别 · 可升级':'顶级联赛'}</span>`;$('#club-database').innerHTML=l.clubs.map(c=>`<div class="club-card"><div class="crest" style="--club:${c[2]}">${crestContent(c)}</div><div><strong>${c[0]}</strong><small>${l.name} ${tier} · 实力 ${c[3]} · ${c.realRank?`现实排名 #${c.realRank}`:`俱乐部参考排名 #${worldRank(c[0])}`}</small><div class="stars">${'★'.repeat(Math.max(1,Math.round((c[3]-55)/9)))}${'☆'.repeat(Math.max(0,5-Math.round((c[3]-55)/9)))}</div></div></div>`).join('');
+  const l=LEAGUES[activeLeague];$('#club-database').innerHTML=l.clubs.map(c=>`<div class="club-card"><div class="crest" style="--club:${c[2]}">${crestContent(c)}</div><div><strong>${c[0]}</strong><small>参赛球队 · 俱乐部参考排名 #${worldRank(c[0])}</small></div></div>`).join('');
 }
 
 /* Version 8.1: promotion/relegation, transfer requests and higher-variance human events. */
