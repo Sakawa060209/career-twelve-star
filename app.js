@@ -44,38 +44,41 @@ const AWARDS=[
   {name:'联赛冠军',icon:'♛',mark:'C',type:'league',desc:'赛季结束时随俱乐部登上积分榜首位。奖杯使用游戏数据库中对应联赛的联网标识。',rule:'所有位置 · 球队最终排名第 1'},
   {name:'国家队冠军',icon:'⚑',mark:'N',type:'national',desc:'随国家队赢得世界杯或所属大洲最高级别国家队赛事，冠军标识会进入荣誉橱窗。',rule:'入选国家队并随队夺冠'}
 ];
+const commonsTrophy=(file,width=420)=>`https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=${width}`;
 const LEAGUE_TROPHY_IMAGES={
-  '英超':'https://media.api-sports.io/football/leagues/39.png',
-  '西甲':'https://media.api-sports.io/football/leagues/140.png',
-  '德甲':'https://media.api-sports.io/football/leagues/78.png',
-  '意甲':'https://media.api-sports.io/football/leagues/135.png',
-  '法甲':'https://media.api-sports.io/football/leagues/61.png',
-  '葡超':'https://media.api-sports.io/football/leagues/94.png',
-  '荷甲':'https://media.api-sports.io/football/leagues/88.png',
-  '比甲':'https://media.api-sports.io/football/leagues/144.png',
-  '苏超':'https://media.api-sports.io/football/leagues/179.png',
-  '奥甲':'https://media.api-sports.io/football/leagues/218.png',
-  '沙特联':'https://media.api-sports.io/football/leagues/307.png',
-  '美职联':'https://media.api-sports.io/football/leagues/253.png',
-  '中超':'https://media.api-sports.io/football/leagues/169.png',
-  'J1联赛':'https://media.api-sports.io/football/leagues/98.png',
-  'K联赛1':'https://media.api-sports.io/football/leagues/292.png',
-  '英冠':'https://media.api-sports.io/football/leagues/40.png',
-  '西乙':'https://media.api-sports.io/football/leagues/141.png',
-  '德乙':'https://media.api-sports.io/football/leagues/79.png',
-  '意乙':'https://media.api-sports.io/football/leagues/136.png',
-  '法乙':'https://media.api-sports.io/football/leagues/62.png'
+  '英超':commonsTrophy('Premier league trophy icon (adjusted).png'),
+  '西甲':commonsTrophy('Liga trophy (adjusted).png'),
+  '德甲':commonsTrophy('Meisterschale.png'),
+  '意甲':commonsTrophy('Coppa Campioni d’Italia.jpg'),
+  '法甲':commonsTrophy('Ligue 1 Trophy 2024.png'),
+  '葡超':commonsTrophy('Primeira Liga Trophy.svg'),
+  '荷甲':commonsTrophy('Trofeo Eredivisie.svg'),
+  '比甲':commonsTrophy('Icone du nouveau trophée du championnat de Belgique.svg'),
+  '苏超':commonsTrophy('Spltrophy.png'),
+  '奥甲':commonsTrophy('Österreichischer Meisterteller 1.JPG'),
+  '沙特联':commonsTrophy('Saudi Professional League Cup.png'),
+  '美职联':commonsTrophy('MLS Cup.svg'),
+  '中超':commonsTrophy('中超火神杯.png'),
+  'J1联赛':'https://www.jleague.jp/img/news/2022/12/24237.jpg?_=1671522154',
+  'K联赛1':commonsTrophy('K League Classic Trophy.png'),
+  '英冠':commonsTrophy('Maresca Championship trophy Leicester (cropped).jpg'),
+  '西乙':commonsTrophy('Trofeo de Segunda División - Deportivo da Coruña.jpg'),
+  '德乙':commonsTrophy('Zweite Bundesliga Schale.png'),
+  '意乙':commonsTrophy('Coppa Ali della Vittoria.png'),
+  '法乙':commonsTrophy('Ligue 2 trophy.png')
 };
 const leagueTrophyImage=short=>LEAGUE_TROPHY_IMAGES[short]||AWARD_IMAGES?.DEFAULT||'';
 const NATIONAL_TROPHY_IMAGES={
-  'FIFA 世界杯':'https://media.api-sports.io/football/leagues/1.png',
-  '世界杯':'https://media.api-sports.io/football/leagues/1.png',
-  '非洲杯':'https://media.api-sports.io/football/leagues/6.png',
-  '亚洲杯':'https://media.api-sports.io/football/leagues/7.png',
-  '美洲杯':'https://media.api-sports.io/football/leagues/9.png'
+  'FIFA 世界杯':commonsTrophy('FIFA World Cup Trophy (FIFAAH-305568).jpg'),
+  '世界杯':commonsTrophy('FIFA World Cup Trophy (FIFAAH-305568).jpg'),
+  '欧洲杯':commonsTrophy('UEFA Euro 2020 Trophy (cropped).jpg'),
+  '非洲杯':commonsTrophy('African Cup of Nations (ACN).svg'),
+  '亚洲杯':commonsTrophy('Asian cup trophy 2019-.png'),
+  '美洲杯':commonsTrophy('Copa america trofeo.jpg'),
+  '中北美及加勒比海金杯':commonsTrophy('CONCACAF - Gold Cup.svg')
 };
 const NATIONAL_TROPHY_GALLERY=[
-  ['FIFA 世界杯','世界杯'],['亚洲杯','亚洲杯'],['美洲杯','美洲杯'],['非洲杯','非洲杯']
+  ['FIFA 世界杯','世界杯'],['欧洲杯','欧洲杯'],['亚洲杯','亚洲杯'],['美洲杯','美洲杯'],['非洲杯','非洲杯'],['中北美及加勒比海金杯','金杯']
 ];
 const nationalTrophyImage=name=>{
   const key=Object.keys(NATIONAL_TROPHY_IMAGES).find(k=>String(name).includes(k));
@@ -809,7 +812,7 @@ function legacyV1_renderClubs(){const l=LEAGUES[activeLeague];$('#club-database'
 function legacyV1_renderAwards(){
   $('#award-cards').innerHTML=AWARDS.map(a=>`<div class="award-card" data-mark="${a.mark}"><div class="trophy-symbol">${a.icon}</div><h3>${a.name}</h3><p>${a.desc}</p><span class="eligibility">${a.rule}</span></div>`).join('');if(!state)return;$('#trophy-count').textContent=`${state.trophies.length} 座奖杯`;$('#trophy-list').innerHTML=state.trophies.length?state.trophies.map(t=>`<div class="trophy-item"><strong>${t.name}</strong><span>${t.season}</span></div>`).join(''):'<div class="empty-state">奖杯柜还空着。继续前进，你会来到这里。</div>'
 }
-function showModal({icon,kicker,title,body,extra='',actions=[],locked=false}){modalLocked=locked;$('#modal-icon').textContent=icon;$('#modal-kicker').textContent=kicker;$('#modal-title').textContent=title;$('#modal-body').textContent=body;$('#modal-extra').innerHTML=extra;$('#modal-close').style.display=locked?'none':'grid';$('#modal-actions').innerHTML='';actions.forEach(([label,fn,primary,detail],i)=>{const b=document.createElement('button');b.type='button';b.innerHTML=`<span>${label}</span>${detail?`<small class="choice-detail">${detail}</small>`:''}`;b.className=primary?'primary':'';b.onclick=()=>{modalLocked=false;fn()};$('#modal-actions').appendChild(b)});if(!actions.length){const b=document.createElement('button');b.type='button';b.textContent='继续';b.className='primary';b.onclick=closeModal;$('#modal-actions').appendChild(b)}document.body.classList.add('modal-open');$('#modal').classList.remove('hidden');requestAnimationFrame(()=>{$('#modal-scroll').scrollTop=0;$('#modal-actions').scrollTop=0;const first=$('#modal-actions button');if(first)first.focus({preventScroll:true})})}
+function showModal({icon,kicker,title,body,extra='',actions=[],locked=false}){modalLocked=locked;const modal=$('#modal');modal.classList.toggle('choice-sheet',locked&&actions.length>=2);modal.classList.toggle('dense-choice-sheet',locked&&actions.length>=3);$('#modal-icon').textContent=icon;$('#modal-kicker').textContent=kicker;$('#modal-title').textContent=title;$('#modal-body').textContent=body;$('#modal-extra').innerHTML=extra;$('#modal-close').style.display=locked?'none':'grid';$('#modal-actions').innerHTML='';actions.forEach(([label,fn,primary,detail],i)=>{const b=document.createElement('button');b.type='button';b.innerHTML=`<span>${label}</span>${detail?`<small class="choice-detail">${detail}</small>`:''}`;b.className=primary?'primary':'';b.onclick=()=>{modalLocked=false;fn()};$('#modal-actions').appendChild(b)});if(!actions.length){const b=document.createElement('button');b.type='button';b.textContent='继续';b.className='primary';b.onclick=closeModal;$('#modal-actions').appendChild(b)}document.body.classList.add('modal-open');modal.classList.remove('hidden');requestAnimationFrame(()=>{$('#modal-scroll').scrollTop=0;$('#modal-actions').scrollTop=0;const first=$('#modal-actions button');if(first)first.focus({preventScroll:true})})}
 function showInfo(title,body,icon='!'){showModal({icon,kicker:'生涯事件',title,body})}
 function closeModal(){if(modalLocked)return;$('#modal').classList.add('hidden');document.body.classList.remove('modal-open')}
 function setPendingDecision(decision){if(!state)return;state.pendingDecision={...decision,createdAt:state.year*12+state.month};save()}
@@ -1011,11 +1014,41 @@ const STYLE_DESCRIPTIONS={
   '清道夫':'补位和回追更强','门线门将':'扑救带来的评分更高','清道夫门将':'一对一和出击更强','出球门将':'传球成功率与组织加分'
 };
 const AWARD_IMAGES={
-  '金球奖':'https://upload.wikimedia.org/wikipedia/commons/0/0b/Bal%C3%B3n_de_oro.png',
-  '欧洲金靴奖':'https://upload.wikimedia.org/wikipedia/commons/a/a1/Bota_de_oro.svg',
-  '欧洲金童奖':'https://upload.wikimedia.org/wikipedia/commons/e/ed/Goldenwiki_higher.svg',
-  '雅辛奖 · 金手套':'https://upload.wikimedia.org/wikipedia/commons/a/a3/Lev_Yashin.jpg',
-  'DEFAULT':'https://upload.wikimedia.org/wikipedia/commons/8/8b/Coppa_Campioni.svg'
+  '金球奖':commonsTrophy('Balón de oro.png'),
+  '欧洲金靴奖':commonsTrophy('Bota de Oro.jpg'),
+  '欧洲金童奖':commonsTrophy("Ballon d'Or simple.svg"),
+  '雅辛奖 · 金手套':commonsTrophy('Golden Glove.png'),
+  'DEFAULT':commonsTrophy('Coppa Campioni.svg')
+};
+const DOMESTIC_CUP_TROPHY_IMAGES={
+  'FA Cup':commonsTrophy('The FA Cup Trophy.jpg'),
+  'Copa del Rey':commonsTrophy('Paulo Futre holding the Copa del Rey trophy.jpg'),
+  'DFB-Pokal':commonsTrophy('DFB Pokal Trophy.png'),
+  'Coppa Italia':commonsTrophy('The Coppa Italia trophy.jpg'),
+  'Coupe de France':commonsTrophy('Finale Coupe de France 1931 Trophée.jpg'),
+  'Taça de Portugal':commonsTrophy('Taça de Portugal Trophy.svg'),
+  'KNVB Cup':commonsTrophy('KNVB Trophy.png'),
+  'Belgian Cup':commonsTrophy('Icone du trophée de la Coupe de Belgique.svg'),
+  'Scottish Cup':commonsTrophy('Scottish cup.jpg'),
+  'Austrian Cup':commonsTrophy('ÖFB-Cups.png'),
+  'King’s Cup':commonsTrophy("King's Cup (Saudi Arabia), 2023.jpg"),
+  'U.S. Open Cup':commonsTrophy('Dewar trophy 1914.jpg'),
+  '中国足协杯':commonsTrophy('2023 CFA Cup Opening ceremony in Guangxi Sports Center (1).jpg'),
+  'Emperor’s Cup':commonsTrophy('Emperors cup.JPG'),
+  'Korea Cup':commonsTrophy('Korean FA Cup Trophy.png')
+};
+const CONTINENTAL_TROPHY_IMAGES={
+  'UEFA Champions League':commonsTrophy('UEFA Champions League trophy, Old Trafford, 1992.jpg'),
+  'UEFA Europa League':commonsTrophy('2011 UEFA Europa League trophy at Museu FC Porto.jpg'),
+  'UEFA Conference League':commonsTrophy('UEFA Europa Conference League Trophy.jpg'),
+  'AFC Champions League Elite':commonsTrophy('AFC Champions League Trophy.png'),
+  'AFC Champions League Two':commonsTrophy('AFC Champions League Trophy.png'),
+  'AFC Challenge League':commonsTrophy('AFC Presidents Cup trophy.JPG'),
+  'CONCACAF Champions Cup':commonsTrophy('Concacaf Liga Campeones.jpg')
+};
+const SPECIAL_TROPHY_IMAGES={
+  'MLS Cup':commonsTrophy('MLS Cup.svg'),
+  'MLS Supporters’ Shield':commonsTrophy("Icon Major League Soccer Supporters' Shield.svg")
 };
 const UEFA_REFERENCE_RANK={'Bayern Munich':1,'Real Madrid':2,'Paris Saint-Germain':3,'Liverpool':4,'Inter':5,'Manchester City':6,'Bayer Leverkusen':7,'Borussia Dortmund':8,'FC Barcelona':9,'Arsenal':10,'Atlético de Madrid':11,'AS Roma':12,'Atalanta':13,'Benfica':14,'Chelsea':15,'Juventus':16,'AC Milan':17,'PSV Eindhoven':18,'Feyenoord':19,'Napoli':20};
 
@@ -1362,15 +1395,15 @@ function legacyV4_renderAwardShowcaseB(){
 }
 function renderAwards(){
   $('#award-cards').innerHTML=AWARDS.map(a=>{
-    let visual=`<div class="trophy-symbol">${a.icon}</div>`,source='';
+    let visual=`<div class="personal-award-visual"><i>${a.icon}</i><img src="${awardImage(a.name)}" alt="${a.name}奖杯图片" loading="lazy" onerror="this.remove()"></div>`,source='<em class="league-image-source">现实奖杯影像 · Wikimedia Commons</em>';
     if(a.type==='league'){
       const league=state?leagueForClub(state.club):LEAGUES[0];
       visual=`<div class="league-trophy-gallery compact-trophy-gallery"><span class="league-trophy-icon" title="${league.name}冠军奖杯"><i>🏆</i><img src="${leagueTrophyImage(league.short)}" alt="${league.short}联赛冠军奖杯图标" loading="lazy" onerror="this.remove()"><small>${league.short}</small></span></div>`;
-      source='<em class="league-image-source">赢得联赛后显示对应赛事奖杯图标</em>';
+      source='<em class="league-image-source">赢得联赛后显示对应现实奖杯影像</em>';
     }else if(a.type==='national'){
       const competition=state?.national?.continentalCup||nationalProfile(state?.country||'中国').continentalCup;
       visual=`<div class="league-trophy-gallery national-trophy-gallery compact-trophy-gallery"><span class="league-trophy-icon" title="${competition}冠军标识"><i>🏆</i><img src="${nationalTrophyImage(competition)}" alt="${competition}冠军图标" loading="lazy" onerror="this.remove()"><small>${competition}</small></span></div>`;
-      source='<em class="league-image-source">国家队夺冠后显示对应赛事奖杯图标</em>';
+      source='<em class="league-image-source">国家队夺冠后显示对应现实奖杯影像</em>';
     }
     const ruleSource=a.sourceUrl?`<a class="award-rule-source" href="${a.sourceUrl}" target="_blank" rel="noopener">${a.source} ↗</a>`:'';
     return`<div class="award-card ${a.type?'league-award-card':''}" data-mark="${a.mark}">${visual}${source}<h3>${a.name}</h3><p>${a.desc}</p><span class="eligibility">${a.rule}</span>${ruleSource}</div>`;
@@ -1704,7 +1737,7 @@ function migrateState(){
   state.seasons.forEach(ensureSeasonBreakdown);
   state.careerBonusEarnings=Number(state.careerBonusEarnings)||0;ensureContractTerms();
   state.leagueMovements=Array.isArray(state.leagueMovements)?state.leagueMovements:[];applyStoredLeagueMovements();
-  state.trophies.forEach(t=>{t.reason=t.reason||`${t.season} 赛季获得的重要荣誉。`;if(String(t.name).includes('联赛冠军')){t.type='league';t.league=t.league||LEAGUES.find(l=>String(t.name).includes(l.short))?.short;t.image=leagueTrophyImage(t.league)}else if(nationalTrophyImage(t.name)){t.national=true;t.image=nationalTrophyImage(t.name)}else t.image=t.image||awardImage(t.name)});
+  state.trophies.forEach(t=>{t.reason=t.reason||`${t.season} 赛季获得的重要荣誉。`;if(String(t.name).includes('联赛冠军')){t.type='league';t.league=t.league||LEAGUES.find(l=>String(t.name).includes(l.short))?.short}if(nationalTrophyImage(t.name))t.national=true;t.image=awardImage(t.name)});
   const c=clubByName(state.club);if(c){state.clubCode=c[1];state.clubColor=c[2];state.clubStrength=c[3]}
   const season=state.seasons[state.seasons.length-1];if(state.continentalCurrent){state.continentalCurrent.club=state.continentalCurrent.club||season?.stints?.[0]?.club||season?.club||state.club;state.continentalCurrent.club=migratedClubName(state.continentalCurrent.club);const campaignClub=clubByName(state.continentalCurrent.club),meta=CONTINENTAL_META[state.continentalCurrent.code];if(campaignClub){state.continentalCurrent.clubCode=campaignClub[1];state.continentalCurrent.clubColor=campaignClub[2];state.continentalCurrent.clubStrength=campaignClub[3]}if(meta){state.continentalCurrent.competition=meta.competition;state.continentalCurrent.format=meta.format;state.continentalCurrent.target=meta.target;state.continentalCurrent.accent=meta.accent;state.continentalCurrent.qualificationRoute=state.continentalCurrent.qualificationRoute||'旧存档洲际资格延续';if(meta.format==='knockout'&&state.continentalCurrent.stage==='联赛阶段')state.continentalCurrent.stage=state.month<=6?'第一轮':state.month===7?'16强':state.month===8?'四分之一决赛':'半决赛'}if(state.continentalCurrent.club!==state.club){archiveContinentalCampaign(state.continentalCurrent,{leftClubMidSeason:true,leftAtMonth:state.month,leftForClub:state.club,migrated:true});state.continentalCurrent=null}}
   if(state.age>=16&&!state.continentalCurrent&&state.month===0&&!(season?.stints?.length>1))state.continentalCurrent=createContinentalCampaign();
@@ -1861,7 +1894,12 @@ function addTrophy(name,s,reason,personal=true){
 }
 if(!AWARDS.some(a=>a.name==='联赛金靴奖'))AWARDS.splice(3,0,{name:'联赛金靴奖',icon:'♟',mark:'L',desc:'授予所在国内联赛当赛季获得金靴的球员。',rule:'非门将 · 所在联赛赛季金靴'});
 function awardImage(name){
-  const national=nationalTrophyImage(name);if(national)return national;const league=LEAGUES.find(l=>String(name).includes(l.short)&&String(name).includes('联赛冠军'));if(league)return leagueTrophyImage(league.short);if(String(name).includes('金靴'))return AWARD_IMAGES['欧洲金靴奖'];if(String(name).includes('金球'))return AWARD_IMAGES['金球奖'];if(String(name).includes('雅辛')||String(name).includes('金手套'))return AWARD_IMAGES['雅辛奖 · 金手套'];if(String(name).includes('金童'))return AWARD_IMAGES['欧洲金童奖'];return AWARD_IMAGES.DEFAULT;
+  const label=String(name||''),national=nationalTrophyImage(label);if(national)return national;
+  const specialKey=Object.keys(SPECIAL_TROPHY_IMAGES).find(key=>label.includes(key));if(specialKey)return SPECIAL_TROPHY_IMAGES[specialKey];
+  const league=LEAGUES.find(l=>label.includes(l.short)&&label.includes('联赛冠军'));if(league)return leagueTrophyImage(league.short);
+  const cupKey=Object.keys(DOMESTIC_CUP_TROPHY_IMAGES).find(key=>label.includes(key));if(cupKey)return DOMESTIC_CUP_TROPHY_IMAGES[cupKey];
+  const continentalKey=Object.keys(CONTINENTAL_TROPHY_IMAGES).find(key=>label.includes(key));if(continentalKey)return CONTINENTAL_TROPHY_IMAGES[continentalKey];
+  if(label.includes('金靴'))return AWARD_IMAGES['欧洲金靴奖'];if(label.includes('金球'))return AWARD_IMAGES['金球奖'];if(label.includes('雅辛')||label.includes('金手套'))return AWARD_IMAGES['雅辛奖 · 金手套'];if(label.includes('金童'))return AWARD_IMAGES['欧洲金童奖'];return AWARD_IMAGES.DEFAULT;
 }
 function evaluateAwards(s){
   ensureSeasonBreakdown(s);const seasonClub=s.finalClub||state.club||s.club,league=leagueForClub(seasonClub),groups=leagueStatGroups(s),finalLeagueStats=groups[league?.short]?.stats||emptyStatLine(),totalStats=s.stats.total,rating=+totalStats.rating||0,output=state.pos==='GK'?totalStats.cleanSheets*3+totalStats.apps+rating*2:totalStats.goals*4+totalStats.assists*2+totalStats.apps*.3+rating*2;
