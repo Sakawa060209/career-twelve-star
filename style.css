@@ -510,3 +510,80 @@ body.modal-open{overflow:hidden;overscroll-behavior:none}
   .selection-competition>div{padding:8px}.decision-people{grid-template-columns:1fr}
   .competition-row{grid-template-columns:22px minmax(0,1fr) 30px}.competition-row i{display:none}
 }
+
+/* 3.1.1: full-height mobile decisions and real-world trophy artwork. */
+.personal-award-visual{
+  position:relative;
+  width:82px;
+  height:88px;
+  display:grid;
+  place-items:center;
+  margin-bottom:17px;
+  overflow:hidden;
+  border:1px solid rgba(231,187,101,.24);
+  background:radial-gradient(circle at 50% 35%,rgba(231,187,101,.17),transparent 62%),#091710;
+}
+.personal-award-visual i{
+  position:absolute;
+  color:var(--gold);
+  font-style:normal;
+  font-size:34px;
+  opacity:.55;
+}
+.personal-award-visual img{
+  position:relative;
+  z-index:1;
+  width:68px;
+  height:76px;
+  object-fit:contain;
+  filter:drop-shadow(0 5px 8px rgba(0,0,0,.48));
+}
+.league-trophy-icon{min-height:96px}
+.league-trophy-icon img{width:52px;height:62px}
+.league-trophy-icon>i{opacity:.38}
+.trophy-item-image{width:48px;height:54px}
+.trophy-item-image img{width:40px;height:46px;filter:drop-shadow(0 3px 5px rgba(0,0,0,.42))}
+.trophy-item-image>i{opacity:.42}
+.honour-card img{padding:3px;object-fit:contain;background:radial-gradient(circle,rgba(231,187,101,.12),transparent 68%)}
+
+@media(max-width:700px){
+  .modal.choice-sheet .modal-card{
+    height:calc(100vh - max(7px,env(safe-area-inset-top,0px)));
+    height:calc(100dvh - max(7px,env(safe-area-inset-top,0px)));
+    max-height:calc(100vh - max(7px,env(safe-area-inset-top,0px)));
+    max-height:calc(100dvh - max(7px,env(safe-area-inset-top,0px)));
+  }
+  .modal.choice-sheet .modal-scroll{
+    flex:0 1 auto;
+    width:100%;
+    max-height:min(43vh,365px);
+    max-height:min(43dvh,365px);
+  }
+  .modal.choice-sheet .modal-actions{
+    flex:1 1 auto;
+    min-height:0;
+    max-height:none;
+    align-content:flex-start;
+    padding-top:12px;
+  }
+  .modal.dense-choice-sheet .modal-scroll{
+    max-height:min(39vh,330px);
+    max-height:min(39dvh,330px);
+    padding:18px 17px 9px;
+  }
+  .modal.dense-choice-sheet .modal-icon{width:39px;height:44px;margin-bottom:9px;font-size:19px}
+  .modal.dense-choice-sheet .modal-card h2{font-size:20px;margin-top:3px;margin-bottom:7px}
+  .modal.dense-choice-sheet #modal-body{font-size:12px;line-height:1.55}
+  .personal-award-visual{
+    grid-row:1/5;
+    width:45px;
+    height:58px;
+    margin:0;
+  }
+  .personal-award-visual img{width:39px;height:51px}
+  .personal-award-visual i{font-size:24px}
+  .league-trophy-icon{min-height:82px}
+  .league-trophy-icon img{width:42px;height:52px}
+  .trophy-item-image{width:38px;height:46px}
+  .trophy-item-image img{width:34px;height:40px}
+}
