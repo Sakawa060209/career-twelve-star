@@ -852,7 +852,7 @@ function showTransferDecision(offers,persist=true){
 }
 function showSeasonObjectiveDecision(persist=true){
   if(seasonStats().objective)return false;if(persist)setPendingDecision({type:'seasonObjective'});
-  showModal({icon:'◎',kicker:`${currentSeason()} · SEASON OBJECTIVE`,title:'为新赛季选择一条明确路线',body:'目标会在每场比赛后更新进度，并在赛季结束时结算。不同路线的收益方向不同，失败也会产生相应后果。',locked:true,actions:Object.values(SEASON_OBJECTIVES).map((objective,index)=>[objective.name,()=>chooseSeasonObjective(objective.id),index===0,`${objective.description} · ${objective.reward} · ${objective.failure}`])});return true;
+  showModal({icon:'◎',kicker:`${currentSeason()} · SEASON OBJECTIVE`,title:'为新赛季选择一条明确路线',body:'目标会在每场比赛后更新进度，并在赛季结束时结算。不同路线的收益方向不同，失败也会产生相应后果。',locked:true,actions:Object.values(SEASON_OBJECTIVES).map((objective,index)=>[objective.name,()=>chooseSeasonObjective(objective.id),index===0,`目标：${objective.description}\n收益：${objective.reward}\n风险：${objective.failure}`])});return true;
 }
 function restorePendingDecision(){
   const pending=state?.pendingDecision;if(!pending)return false;
