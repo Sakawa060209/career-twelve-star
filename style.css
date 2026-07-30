@@ -538,6 +538,9 @@ body.modal-open{overflow:hidden;overscroll-behavior:none}
   object-fit:contain;
   filter:drop-shadow(0 5px 8px rgba(0,0,0,.48));
 }
+.trophy-image-credit{margin:12px 2px 0;color:var(--muted);font-size:11px;line-height:1.65}
+.trophy-image-credit a{color:var(--lime);text-decoration:none;border-bottom:1px solid rgba(181,255,0,.35)}
+.trophy-image-credit a:active{opacity:.72}
 .league-trophy-icon{min-height:96px}
 .league-trophy-icon img{width:52px;height:62px}
 .league-trophy-icon>i{opacity:.38}
